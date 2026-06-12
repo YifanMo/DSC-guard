@@ -1,0 +1,7 @@
+case,name,failure_class,chain,evidence_status,trigger_tx,impact_tx_count,attacker_candidates,pre_attack_log_count,pre_attack_topic_coverage,trace_records,alerts,rpc_requests,abi_requests,dune_queries,limitations
+ploutos,Ploutos Money USDC oracle misconfiguration,feed_binding_failure,ethereum,real_tx_with_receipt_flow_decode,0xcfedf63b37a6cd45b21bc94e3de5412fee0765e7dad6b7c8561a01cebd193ab6,1,1,1,1/1,4,3,13,2,0,"some protocol-specific event fields are inferred from known transactions rather than fully ABI-decoded; loss is a receipt-flow impact estimate, not a fully protocol-decoded loss amount"
+moonwell_cbeth,Moonwell cbETH oracle formula error,price_composition_failure,base,real_materialized,0xd26baf29dcba7bf66db4be17b46a49bb4dacca41ace968c98c8a5b09a03ae812,123,14,71,71/71,124,124,48,0,6,
+moonwell_wrseth,Moonwell wrsETH oracle malfunction,price_semantics_mismatch,base,real_materialized,,12,2,3,3/3,13,13,0,0,0,
+blueberry_faulty_oracle,Blueberry Protocol faulty oracle deployment,price_semantics_mismatch,ethereum,real_materialized,,1,2,56,56/56,2,2,0,0,0,
+venus_luna,Venus Protocol LUNA stale oracle consumption,freshness_handling_failure,bsc,real_materialized,0xa73bcdba45d34dde372a3284ef4749004a76b2e04be345c602c99d60f4048d4f,217,12,3,3/3,218,201,0,0,0,
+blizz_luna,Blizz Finance LUNA stale oracle consumption,freshness_handling_failure,avalanche,real_materialized,0x6b5f6f5b620489aa6616c7e0b4fdd9df712ef47fbd9ba9acf9dedb8cd2207473,108,24,3,3/3,109,88,0,0,9,

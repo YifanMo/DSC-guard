@@ -1,0 +1,205 @@
+{
+  "ploutos": {
+    "name": "Ploutos Money USDC oracle misconfiguration",
+    "chain": "ethereum",
+    "chain_id": 1,
+    "explorer_api": "https://api.etherscan.io/v2/api",
+    "api_key_env": "ETHERSCAN_KEY",
+    "rpc_url_template": "https://eth-mainnet.g.alchemy.com/v2/{ALCHEMY_KEY}",
+    "fixture_source": "contracts/fixtures/OracleLendingFixture.sol",
+    "source_targets": [
+      "0x9dce7a180c34203fee8ce8ca62f244feeb67bd30",
+      "0x3e47945cca05439f99029a3d21e3166ce1a84fab"
+    ],
+    "known_txs": {
+      "config": "0xcfedf63b37a6cd45b21bc94e3de5412fee0765e7dad6b7c8561a01cebd193ab6",
+      "exploit": "0xa17dc37e1b65c65d20042212fb834974f7faaa961442e3fc05393778705f8474"
+    },
+    "constraints": [
+      {
+        "id": "USDC_FEED_MUST_BE_USDC_USD",
+        "type": "feed_mismatch",
+        "asset": "USDC",
+        "expected_feed": "USDC/USD",
+        "forbidden_feed": "BTC/USD",
+        "severity": "critical"
+      },
+      {
+        "id": "BORROW_MUST_BE_COLLATERALIZED",
+        "type": "borrow_collateralization",
+        "severity": "critical"
+      }
+    ],
+    "fixture_attacker": "0x1111111111111111111111111111111111111111"
+  },
+  "moonwell_cbeth": {
+    "name": "Moonwell cbETH oracle formula error",
+    "chain": "base",
+    "chain_id": 8453,
+    "explorer_api": "https://api.etherscan.io/v2/api",
+    "api_key_env": "ETHERSCAN_KEY",
+    "rpc_url_template": "https://base-mainnet.g.alchemy.com/v2/{ALCHEMY_KEY}",
+    "fixture_source": "contracts/fixtures/OracleLendingFixture.sol",
+    "source_targets": [
+      "0xec942be8a8114bfd0396a5052c36027f2ca6a9d0",
+      "0x84eaf5e855514685927b75876e0c9798895c249a",
+      "0x628ff693426583d9a7fb391e54366292f509d457"
+    ],
+    "known_txs": {
+      "mip_x43_execute": "0xd26baf29dcba7bf66db4be17b46a49bb4dacca41ace968c98c8a5b09a03ae812",
+      "sample_cbeth_liquidation": "0xa49a27498d82db8b093b2fcf969f2091f74dab437ee24ab2c43a182927335c84",
+      "sample_cbeth_overborrow_large": "0x3c90e922b44cb8f9e6003734252a710c47a06ae716b6040e63c36b30ac220f77",
+      "sample_cbeth_overborrow_mid": "0xab71f7cd12f46b2a8c3d7bd7e8ca1d7fc80f387f1f9ea0cf858a39c34da88ba7",
+      "sample_cbeth_overborrow_small": "0x67e015119e224a2117b0cbf2f248f59daeebb87eeaaa9d67afac465ee77b121a"
+    },
+    "constraints": [
+      {
+        "id": "CBETH_USD_MUST_MULTIPLY_ETH_USD",
+        "type": "formula_mismatch",
+        "asset": "cbETH",
+        "expected_formula": "cbETH/ETH * ETH/USD",
+        "forbidden_formula": "cbETH/ETH",
+        "severity": "critical"
+      }
+    ],
+    "fixture_attacker": "0x9e81b20e3255cdfaebda41d5decbacd9fc6ae0a9"
+  },
+  "moonwell_wrseth": {
+    "name": "Moonwell wrsETH oracle malfunction",
+    "chain": "base",
+    "chain_id": 8453,
+    "explorer_api": "https://api.etherscan.io/v2/api",
+    "api_key_env": "ETHERSCAN_KEY",
+    "rpc_url_template": "https://base-mainnet.g.alchemy.com/v2/{ALCHEMY_KEY}",
+    "fixture_source": "contracts/fixtures/OracleLendingFixture.sol",
+    "source_targets": [
+      "0xd7221b10fbbc1e1ba95fd0b4d031c15f7f365296",
+      "0x71041dddad3595f9ced3dccfbe3d1f4b0a16bb70",
+      "0x4a61db12d0cb4293d799ecdd82e5994b5746f850",
+      "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+    ],
+    "known_txs": {
+      "first_attack": "0x229caeb87e0b6c31afad950150d2ba05a8d7fe823c9e5c05af63b4150b8f6cc6",
+      "attacker_contract": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+      "attacker_eoa": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff"
+    },
+    "constraints": [
+      {
+        "id": "WRSETH_ETH_SOURCE_MUST_NOT_OUTLIER",
+        "type": "price_source_outlier",
+        "asset": "wrsETH",
+        "quote_asset": "ETH",
+        "feed": "0xd7221b10fbbc1e1ba95fd0b4d031c15f7f365296",
+        "severity": "critical"
+      }
+    ],
+    "fixture_attacker": "0x6666666666666666666666666666666666666666"
+  },
+  "blueberry_faulty_oracle": {
+    "name": "Blueberry Protocol faulty oracle deployment",
+    "chain": "ethereum",
+    "chain_id": 1,
+    "explorer_api": "https://api.etherscan.io/v2/api",
+    "api_key_env": "ETHERSCAN_KEY",
+    "rpc_url_template": "https://eth-mainnet.g.alchemy.com/v2/{ALCHEMY_KEY}",
+    "fixture_source": "contracts/fixtures/OracleLendingFixture.sol",
+    "source_targets": [
+      "0xffadb0bba4379dfabfb20ca6823f6ec439429ec2",
+      "0x16d43cac32329ec286dc14431e0c0e805e6f5174",
+      "0xc5cea3f9c92291335076d4c2ec6ae72e45fb8937",
+      "0xdfe469ace05c3d0d4461439e6cf5d0f46f33ec56",
+      "0x3aa228a80f50763045bdfc45012da124bd0a6809"
+    ],
+    "known_txs": {
+      "canonical_attack": "0xf0464b01d962f714eee9d4392b2494524d0e10ce3eb3723873afd1346b8b06e4",
+      "attacker_eoa": "0xC0ffeEBABE5D496B2DDE509f9fa189C25cF29671",
+      "attacker_contract": "0x3AA228a80F50763045BDfc45012dA124Bd0a6809"
+    },
+    "constraints": [
+      {
+        "id": "BLUEBERRY_MONEY_MARKET_MUST_USE_NORMALIZED_ORACLE_SEMANTICS",
+        "type": "decimal_semantics_mismatch",
+        "asset": "WETH",
+        "expected_oracle": "PriceOracleProxy",
+        "actual_oracle": "CoreOracle",
+        "severity": "critical"
+      }
+    ],
+    "fixture_attacker": "0xC0ffeEBABE5D496B2DDE509f9fa189C25cF29671"
+  },
+  "venus_luna": {
+    "name": "Venus Protocol LUNA stale oracle consumption",
+    "chain": "bsc",
+    "chain_id": 56,
+    "explorer_api": "https://api.etherscan.io/v2/api",
+    "api_key_env": "ETHERSCAN_KEY",
+    "rpc_url_template": "https://bnb-mainnet.g.alchemy.com/v2/{ALCHEMY_KEY}",
+    "fixture_source": "contracts/fixtures/OracleLendingFixture.sol",
+    "source_targets": [
+      "0xec72d46011d67a6ac4fa7d3f476fa2049dc807ee",
+      "0xb91a659e88b51474767cd97ef3196a3e7cedd2c8",
+      "0x95c78222b3d6e262426483d42cfa53685a67ab9d"
+    ],
+    "known_txs": {
+      "stale_oracle_last_update": "0xa73bcdba45d34dde372a3284ef4749004a76b2e04be345c602c99d60f4048d4f",
+      "sample_luna_deposit": "0xa9a0682280af5be4e6d58ad7cc24018719aaaf3ed04f3a1d2316361ab11735ec",
+      "sample_borrow_busd": "0xb81cabf803237f12e145434f68b7e541e0829da17fbf55e347e782e7c6b10a63"
+    },
+    "constraints": [
+      {
+        "id": "LUNA_ORACLE_MUST_BE_FRESH",
+        "type": "stale_oracle",
+        "asset": "LUNA",
+        "heartbeat_seconds": 3600,
+        "lower_bound_answer": "0.107",
+        "severity": "critical"
+      },
+      {
+        "id": "LUNA_COLLATERAL_DISABLED_WHEN_STALE",
+        "type": "stale_collateral_borrow",
+        "asset": "LUNA",
+        "severity": "critical"
+      }
+    ],
+    "fixture_attacker": "0x4444444444444444444444444444444444444444"
+  },
+  "blizz_luna": {
+    "name": "Blizz Finance LUNA stale oracle consumption",
+    "chain": "avalanche",
+    "chain_id": 43114,
+    "explorer_api": "https://api.etherscan.io/v2/api",
+    "api_key_env": "ETHERSCAN_KEY",
+    "rpc_url_template": "https://avax-mainnet.g.alchemy.com/v2/{ALCHEMY_KEY}",
+    "fixture_source": "contracts/fixtures/OracleLendingFixture.sol",
+    "source_targets": [
+      "0x2e7e21f479167c1206420c956f3e8e392da580f5",
+      "0xbd1f70fc3bff70a37441c9d8b51c0d9220483c5a",
+      "0x9d2f3d6cb1116f7db52b89104091327e77829c6a",
+      "0x18cb11c9f2b6f45a7ac0a95efd322ed4cf9eeebf",
+      "0x20a3f85f9997d14a7be010f23be239e2668a9943"
+    ],
+    "known_txs": {
+      "stale_oracle_last_update": "0x6b5f6f5b620489aa6616c7e0b4fdd9df712ef47fbd9ba9acf9dedb8cd2207473",
+      "sample_luna_deposit": "0x9aeee69ae27b420420808a6830ce9eefb13a46a8b35f5b7cb4c5b922e94402ee",
+      "sample_borrow_wbtc": "0x3e5e20303b58e62f641915776d3355638788835d4aabcfe7d14937d61a875043",
+      "sample_borrow_weth": "0x31424b26402e8f0d609ea339599f4e071fbc8269ac13910e4731367708a2d337"
+    },
+    "constraints": [
+      {
+        "id": "LUNA_ORACLE_MUST_BE_FRESH",
+        "type": "stale_oracle",
+        "asset": "LUNA",
+        "heartbeat_seconds": 3600,
+        "lower_bound_answer": "0.10",
+        "severity": "critical"
+      },
+      {
+        "id": "LUNA_COLLATERAL_DISABLED_WHEN_STALE",
+        "type": "stale_collateral_borrow",
+        "asset": "LUNA",
+        "severity": "critical"
+      }
+    ],
+    "fixture_attacker": "0x5555555555555555555555555555555555555555"
+  }
+}

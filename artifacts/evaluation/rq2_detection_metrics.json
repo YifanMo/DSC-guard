@@ -1,0 +1,467 @@
+{
+  "baselines": {
+    "abi_only_parser": {
+      "case_recall": 0.0,
+      "description": "Decodes event shape only and has no oracle-consumption constraints.",
+      "detected_cases": 0,
+      "detected_impact_txs": 0,
+      "positive_cases": 6,
+      "positive_impact_txs": 285,
+      "tx_recall": 0.0
+    },
+    "full_dsc_guard": {
+      "case_recall": 1.0,
+      "description": "Log semantics plus evidence closure and K-style oracle-consumption replay constraints.",
+      "detected_cases": 6,
+      "detected_impact_txs": 285,
+      "positive_cases": 6,
+      "positive_impact_txs": 285,
+      "tx_recall": 1.0
+    },
+    "tx_level_only_impact_visibility": {
+      "case_recall": 1.0,
+      "description": "Sees downstream impact events but does not bind them to prior oracle semantics.",
+      "detected_cases": 6,
+      "detected_impact_txs": 285,
+      "positive_cases": 6,
+      "positive_impact_txs": 285,
+      "tx_recall": 1.0
+    }
+  },
+  "benign": {
+    "abi_only_parser": {
+      "strict_row_fp": 0,
+      "strict_row_fp_rate": 0.0,
+      "strict_tx_fp": 0,
+      "strict_tx_fp_rate": 0.0
+    },
+    "full_dsc_guard": {
+      "review_or_alert_rows_excluded_from_fp_denominator": 14,
+      "strict_row_fp": 0,
+      "strict_row_fp_rate": 0.0,
+      "strict_tx_fp": 0,
+      "strict_tx_fp_rate": 0.0,
+      "unknown_rows_excluded_from_fp_denominator": 349
+    },
+    "review_rows": 14,
+    "review_txs": 8,
+    "row_case_counts": {
+      "blizz_luna": 1623,
+      "blueberry_faulty_oracle": 34,
+      "moonwell_cbeth": 2896,
+      "moonwell_wrseth": 636,
+      "ploutos": 60,
+      "venus_luna": 4751
+    },
+    "row_status_counts": {
+      "materialized_no_replayable_constraint_violation": 9591,
+      "needs_review_case_asset_other_feed": 14,
+      "unknown_after_materialization": 349,
+      "verified_no_case_feed_mismatch": 46
+    },
+    "sample_rows": 10000,
+    "strict_benign_rows": 9637,
+    "strict_benign_txs": 9201,
+    "tx_level_only_impact_visibility": {
+      "strict_row_fp": 0,
+      "strict_row_fp_rate": 0.0,
+      "strict_tx_fp": 0,
+      "strict_tx_fp_rate": 0.0
+    },
+    "unique_txs": 9521,
+    "unknown_rows": 349,
+    "unknown_txs": 312
+  },
+  "log_level": {
+    "benign": {
+      "benign_log_definition": "Each materialized benign sample row is treated as one log-level negative candidate. Only verified strict benign rows enter the confirmed FP denominator; unknown and review rows are reported separately.",
+      "case_counts": {
+        "blizz_luna": 1623,
+        "blueberry_faulty_oracle": 34,
+        "moonwell_cbeth": 2896,
+        "moonwell_wrseth": 636,
+        "ploutos": 60,
+        "venus_luna": 4751
+      },
+      "confirmed_strict_fp_log_rows": 0,
+      "confirmed_strict_tn_log_rows": 9637,
+      "materialized_log_rows": 10000,
+      "review_log_rows_excluded": 14,
+      "review_or_alert_log_rows_excluded": 14,
+      "status_counts": {
+        "materialized_no_replayable_constraint_violation": 9591,
+        "needs_review_case_asset_other_feed": 14,
+        "unknown_after_materialization": 349,
+        "verified_no_case_feed_mismatch": 46
+      },
+      "strict_benign_log_rows": 9637,
+      "strict_fp_log_rate": 0.0,
+      "strict_specificity": 1.0,
+      "strict_specificity_wilson_95": {
+        "lower": 0.9996015285636474,
+        "upper": 0.9999999999999999
+      },
+      "unknown_log_rows_excluded": 349
+    },
+    "confusion_counts": {
+      "confirmed_strict_fp_logs": 0,
+      "fn_all_semantic_logs_if_context_requires_direct_alert": 39,
+      "fn_target_logs": 0,
+      "review_logs_for_precision_sensitivity": 14,
+      "strict_tn_logs": 9637,
+      "tp_target_logs": 431
+    },
+    "conservative_review_as_fp_precision_floor": 0.9685393258426966,
+    "metric_scope": "log_level_semantic_record_metrics",
+    "notes": [
+      "This is an expanded log-warning semantics change, not a data modification.",
+      "Support-only context records are necessary for replay but are not direct violation targets.",
+      "Collateral-enabling SUPPLY records are counted only when bound to an active bad-oracle state and a later same-actor impact.",
+      "The conservative precision floor treats all review/alert benign rows as false positives; the strict metric does not."
+    ],
+    "positive": {
+      "all_semantic_log_alert_recall": 0.9170212765957447,
+      "all_semantic_log_alert_recall_wilson_95": {
+        "lower": 0.8885735194074481,
+        "upper": 0.9387071583549097
+      },
+      "all_semantic_log_records": 470,
+      "all_trace_records": 470,
+      "canonical_target_log_recall": 1.0,
+      "canonical_target_log_recall_wilson_95": {
+        "lower": 0.9911246978109314,
+        "upper": 1.0
+      },
+      "canonical_target_log_records": 429,
+      "context_log_records_included_in_all_denominator": 179,
+      "context_only_records_excluded_from_recall": 39,
+      "detected_canonical_target_log_records": 429,
+      "detected_direct_violation_log_records": 291,
+      "detected_early_evidence_log_records": 140,
+      "detected_event_type_counts": {
+        "BORROW": 176,
+        "LIQUIDATE": 109,
+        "ORACLE_FEED_SET": 1,
+        "ORACLE_FORMULA_SET": 1,
+        "ORACLE_IMPLEMENTATION_MISMATCH": 1,
+        "ORACLE_PRICE_MALFUNCTION": 1,
+        "STALE_ORACLE_START": 2,
+        "SUPPLY": 140
+      },
+      "detected_semantic_marker_records": 2,
+      "detected_target_log_records": 431,
+      "direct_violation_recall": 1.0,
+      "direct_violation_recall_wilson_95": {
+        "lower": 0.9869706310100068,
+        "upper": 1.0
+      },
+      "direct_violation_target_log_records": 291,
+      "directly_alerted_context_log_records": 140,
+      "directly_alerted_semantic_log_records": 431,
+      "early_evidence_recall": 1.0,
+      "early_evidence_recall_wilson_95": {
+        "lower": 0.9732928443510084,
+        "upper": 1.0
+      },
+      "early_evidence_target_log_records": 140,
+      "event_type_counts": {
+        "BORROW": 176,
+        "LIQUIDATE": 109,
+        "ORACLE_FEED_SET": 1,
+        "ORACLE_FORMULA_SET": 1,
+        "ORACLE_IMPLEMENTATION_MISMATCH": 1,
+        "ORACLE_PRICE_MALFUNCTION": 1,
+        "STALE_ORACLE_START": 2,
+        "SUPPLY": 140
+      },
+      "incident_log_warning_recall": 0.9170212765957447,
+      "incident_log_warning_recall_wilson_95": {
+        "lower": 0.8885735194074481,
+        "upper": 0.9387071583549097
+      },
+      "per_case": [
+        {
+          "all_trace_records": 4,
+          "canonical_target_log_records": 3,
+          "canonical_target_recall": 1.0,
+          "case": "ploutos",
+          "context_log_records_included_in_all_denominator": 2,
+          "context_only_records_excluded_from_recall": 1,
+          "detected_canonical_target_log_records": 3,
+          "detected_direct_violation_log_records": 2,
+          "detected_early_evidence_log_records": 1,
+          "detected_semantic_marker_records": 0,
+          "detected_target_log_records": 3,
+          "direct_violation_event_type_counts": {
+            "BORROW": 1,
+            "ORACLE_FEED_SET": 1
+          },
+          "direct_violation_recall": 1.0,
+          "direct_violation_target_log_records": 2,
+          "directly_alerted_context_log_records": 1,
+          "early_evidence_event_type_counts": {
+            "SUPPLY": 1
+          },
+          "early_evidence_target_log_records": 1,
+          "failure_class": "feed_binding",
+          "semantic_marker_target_records": 0,
+          "support_only_context_records": 1,
+          "target_event_type_counts": {
+            "BORROW": 1,
+            "ORACLE_FEED_SET": 1,
+            "SUPPLY": 1
+          },
+          "target_log_records": 3,
+          "target_recall": 1.0
+        },
+        {
+          "all_trace_records": 124,
+          "canonical_target_log_records": 124,
+          "canonical_target_recall": 1.0,
+          "case": "moonwell_cbeth",
+          "context_log_records_included_in_all_denominator": 0,
+          "context_only_records_excluded_from_recall": 0,
+          "detected_canonical_target_log_records": 124,
+          "detected_direct_violation_log_records": 124,
+          "detected_early_evidence_log_records": 0,
+          "detected_semantic_marker_records": 0,
+          "detected_target_log_records": 124,
+          "direct_violation_event_type_counts": {
+            "BORROW": 14,
+            "LIQUIDATE": 109,
+            "ORACLE_FORMULA_SET": 1
+          },
+          "direct_violation_recall": 1.0,
+          "direct_violation_target_log_records": 124,
+          "directly_alerted_context_log_records": 0,
+          "early_evidence_event_type_counts": {},
+          "early_evidence_target_log_records": 0,
+          "failure_class": "price_semantics",
+          "semantic_marker_target_records": 0,
+          "support_only_context_records": 0,
+          "target_event_type_counts": {
+            "BORROW": 14,
+            "LIQUIDATE": 109,
+            "ORACLE_FORMULA_SET": 1
+          },
+          "target_log_records": 124,
+          "target_recall": 1.0
+        },
+        {
+          "all_trace_records": 13,
+          "canonical_target_log_records": 12,
+          "canonical_target_recall": 1.0,
+          "case": "moonwell_wrseth",
+          "context_log_records_included_in_all_denominator": 0,
+          "context_only_records_excluded_from_recall": 0,
+          "detected_canonical_target_log_records": 12,
+          "detected_direct_violation_log_records": 13,
+          "detected_early_evidence_log_records": 0,
+          "detected_semantic_marker_records": 1,
+          "detected_target_log_records": 13,
+          "direct_violation_event_type_counts": {
+            "BORROW": 12,
+            "ORACLE_PRICE_MALFUNCTION": 1
+          },
+          "direct_violation_recall": 1.0,
+          "direct_violation_target_log_records": 13,
+          "directly_alerted_context_log_records": 0,
+          "early_evidence_event_type_counts": {},
+          "early_evidence_target_log_records": 0,
+          "failure_class": "price_semantics",
+          "semantic_marker_target_records": 1,
+          "support_only_context_records": 0,
+          "target_event_type_counts": {
+            "BORROW": 12,
+            "ORACLE_PRICE_MALFUNCTION": 1
+          },
+          "target_log_records": 13,
+          "target_recall": 1.0
+        },
+        {
+          "all_trace_records": 2,
+          "canonical_target_log_records": 1,
+          "canonical_target_recall": 1.0,
+          "case": "blueberry_faulty_oracle",
+          "context_log_records_included_in_all_denominator": 0,
+          "context_only_records_excluded_from_recall": 0,
+          "detected_canonical_target_log_records": 1,
+          "detected_direct_violation_log_records": 2,
+          "detected_early_evidence_log_records": 0,
+          "detected_semantic_marker_records": 1,
+          "detected_target_log_records": 2,
+          "direct_violation_event_type_counts": {
+            "BORROW": 1,
+            "ORACLE_IMPLEMENTATION_MISMATCH": 1
+          },
+          "direct_violation_recall": 1.0,
+          "direct_violation_target_log_records": 2,
+          "directly_alerted_context_log_records": 0,
+          "early_evidence_event_type_counts": {},
+          "early_evidence_target_log_records": 0,
+          "failure_class": "price_semantics",
+          "semantic_marker_target_records": 1,
+          "support_only_context_records": 0,
+          "target_event_type_counts": {
+            "BORROW": 1,
+            "ORACLE_IMPLEMENTATION_MISMATCH": 1
+          },
+          "target_log_records": 2,
+          "target_recall": 1.0
+        },
+        {
+          "all_trace_records": 218,
+          "canonical_target_log_records": 201,
+          "canonical_target_recall": 1.0,
+          "case": "venus_luna",
+          "context_log_records_included_in_all_denominator": 122,
+          "context_only_records_excluded_from_recall": 17,
+          "detected_canonical_target_log_records": 201,
+          "detected_direct_violation_log_records": 96,
+          "detected_early_evidence_log_records": 105,
+          "detected_semantic_marker_records": 0,
+          "detected_target_log_records": 201,
+          "direct_violation_event_type_counts": {
+            "BORROW": 95,
+            "STALE_ORACLE_START": 1
+          },
+          "direct_violation_recall": 1.0,
+          "direct_violation_target_log_records": 96,
+          "directly_alerted_context_log_records": 105,
+          "early_evidence_event_type_counts": {
+            "SUPPLY": 105
+          },
+          "early_evidence_target_log_records": 105,
+          "failure_class": "freshness",
+          "semantic_marker_target_records": 0,
+          "support_only_context_records": 17,
+          "target_event_type_counts": {
+            "BORROW": 95,
+            "STALE_ORACLE_START": 1,
+            "SUPPLY": 105
+          },
+          "target_log_records": 201,
+          "target_recall": 1.0
+        },
+        {
+          "all_trace_records": 109,
+          "canonical_target_log_records": 88,
+          "canonical_target_recall": 1.0,
+          "case": "blizz_luna",
+          "context_log_records_included_in_all_denominator": 55,
+          "context_only_records_excluded_from_recall": 21,
+          "detected_canonical_target_log_records": 88,
+          "detected_direct_violation_log_records": 54,
+          "detected_early_evidence_log_records": 34,
+          "detected_semantic_marker_records": 0,
+          "detected_target_log_records": 88,
+          "direct_violation_event_type_counts": {
+            "BORROW": 53,
+            "STALE_ORACLE_START": 1
+          },
+          "direct_violation_recall": 1.0,
+          "direct_violation_target_log_records": 54,
+          "directly_alerted_context_log_records": 34,
+          "early_evidence_event_type_counts": {
+            "SUPPLY": 34
+          },
+          "early_evidence_target_log_records": 34,
+          "failure_class": "freshness",
+          "semantic_marker_target_records": 0,
+          "support_only_context_records": 21,
+          "target_event_type_counts": {
+            "BORROW": 53,
+            "STALE_ORACLE_START": 1,
+            "SUPPLY": 34
+          },
+          "target_log_records": 88,
+          "target_recall": 1.0
+        }
+      ],
+      "positive_target_definition": "Target logs now include direct violation records plus collateral-enabling early evidence. A SUPPLY record is counted as early evidence only when a bad-oracle/stale state is already active and the same actor later produces a borrow/liquidation impact; remaining context logs stay in the all-semantic denominator as support-only records.",
+      "replay_covered_semantic_log_records": 470,
+      "semantic_log_replay_coverage": 1.0,
+      "semantic_marker_target_records": 2,
+      "support_only_context_records": 39,
+      "target_log_recall": 1.0,
+      "target_log_recall_wilson_95": {
+        "lower": 0.9911655186624281,
+        "upper": 1.0
+      },
+      "target_log_records": 431
+    },
+    "strict_precision": 1.0,
+    "strict_precision_wilson_95": {
+      "lower": 0.9911655186624281,
+      "upper": 1.0
+    }
+  },
+  "notes": [
+    "Unknown benign rows are excluded from the strict false-positive denominator.",
+    "needs_review_case_asset_other_feed rows are reported as review pool, not confirmed false positives.",
+    "Tx-level-only impact visibility is an ablation, not an oracle attack detector."
+  ],
+  "per_case": [
+    {
+      "alert_count": 3,
+      "attacker_candidate_count": 1,
+      "case": "ploutos",
+      "case_detected": true,
+      "detected_impact_txs": 1,
+      "failure_class": "feed_binding",
+      "positive_impact_txs": 1
+    },
+    {
+      "alert_count": 124,
+      "attacker_candidate_count": 14,
+      "case": "moonwell_cbeth",
+      "case_detected": true,
+      "detected_impact_txs": 123,
+      "failure_class": "price_semantics",
+      "positive_impact_txs": 123
+    },
+    {
+      "alert_count": 13,
+      "attacker_candidate_count": 2,
+      "case": "moonwell_wrseth",
+      "case_detected": true,
+      "detected_impact_txs": 12,
+      "failure_class": "price_semantics",
+      "positive_impact_txs": 12
+    },
+    {
+      "alert_count": 2,
+      "attacker_candidate_count": 2,
+      "case": "blueberry_faulty_oracle",
+      "case_detected": true,
+      "detected_impact_txs": 1,
+      "failure_class": "price_semantics",
+      "positive_impact_txs": 1
+    },
+    {
+      "alert_count": 201,
+      "attacker_candidate_count": 12,
+      "case": "venus_luna",
+      "case_detected": true,
+      "detected_impact_txs": 95,
+      "failure_class": "freshness",
+      "positive_impact_txs": 95
+    },
+    {
+      "alert_count": 88,
+      "attacker_candidate_count": 24,
+      "case": "blizz_luna",
+      "case_detected": true,
+      "detected_impact_txs": 53,
+      "failure_class": "freshness",
+      "positive_impact_txs": 53
+    }
+  ],
+  "positive_case_detected": 6,
+  "positive_case_recall": 1.0,
+  "positive_cases": 6,
+  "positive_impact_tx_detected": 285,
+  "positive_impact_tx_recall": 1.0,
+  "positive_impact_txs": 285,
+  "rq": "RQ2"
+}

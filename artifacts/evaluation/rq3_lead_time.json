@@ -1,0 +1,98 @@
+{
+  "case_count": 6,
+  "cases": [
+    {
+      "case": "ploutos",
+      "failure_class": "feed_binding",
+      "first_dangerous_block_timestamp": 1772082467,
+      "first_dangerous_event_type": "ORACLE_FEED_SET",
+      "first_dangerous_topic0_or_selector": "0xabfd5310",
+      "first_dangerous_tx_hash": "0xcfedf63b37a6cd45b21bc94e3de5412fee0765e7dad6b7c8561a01cebd193ab6",
+      "first_impact_block_timestamp": 1772082479,
+      "first_impact_event_type": "BORROW",
+      "first_impact_topic0_or_selector": "",
+      "first_impact_tx_hash": "0xa17dc37e1b65c65d20042212fb834974f7faaa961442e3fc05393778705f8474",
+      "lead_time_seconds": 12,
+      "lead_time_status": "pre_attack_observed"
+    },
+    {
+      "case": "moonwell_cbeth",
+      "failure_class": "price_semantics",
+      "first_dangerous_block_timestamp": 1771178673,
+      "first_dangerous_event_type": "ORACLE_FORMULA_SET",
+      "first_dangerous_topic0_or_selector": "0x0c607acf",
+      "first_dangerous_tx_hash": "0xd26baf29dcba7bf66db4be17b46a49bb4dacca41ace968c98c8a5b09a03ae812",
+      "first_impact_block_timestamp": 1771178675,
+      "first_impact_event_type": "LIQUIDATE",
+      "first_impact_topic0_or_selector": "",
+      "first_impact_tx_hash": "0xc400576de059e8c21c13249bd4cf28b8e8f4be9052772208b65dfa10cd15a7ce",
+      "lead_time_seconds": 2,
+      "lead_time_status": "pre_attack_observed"
+    },
+    {
+      "case": "moonwell_wrseth",
+      "failure_class": "price_semantics",
+      "first_dangerous_block_timestamp": 1762235095,
+      "first_dangerous_event_type": "ORACLE_PRICE_MALFUNCTION",
+      "first_dangerous_topic0_or_selector": "",
+      "first_dangerous_tx_hash": "",
+      "first_impact_block_timestamp": 1762235096,
+      "first_impact_event_type": "BORROW",
+      "first_impact_topic0_or_selector": "",
+      "first_impact_tx_hash": "0x229caeb87e0b6c31afad950150d2ba05a8d7fe823c9e5c05af63b4150b8f6cc6",
+      "lead_time_seconds": 1,
+      "lead_time_status": "semantic_marker_only"
+    },
+    {
+      "case": "blueberry_faulty_oracle",
+      "failure_class": "price_semantics",
+      "first_dangerous_block_timestamp": 1708590960,
+      "first_dangerous_event_type": "ORACLE_IMPLEMENTATION_MISMATCH",
+      "first_dangerous_topic0_or_selector": "",
+      "first_dangerous_tx_hash": "",
+      "first_impact_block_timestamp": 1708654931,
+      "first_impact_event_type": "BORROW",
+      "first_impact_topic0_or_selector": "",
+      "first_impact_tx_hash": "0xf0464b01d962f714eee9d4392b2494524d0e10ce3eb3723873afd1346b8b06e4",
+      "lead_time_seconds": 63971,
+      "lead_time_status": "semantic_marker_only"
+    },
+    {
+      "case": "venus_luna",
+      "failure_class": "freshness",
+      "first_dangerous_block_timestamp": 1652355524,
+      "first_dangerous_event_type": "STALE_ORACLE_START",
+      "first_dangerous_topic0_or_selector": "",
+      "first_dangerous_tx_hash": "0xa73bcdba45d34dde372a3284ef4749004a76b2e04be345c602c99d60f4048d4f",
+      "first_impact_block_timestamp": 1652355995,
+      "first_impact_event_type": "BORROW",
+      "first_impact_topic0_or_selector": "",
+      "first_impact_tx_hash": "0xf5004eb392b1e9403cb5d5e40d11981352d6afe9214d0896cc55fb111e0ff41f",
+      "lead_time_seconds": 471,
+      "lead_time_status": "pre_attack_observed"
+    },
+    {
+      "case": "blizz_luna",
+      "failure_class": "freshness",
+      "first_dangerous_block_timestamp": 1652355546,
+      "first_dangerous_event_type": "STALE_ORACLE_START",
+      "first_dangerous_topic0_or_selector": "",
+      "first_dangerous_tx_hash": "0x6b5f6f5b620489aa6616c7e0b4fdd9df712ef47fbd9ba9acf9dedb8cd2207473",
+      "first_impact_block_timestamp": 1652400071,
+      "first_impact_event_type": "BORROW",
+      "first_impact_topic0_or_selector": "",
+      "first_impact_tx_hash": "0x567d89dce96868de08559dbdb1bbe24f0bae47fa421b9dc140496a0f6808cb51",
+      "lead_time_seconds": 44525,
+      "lead_time_status": "pre_attack_observed"
+    }
+  ],
+  "max_lead_time_seconds": 63971,
+  "min_lead_time_seconds": 1,
+  "notes": [
+    "semantic_marker_only means the case trace has a validated semantic marker but no canonical pre-impact tx hash.",
+    "Lead time is measured from first dangerous oracle/config/stale evidence to first borrow/liquidation impact."
+  ],
+  "pre_attack_observed_count": 4,
+  "rq": "RQ3",
+  "semantic_marker_only_count": 2
+}

@@ -1,0 +1,13 @@
+{
+  "allow_explorer_fill": true,
+  "allow_rpc_fill": true,
+  "batch_size": 1,
+  "candidate_summary_path": "/Users/moyifan/Desktop/desktop/oracle_misconfigure/artifacts/eval_dataset/no_dune_10k/candidate_pools.json",
+  "candidates_path": "/Users/moyifan/Desktop/desktop/oracle_misconfigure/artifacts/eval_dataset/no_dune_10k/benign_candidates.jsonl",
+  "dataset": "no_dune_10k_benign_eval_dataset",
+  "dry_run": false,
+  "materialization_summary_path": "/Users/moyifan/Desktop/desktop/oracle_misconfigure/artifacts/eval_dataset/no_dune_10k/materialized/materialization_summary.json",
+  "safety_boundary": "read-only historical explorer/RPC evidence; no chain writes, no write methods, no private keys, no attack simulation",
+  "trace_mode": "two-layer",
+  "workers": 16
+}

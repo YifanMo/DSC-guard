@@ -1,0 +1,315 @@
+{
+  "allocations": {
+    "blizz_luna": 3074,
+    "blueberry_faulty_oracle": 38,
+    "moonwell_cbeth": 3075,
+    "moonwell_wrseth": 677,
+    "ploutos": 62,
+    "venus_luna": 5084
+  },
+  "candidate_rpc_requests": {
+    "max": 30000,
+    "used": 0
+  },
+  "case_summaries": {
+    "blizz_luna": {
+      "allocation": 3074,
+      "case": "blizz_luna",
+      "estimated_pool_rows": 9250,
+      "incident_guard_blocks": {
+        "from": 14552864,
+        "to": 14678255
+      },
+      "selected_rows": 1741,
+      "strata": [
+        {
+          "address": "0x2e7e21f479167c1206420c956f3e8e392da580f5",
+          "benign_stratum": "same_oracle",
+          "cached_rows_available": 1741,
+          "estimated_rows": 9250,
+          "fetched_candidate_logs": 1741,
+          "from_block": 8959216,
+          "partial_cache_accept_threshold": 1000,
+          "passes": [],
+          "scope_class": "S1",
+          "selected_rows": 1741,
+          "strategy": "local_cache_partial_hash_sample",
+          "target": 3074,
+          "to_block": 14552864,
+          "topic0": "0x0559884fd3a460db3073b7fc896cc77986f16e378210ded43186175bf646fc5f"
+        }
+      ]
+    },
+    "blueberry_faulty_oracle": {
+      "allocation": 38,
+      "case": "blueberry_faulty_oracle",
+      "estimated_pool_rows": 68,
+      "incident_guard_blocks": {
+        "from": 19274887,
+        "to": 19294431
+      },
+      "selected_rows": 38,
+      "strata": [
+        {
+          "address": "",
+          "benign_stratum": "case_topic",
+          "estimated_rows": 8,
+          "fetched_candidate_logs": 22,
+          "from_block": 13914056,
+          "range_queries": 1,
+          "scope_class": "S2",
+          "selected_rows": 4,
+          "split_count": 0,
+          "strategy": "full_small_pool",
+          "target": 4,
+          "to_block": 25072914,
+          "topic0": "0xaef9ecb0b33da1a5a170fdeed3accb3e88c5257f51d6faa019cea841b864d049"
+        },
+        {
+          "address": "",
+          "benign_stratum": "case_topic",
+          "estimated_rows": 30,
+          "fetched_candidate_logs": 132,
+          "from_block": 13914056,
+          "range_queries": 1,
+          "scope_class": "S3",
+          "selected_rows": 17,
+          "split_count": 0,
+          "strategy": "full_small_pool",
+          "target": 17,
+          "to_block": 25072914,
+          "topic0": "0xa8c96090e146ce1076efa81e5424d56e13d5c3854943f7926406c12d15d6dbe9"
+        },
+        {
+          "address": "",
+          "benign_stratum": "case_topic",
+          "estimated_rows": 30,
+          "fetched_candidate_logs": 36,
+          "from_block": 13914056,
+          "range_queries": 1,
+          "scope_class": "S3",
+          "selected_rows": 17,
+          "split_count": 0,
+          "strategy": "full_small_pool",
+          "target": 17,
+          "to_block": 25072914,
+          "topic0": "0xd1b3641b73e6c323671a85001b02db34d4e63a7fa6d264896138094dd6b8bfdf"
+        }
+      ]
+    },
+    "moonwell_cbeth": {
+      "allocation": 3075,
+      "case": "moonwell_cbeth",
+      "estimated_pool_rows": 1687292,
+      "incident_guard_blocks": {
+        "from": 42151463,
+        "to": 42240790
+      },
+      "selected_rows": 3075,
+      "strata": [
+        {
+          "address": "",
+          "benign_stratum": "case_topic",
+          "estimated_rows": 2,
+          "fetched_candidate_logs": 32,
+          "from_block": 0,
+          "range_queries": 1,
+          "scope_class": "S2",
+          "selected_rows": 1,
+          "split_count": 0,
+          "strategy": "full_small_pool",
+          "target": 1,
+          "to_block": 45862926,
+          "topic0": "0xd9e7d1778ca05570ced72c9aeb12a41fcc76f7f57ea25853dea228f8836d0022"
+        },
+        {
+          "address": "",
+          "benign_stratum": "case_topic",
+          "estimated_rows": 1687290,
+          "fetched_candidate_logs": 7414,
+          "from_block": 0,
+          "passes": [
+            {
+              "collected_rows": 7414,
+              "explorer_requests": 36,
+              "pass": 1,
+              "probe_count": 123,
+              "probe_width_blocks": 15536
+            }
+          ],
+          "range_split_count": 0,
+          "scope_class": "S4",
+          "selected_rows": 3074,
+          "strategy": "stratified_probe_hash_sample",
+          "target": 3074,
+          "to_block": 45862926,
+          "topic0": "0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b"
+        }
+      ]
+    },
+    "moonwell_wrseth": {
+      "allocation": 677,
+      "case": "moonwell_wrseth",
+      "estimated_pool_rows": 1723355,
+      "incident_guard_blocks": {
+        "from": 37679674,
+        "to": 37766081
+      },
+      "selected_rows": 677,
+      "strata": [
+        {
+          "address": "",
+          "benign_stratum": "case_topic",
+          "estimated_rows": 1723355,
+          "fetched_candidate_logs": 4897,
+          "from_block": 24450138,
+          "passes": [
+            {
+              "collected_rows": 4897,
+              "explorer_requests": 6,
+              "pass": 1,
+              "probe_count": 28,
+              "probe_width_blocks": 50000
+            }
+          ],
+          "range_split_count": 0,
+          "scope_class": "S3",
+          "selected_rows": 677,
+          "strategy": "stratified_probe_hash_sample",
+          "target": 677,
+          "to_block": 40218100,
+          "topic0": "0x0559884fd3a460db3073b7fc896cc77986f16e378210ded43186175bf646fc5f"
+        }
+      ]
+    },
+    "ploutos": {
+      "allocation": 62,
+      "case": "ploutos",
+      "estimated_pool_rows": 248,
+      "incident_guard_blocks": {
+        "from": 24531733,
+        "to": 24546074
+      },
+      "selected_rows": 62,
+      "strata": [
+        {
+          "address": "",
+          "benign_stratum": "case_topic",
+          "estimated_rows": 62,
+          "fetched_candidate_logs": 1469,
+          "from_block": 13914056,
+          "range_queries": 3,
+          "scope_class": "S2",
+          "selected_rows": 16,
+          "split_count": 1,
+          "strategy": "full_small_pool",
+          "target": 16,
+          "to_block": 25072914,
+          "topic0": "0x22c5b7b2d8561d39f7f210b6b326a1aa69f15311163082308ac4877db6339dc1"
+        },
+        {
+          "address": "",
+          "benign_stratum": "case_topic",
+          "estimated_rows": 62,
+          "fetched_candidate_logs": 269,
+          "from_block": 13914056,
+          "range_queries": 1,
+          "scope_class": "S2",
+          "selected_rows": 16,
+          "split_count": 0,
+          "strategy": "full_small_pool",
+          "target": 16,
+          "to_block": 25072914,
+          "topic0": "0xd9e7d1778ca05570ced72c9aeb12a41fcc76f7f57ea25853dea228f8836d0022"
+        },
+        {
+          "address": "",
+          "benign_stratum": "case_topic",
+          "estimated_rows": 62,
+          "fetched_candidate_logs": 23,
+          "from_block": 13914056,
+          "range_queries": 1,
+          "scope_class": "S2",
+          "selected_rows": 16,
+          "split_count": 0,
+          "strategy": "full_small_pool",
+          "target": 16,
+          "to_block": 25072914,
+          "topic0": "0xaef9ecb0b33da1a5a170fdeed3accb3e88c5257f51d6faa019cea841b864d049"
+        },
+        {
+          "address": "",
+          "benign_stratum": "case_topic",
+          "estimated_rows": 62,
+          "fetched_candidate_logs": 185,
+          "from_block": 13914056,
+          "range_queries": 1,
+          "scope_class": "S2",
+          "selected_rows": 14,
+          "split_count": 0,
+          "strategy": "full_small_pool",
+          "target": 14,
+          "to_block": 25072914,
+          "topic0": "0xd52b2b9b7e9ee655fcb95d2e5b9e0c9f69e7ef2b8e9d2d0ea78402d576d22e22"
+        }
+      ]
+    },
+    "venus_luna": {
+      "allocation": 5084,
+      "case": "venus_luna",
+      "estimated_pool_rows": 5376,
+      "incident_guard_blocks": {
+        "from": 17709414,
+        "to": 17794492
+      },
+      "selected_rows": 5084,
+      "strata": [
+        {
+          "address": "0xec72d46011d67a6ac4fa7d3f476fa2049dc807ee",
+          "benign_stratum": "same_oracle",
+          "cached_rows_available": 7167,
+          "estimated_rows": 5376,
+          "fetched_candidate_logs": 7167,
+          "from_block": 13960069,
+          "scope_class": "S1",
+          "selected_rows": 5084,
+          "strategy": "local_cache_hash_sample",
+          "target": 5084,
+          "to_block": 17709414,
+          "topic0": "0x0559884fd3a460db3073b7fc896cc77986f16e378210ded43186175bf646fc5f"
+        }
+      ]
+    }
+  },
+  "dataset": "no_dune_10k_benign_candidates",
+  "dry_run": false,
+  "explorer_requests": {
+    "max": 25000,
+    "used": 0
+  },
+  "pool_estimates": {
+    "blizz_luna": 9250,
+    "blueberry_faulty_oracle": 38,
+    "moonwell_cbeth": 1687292,
+    "moonwell_wrseth": 677,
+    "ploutos": 62,
+    "venus_luna": 5376
+  },
+  "safety_boundary": "read-only historical explorer/RPC evidence; no write methods, private keys, attack simulation, or future target prediction",
+  "selected_by_case": {
+    "blizz_luna": 1623,
+    "blueberry_faulty_oracle": 34,
+    "moonwell_cbeth": 2896,
+    "moonwell_wrseth": 636,
+    "ploutos": 60,
+    "venus_luna": 4751
+  },
+  "selected_by_label": {
+    "benign_verified": 6374,
+    "unknown_negative": 3626
+  },
+  "selected_candidate_count": 10000,
+  "selection_policy": "small pools are full; large pools use deterministic case/year/topic/block-window hash sampling; no Dune, rank truncation, scoring formula, amount-based ordering, nondeterministic sampling, or chain writes",
+  "small_pool_full_threshold": 1000,
+  "target_total": 10000
+}

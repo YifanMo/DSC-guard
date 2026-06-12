@@ -1,0 +1,63 @@
+{
+  "by_case": {
+    "blizz_luna": 1623,
+    "blueberry_faulty_oracle": 34,
+    "moonwell_cbeth": 2896,
+    "moonwell_wrseth": 636,
+    "ploutos": 60,
+    "venus_luna": 4751
+  },
+  "by_verification_status": {
+    "materialized_no_replayable_constraint_violation": 9591,
+    "needs_review_case_asset_other_feed": 14,
+    "unknown_after_materialization": 349,
+    "verified_no_case_feed_mismatch": 46
+  },
+  "cumulative_cache_files": {
+    "debug_trace": 312,
+    "rpc": 38275,
+    "source": 5508
+  },
+  "dataset": "unknown_negative_benign_materialization",
+  "input_sample_count": 0,
+  "materialized_sample_count": 10000,
+  "needs_review_or_alert_after_replay": 363,
+  "replay_alert_count": 14,
+  "replay_results": {
+    "blizz_luna": {
+      "alerts": 0,
+      "input_records": 1623
+    },
+    "blueberry_faulty_oracle": {
+      "alerts": 0,
+      "input_records": 34
+    },
+    "moonwell_cbeth": {
+      "alerts": 0,
+      "input_records": 2896
+    },
+    "moonwell_wrseth": {
+      "alerts": 0,
+      "input_records": 636
+    },
+    "ploutos": {
+      "alerts": 14,
+      "input_records": 60
+    },
+    "venus_luna": {
+      "alerts": 0,
+      "input_records": 4751
+    }
+  },
+  "request_budget": {
+    "debug_trace_max": 2000,
+    "debug_trace_used": 0,
+    "rpc_max": 60000,
+    "rpc_used": 0,
+    "source_max": 12000,
+    "source_used": 0
+  },
+  "resumed_checkpoint_count": 10000,
+  "safety_boundary": "read-only historical RPC/explorer evidence; no chain writes, no write methods, no private keys, no attack simulation",
+  "strict_benign_verified_after_replay": 9637
+}

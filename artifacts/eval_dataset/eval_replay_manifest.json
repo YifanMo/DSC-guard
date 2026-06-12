@@ -1,0 +1,28 @@
+{
+  "artifacts": {
+    "base_eval_manifest": "artifacts/eval_dataset/eval_manifest.json",
+    "unknown_materialization_summary": "artifacts/eval_dataset/materialized_unknown_negative/materialization_summary.json",
+    "unknown_materialized_samples": "artifacts/eval_dataset/materialized_unknown_negative/materialized_samples.jsonl",
+    "unknown_replay_report": "results/unknown_negative_replay_report.md"
+  },
+  "by_unknown_replay_status": {
+    "materialized_no_replayable_constraint_violation": 1,
+    "unknown_after_materialization": 19,
+    "verified_no_case_feed_mismatch": 10
+  },
+  "dataset": "case_aware_benign_eval_dataset_with_replay",
+  "initial_benign_verified_count": 30,
+  "positive_count": 6,
+  "remaining_unknown_negative_after_materialization": 19,
+  "request_budget": {
+    "rpc_max": 250,
+    "rpc_used": 101,
+    "source_max": 120,
+    "source_used": 40
+  },
+  "safety_boundary": "read-only historical RPC/explorer evidence; no chain writes, no write methods, no private keys, no attack simulation",
+  "strict_benign_verified_after_unknown_replay": 11,
+  "strict_false_positive_denominator_total": 41,
+  "unknown_negative_materialized_count": 30,
+  "unknown_negative_replay_alert_count": 0
+}

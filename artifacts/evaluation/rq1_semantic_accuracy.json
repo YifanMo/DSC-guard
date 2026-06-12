@@ -1,0 +1,192 @@
+{
+  "all_case_label_metrics": {
+    "f1": 0.5263157894736842,
+    "fn": 9,
+    "fp": 0,
+    "precision": 1.0,
+    "recall": 0.35714285714285715,
+    "tp": 5
+  },
+  "automatic_case_count": 6,
+  "automatic_label_metrics": {
+    "f1": 0.4571428571428572,
+    "fn": 36,
+    "fp": 2,
+    "precision": 0.8888888888888888,
+    "recall": 0.3076923076923077,
+    "tp": 16
+  },
+  "case_count": 6,
+  "cases": [
+    {
+      "backend": "slither",
+      "case": "ploutos",
+      "f1": 0.19999999999999998,
+      "failure_class": "feed_binding",
+      "fn": 8,
+      "fp": 0,
+      "gold_labels": [
+        "actor_field",
+        "borrow",
+        "feed_binding",
+        "lending_impact",
+        "oracle_anomaly",
+        "oracle_boundary",
+        "replayable_constraint",
+        "supply",
+        "temporal_field"
+      ],
+      "inclusion": "automatic_ir_available",
+      "precision": 1.0,
+      "predicted_labels": [
+        "oracle_boundary"
+      ],
+      "recall": 0.1111111111111111,
+      "tp": 1
+    },
+    {
+      "backend": "slither",
+      "case": "moonwell_cbeth",
+      "f1": 0.5,
+      "failure_class": "price_semantics",
+      "fn": 6,
+      "fp": 0,
+      "gold_labels": [
+        "actor_field",
+        "borrow",
+        "lending_impact",
+        "liquidation",
+        "oracle_anomaly",
+        "oracle_boundary",
+        "price_composition",
+        "replayable_constraint",
+        "temporal_field"
+      ],
+      "inclusion": "automatic_ir_available",
+      "precision": 1.0,
+      "predicted_labels": [
+        "actor_field",
+        "borrow",
+        "lending_impact"
+      ],
+      "recall": 0.3333333333333333,
+      "tp": 3
+    },
+    {
+      "backend": "slither",
+      "case": "moonwell_wrseth",
+      "f1": 0.2,
+      "failure_class": "price_semantics",
+      "fn": 7,
+      "fp": 1,
+      "gold_labels": [
+        "actor_field",
+        "borrow",
+        "lending_impact",
+        "oracle_anomaly",
+        "oracle_boundary",
+        "price_source_outlier",
+        "replayable_constraint",
+        "temporal_field"
+      ],
+      "inclusion": "automatic_ir_available",
+      "precision": 0.5,
+      "predicted_labels": [
+        "freshness",
+        "oracle_boundary"
+      ],
+      "recall": 0.125,
+      "tp": 1
+    },
+    {
+      "backend": "slither",
+      "case": "blueberry_faulty_oracle",
+      "f1": 0.6153846153846154,
+      "failure_class": "price_semantics",
+      "fn": 4,
+      "fp": 1,
+      "gold_labels": [
+        "actor_field",
+        "borrow",
+        "implementation_mismatch",
+        "lending_impact",
+        "oracle_anomaly",
+        "oracle_boundary",
+        "replayable_constraint",
+        "temporal_field"
+      ],
+      "inclusion": "automatic_ir_available",
+      "precision": 0.8,
+      "predicted_labels": [
+        "actor_field",
+        "borrow",
+        "freshness",
+        "lending_impact",
+        "oracle_boundary"
+      ],
+      "recall": 0.5,
+      "tp": 4
+    },
+    {
+      "backend": "slither",
+      "case": "venus_luna",
+      "f1": 0.7142857142857143,
+      "failure_class": "freshness",
+      "fn": 4,
+      "fp": 0,
+      "gold_labels": [
+        "actor_field",
+        "borrow",
+        "freshness",
+        "lending_impact",
+        "oracle_anomaly",
+        "oracle_boundary",
+        "replayable_constraint",
+        "supply",
+        "temporal_field"
+      ],
+      "inclusion": "automatic_ir_available",
+      "precision": 1.0,
+      "predicted_labels": [
+        "actor_field",
+        "borrow",
+        "freshness",
+        "lending_impact",
+        "oracle_boundary"
+      ],
+      "recall": 0.5555555555555556,
+      "tp": 5
+    },
+    {
+      "backend": "slither",
+      "case": "blizz_luna",
+      "f1": 0.3636363636363636,
+      "failure_class": "freshness",
+      "fn": 7,
+      "fp": 0,
+      "gold_labels": [
+        "actor_field",
+        "borrow",
+        "freshness",
+        "lending_impact",
+        "oracle_anomaly",
+        "oracle_boundary",
+        "replayable_constraint",
+        "supply",
+        "temporal_field"
+      ],
+      "inclusion": "automatic_ir_available",
+      "precision": 1.0,
+      "predicted_labels": [
+        "freshness",
+        "oracle_boundary"
+      ],
+      "recall": 0.2222222222222222,
+      "tp": 2
+    }
+  ],
+  "claim_boundary": "automatic metrics include only cases with Slither IR; missing IR cases are reported as manual-seed-supported",
+  "manual_seed_supported_case_count": 0,
+  "metric": "semantic_label_precision_recall_against_case_gold",
+  "rq": "RQ1"
+}

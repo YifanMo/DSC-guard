@@ -1,0 +1,3656 @@
+{
+  "backend": "slither",
+  "case": "ploutos",
+  "case_name": "Ploutos Money USDC oracle misconfiguration",
+  "contracts": [
+    {
+      "events": [
+        {
+          "arguments": [
+            "current",
+            "roundId",
+            "updatedAt"
+          ],
+          "name": "AnswerUpdated"
+        },
+        {
+          "arguments": [
+            "roundId",
+            "startedBy",
+            "startedAt"
+          ],
+          "name": "NewRound"
+        }
+      ],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "latestAnswer",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "latestTimestamp",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "latestRound",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "roundId",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAnswer",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "roundId",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getTimestamp",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        }
+      ],
+      "name": "AggregatorInterface"
+    },
+    {
+      "events": [],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "ADDRESSES_PROVIDER",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "POOL_ADMIN_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "EMERGENCY_ADMIN_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "RISK_ADMIN_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "FLASH_BORROWER_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "borrow"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "BRIDGE_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "ASSET_LISTING_ADMIN_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "role, adminRole",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setRoleAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addPoolAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removePoolAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isPoolAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addEmergencyAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removeEmergencyAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isEmergencyAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addRiskAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removeRiskAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isRiskAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "borrower",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addFlashBorrower",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "borrow"
+          ]
+        },
+        {
+          "arguments": "borrower",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removeFlashBorrower",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "borrow"
+          ]
+        },
+        {
+          "arguments": "borrower",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isFlashBorrower",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "borrow"
+          ]
+        },
+        {
+          "arguments": "bridge",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addBridge",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "bridge",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removeBridge",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "bridge",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isBridge",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addAssetListingAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removeAssetListingAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isAssetListingAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        }
+      ],
+      "name": "IACLManager"
+    },
+    {
+      "events": [
+        {
+          "arguments": [
+            "oldMarketId",
+            "newMarketId"
+          ],
+          "name": "MarketIdSet"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolConfiguratorUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PriceOracleUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "ACLManagerUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "ACLAdminUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PriceOracleSentinelUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolDataProviderUpdated"
+        },
+        {
+          "arguments": [
+            "id",
+            "proxyAddress",
+            "implementationAddress"
+          ],
+          "name": "ProxyCreated"
+        },
+        {
+          "arguments": [
+            "id",
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "AddressSet"
+        },
+        {
+          "arguments": [
+            "id",
+            "proxyAddress",
+            "oldImplementationAddress",
+            "newImplementationAddress"
+          ],
+          "name": "AddressSetAsProxy"
+        }
+      ],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getMarketId",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newMarketId",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setMarketId",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAddress",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id, newImplementationAddress",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setAddressAsProxy",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id, newAddress",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setAddress",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPool",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newPoolImpl",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolImpl",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPoolConfigurator",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newPoolConfiguratorImpl",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolConfiguratorImpl",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPriceOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "newPriceOracle",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPriceOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getACLManager",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newAclManager",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setACLManager",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getACLAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newAclAdmin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setACLAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPriceOracleSentinel",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "newPriceOracleSentinel",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPriceOracleSentinel",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPoolDataProvider",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newDataProvider",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolDataProvider",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        }
+      ],
+      "name": "IPoolAddressesProvider"
+    },
+    {
+      "events": [
+        {
+          "arguments": [
+            "baseCurrency",
+            "baseCurrencyUnit"
+          ],
+          "name": "BaseCurrencySet"
+        },
+        {
+          "arguments": [
+            "asset",
+            "source"
+          ],
+          "name": "AssetSourceUpdated"
+        },
+        {
+          "arguments": [
+            "fallbackOracle"
+          ],
+          "name": "FallbackOracleUpdated"
+        }
+      ],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "ADDRESSES_PROVIDER",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "assets, sources",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setAssetSources",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "fallbackOracle",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setFallbackOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "assets",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAssetsPrices",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "asset",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getSourceOfAsset",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getFallbackOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        }
+      ],
+      "name": "IAaveOracle"
+    },
+    {
+      "events": [
+        {
+          "arguments": [
+            "oldMarketId",
+            "newMarketId"
+          ],
+          "name": "MarketIdSet"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolConfiguratorUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PriceOracleUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "ACLManagerUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "ACLAdminUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PriceOracleSentinelUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolDataProviderUpdated"
+        },
+        {
+          "arguments": [
+            "id",
+            "proxyAddress",
+            "implementationAddress"
+          ],
+          "name": "ProxyCreated"
+        },
+        {
+          "arguments": [
+            "id",
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "AddressSet"
+        },
+        {
+          "arguments": [
+            "id",
+            "proxyAddress",
+            "oldImplementationAddress",
+            "newImplementationAddress"
+          ],
+          "name": "AddressSetAsProxy"
+        }
+      ],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getMarketId",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newMarketId",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setMarketId",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAddress",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id, newImplementationAddress",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setAddressAsProxy",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id, newAddress",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setAddress",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPool",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newPoolImpl",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolImpl",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPoolConfigurator",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newPoolConfiguratorImpl",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolConfiguratorImpl",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPriceOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "newPriceOracle",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPriceOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getACLManager",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newAclManager",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setACLManager",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getACLAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newAclAdmin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setACLAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPriceOracleSentinel",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "newPriceOracleSentinel",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPriceOracleSentinel",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPoolDataProvider",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newDataProvider",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolDataProvider",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        }
+      ],
+      "name": "IPoolAddressesProvider"
+    },
+    {
+      "events": [],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "BASE_CURRENCY",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "BASE_CURRENCY_UNIT",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "asset",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAssetPrice",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        }
+      ],
+      "name": "IPriceOracleGetter"
+    },
+    {
+      "events": [
+        {
+          "arguments": [
+            "oldMarketId",
+            "newMarketId"
+          ],
+          "name": "MarketIdSet"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolConfiguratorUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PriceOracleUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "ACLManagerUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "ACLAdminUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PriceOracleSentinelUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolDataProviderUpdated"
+        },
+        {
+          "arguments": [
+            "id",
+            "proxyAddress",
+            "implementationAddress"
+          ],
+          "name": "ProxyCreated"
+        },
+        {
+          "arguments": [
+            "id",
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "AddressSet"
+        },
+        {
+          "arguments": [
+            "id",
+            "proxyAddress",
+            "oldImplementationAddress",
+            "newImplementationAddress"
+          ],
+          "name": "AddressSetAsProxy"
+        }
+      ],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getMarketId",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newMarketId",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setMarketId",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAddress",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id, newImplementationAddress",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setAddressAsProxy",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id, newAddress",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setAddress",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPool",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newPoolImpl",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolImpl",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPoolConfigurator",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newPoolConfiguratorImpl",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolConfiguratorImpl",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPriceOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "newPriceOracle",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPriceOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getACLManager",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newAclManager",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setACLManager",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getACLAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newAclAdmin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setACLAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPriceOracleSentinel",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "newPriceOracleSentinel",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPriceOracleSentinel",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPoolDataProvider",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newDataProvider",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolDataProvider",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        }
+      ],
+      "name": "IPoolAddressesProvider"
+    },
+    {
+      "events": [],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "BASE_CURRENCY",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "BASE_CURRENCY_UNIT",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "asset",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAssetPrice",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        }
+      ],
+      "name": "IPriceOracleGetter"
+    },
+    {
+      "events": [
+        {
+          "arguments": [
+            "current",
+            "roundId",
+            "updatedAt"
+          ],
+          "name": "AnswerUpdated"
+        },
+        {
+          "arguments": [
+            "roundId",
+            "startedBy",
+            "startedAt"
+          ],
+          "name": "NewRound"
+        }
+      ],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "latestAnswer",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "latestTimestamp",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "latestRound",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "roundId",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAnswer",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "roundId",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getTimestamp",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        }
+      ],
+      "name": "AggregatorInterface"
+    },
+    {
+      "events": [],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "ADDRESSES_PROVIDER",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "POOL_ADMIN_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "EMERGENCY_ADMIN_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "RISK_ADMIN_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "FLASH_BORROWER_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "borrow"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "BRIDGE_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "ASSET_LISTING_ADMIN_ROLE",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "role, adminRole",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setRoleAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addPoolAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removePoolAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isPoolAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addEmergencyAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removeEmergencyAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isEmergencyAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addRiskAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removeRiskAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isRiskAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "borrower",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addFlashBorrower",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "borrow"
+          ]
+        },
+        {
+          "arguments": "borrower",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removeFlashBorrower",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "borrow"
+          ]
+        },
+        {
+          "arguments": "borrower",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isFlashBorrower",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "borrow"
+          ]
+        },
+        {
+          "arguments": "bridge",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addBridge",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "bridge",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removeBridge",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "bridge",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isBridge",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "addAssetListingAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "removeAssetListingAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "admin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "isAssetListingAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        }
+      ],
+      "name": "IACLManager"
+    },
+    {
+      "events": [
+        {
+          "arguments": [
+            "baseCurrency",
+            "baseCurrencyUnit"
+          ],
+          "name": "BaseCurrencySet"
+        },
+        {
+          "arguments": [
+            "asset",
+            "source"
+          ],
+          "name": "AssetSourceUpdated"
+        },
+        {
+          "arguments": [
+            "fallbackOracle"
+          ],
+          "name": "FallbackOracleUpdated"
+        }
+      ],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "ADDRESSES_PROVIDER",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "assets, sources",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setAssetSources",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "fallbackOracle",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setFallbackOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "assets",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAssetsPrices",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "asset",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getSourceOfAsset",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getFallbackOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        }
+      ],
+      "name": "IAaveOracle"
+    },
+    {
+      "events": [
+        {
+          "arguments": [
+            "oldMarketId",
+            "newMarketId"
+          ],
+          "name": "MarketIdSet"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolConfiguratorUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PriceOracleUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "ACLManagerUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "ACLAdminUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PriceOracleSentinelUpdated"
+        },
+        {
+          "arguments": [
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "PoolDataProviderUpdated"
+        },
+        {
+          "arguments": [
+            "id",
+            "proxyAddress",
+            "implementationAddress"
+          ],
+          "name": "ProxyCreated"
+        },
+        {
+          "arguments": [
+            "id",
+            "oldAddress",
+            "newAddress"
+          ],
+          "name": "AddressSet"
+        },
+        {
+          "arguments": [
+            "id",
+            "proxyAddress",
+            "oldImplementationAddress",
+            "newImplementationAddress"
+          ],
+          "name": "AddressSetAsProxy"
+        }
+      ],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getMarketId",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newMarketId",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setMarketId",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAddress",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id, newImplementationAddress",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setAddressAsProxy",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "id, newAddress",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setAddress",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPool",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newPoolImpl",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolImpl",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPoolConfigurator",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newPoolConfiguratorImpl",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolConfiguratorImpl",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPriceOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "newPriceOracle",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPriceOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getACLManager",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newAclManager",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setACLManager",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getACLAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newAclAdmin",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setACLAdmin",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPriceOracleSentinel",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "newPriceOracleSentinel",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPriceOracleSentinel",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getPoolDataProvider",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "newDataProvider",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "setPoolDataProvider",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        }
+      ],
+      "name": "IPoolAddressesProvider"
+    },
+    {
+      "events": [],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "BASE_CURRENCY",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "BASE_CURRENCY_UNIT",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": []
+        },
+        {
+          "arguments": "asset",
+          "cfg_nodes": [],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getAssetPrice",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        }
+      ],
+      "name": "IPriceOracleGetter"
+    },
+    {
+      "events": [
+        {
+          "arguments": [
+            "baseCurrency",
+            "baseCurrencyUnit"
+          ],
+          "name": "BaseCurrencySet"
+        },
+        {
+          "arguments": [
+            "asset",
+            "source"
+          ],
+          "name": "AssetSourceUpdated"
+        },
+        {
+          "arguments": [
+            "fallbackOracle"
+          ],
+          "name": "FallbackOracleUpdated"
+        }
+      ],
+      "functions": [
+        {
+          "arguments": "provider, assets, sources, fallbackOracle, baseCurrency, baseCurrencyUnit",
+          "cfg_nodes": [
+            "ADDRESSES_PROVIDER = provider",
+            "_setFallbackOracle(fallbackOracle)",
+            "_setAssetsSources(assets,sources)",
+            "BASE_CURRENCY = baseCurrency",
+            "BASE_CURRENCY_UNIT = baseCurrencyUnit",
+            "BaseCurrencySet(baseCurrency,baseCurrencyUnit)"
+          ],
+          "event_emits": [
+            {
+              "arguments": [
+                "baseCurrency",
+                "baseCurrencyUnit"
+              ],
+              "event": "BaseCurrencySet"
+            }
+          ],
+          "external_calls": [
+            "INTERNAL_CALL, AaveOracle._setAssetsSources(address[],address[])(assets,sources)",
+            "INTERNAL_CALL, AaveOracle._setFallbackOracle(address)(fallbackOracle)"
+          ],
+          "freshness_check": false,
+          "name": "constructor",
+          "oracle_reads": [
+            "INTERNAL_CALL, AaveOracle._setAssetsSources(address[],address[])(assets,sources)",
+            "INTERNAL_CALL, AaveOracle._setFallbackOracle(address)(fallbackOracle)"
+          ],
+          "pruned_cfg_nodes": [
+            "_setFallbackOracle(fallbackOracle)",
+            "ADDRESSES_PROVIDER = provider",
+            "BASE_CURRENCY = baseCurrency",
+            "BASE_CURRENCY_UNIT = baseCurrencyUnit"
+          ],
+          "state_reads": [],
+          "state_writes": [
+            "ADDRESSES_PROVIDER",
+            "BASE_CURRENCY",
+            "BASE_CURRENCY_UNIT"
+          ],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "assets, sources",
+          "cfg_nodes": [
+            "_setAssetsSources(assets,sources)",
+            "onlyAssetListingOrPoolAdmins()"
+          ],
+          "event_emits": [],
+          "external_calls": [
+            "INTERNAL_CALL, AaveOracle._setAssetsSources(address[],address[])(assets,sources)",
+            "MODIFIER_CALL, AaveOracle.onlyAssetListingOrPoolAdmins()()"
+          ],
+          "freshness_check": false,
+          "name": "setAssetSources",
+          "oracle_reads": [
+            "INTERNAL_CALL, AaveOracle._setAssetsSources(address[],address[])(assets,sources)",
+            "MODIFIER_CALL, AaveOracle.onlyAssetListingOrPoolAdmins()()"
+          ],
+          "pruned_cfg_nodes": [],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "fallbackOracle",
+          "cfg_nodes": [
+            "_setFallbackOracle(fallbackOracle)",
+            "onlyAssetListingOrPoolAdmins()"
+          ],
+          "event_emits": [],
+          "external_calls": [
+            "INTERNAL_CALL, AaveOracle._setFallbackOracle(address)(fallbackOracle)",
+            "MODIFIER_CALL, AaveOracle.onlyAssetListingOrPoolAdmins()()"
+          ],
+          "freshness_check": false,
+          "name": "setFallbackOracle",
+          "oracle_reads": [
+            "INTERNAL_CALL, AaveOracle._setFallbackOracle(address)(fallbackOracle)",
+            "MODIFIER_CALL, AaveOracle.onlyAssetListingOrPoolAdmins()()"
+          ],
+          "pruned_cfg_nodes": [
+            "_setFallbackOracle(fallbackOracle)"
+          ],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "assets, sources",
+          "cfg_nodes": [
+            "require(bool,string)(assets.length == sources.length,Errors.INCONSISTENT_PARAMS_LENGTH)",
+            "i = 0",
+            "i < assets.length",
+            "assetsSources[assets[i]] = AggregatorInterface(sources[i])",
+            "AssetSourceUpdated(assets[i],sources[i])",
+            "i ++"
+          ],
+          "event_emits": [
+            {
+              "arguments": [
+                "REF_7",
+                "REF_8"
+              ],
+              "event": "AssetSourceUpdated"
+            }
+          ],
+          "external_calls": [
+            "REF_2(string) -> Errors.INCONSISTENT_PARAMS_LENGTH"
+          ],
+          "freshness_check": false,
+          "name": "_setAssetsSources",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [
+            "assetsSources[assets[i]] = AggregatorInterface(sources[i])"
+          ],
+          "state_reads": [],
+          "state_writes": [
+            "assetsSources"
+          ],
+          "tags": [
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "fallbackOracle",
+          "cfg_nodes": [
+            "_fallbackOracle = IPriceOracleGetter(fallbackOracle)",
+            "FallbackOracleUpdated(fallbackOracle)"
+          ],
+          "event_emits": [
+            {
+              "arguments": [
+                "fallbackOracle"
+              ],
+              "event": "FallbackOracleUpdated"
+            }
+          ],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "_setFallbackOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [
+            "_fallbackOracle = IPriceOracleGetter(fallbackOracle)",
+            "FallbackOracleUpdated(fallbackOracle)"
+          ],
+          "state_reads": [],
+          "state_writes": [
+            "_fallbackOracle"
+          ],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "asset",
+          "cfg_nodes": [
+            "source = assetsSources[asset]",
+            "asset == BASE_CURRENCY",
+            "BASE_CURRENCY_UNIT",
+            "address(source) == address(0)",
+            "_fallbackOracle.getAssetPrice(asset)",
+            "price = source.latestAnswer()",
+            "price > 0",
+            "uint256(price)",
+            "_fallbackOracle.getAssetPrice(asset)"
+          ],
+          "event_emits": [],
+          "external_calls": [
+            "TMP_19(uint256) = HIGH_LEVEL_CALL, dest:_fallbackOracle(IPriceOracleGetter), function:getAssetPrice, arguments:['asset']",
+            "TMP_20(int256) = HIGH_LEVEL_CALL, dest:source(AggregatorInterface), function:latestAnswer, arguments:[]",
+            "TMP_23(uint256) = HIGH_LEVEL_CALL, dest:_fallbackOracle(IPriceOracleGetter), function:getAssetPrice, arguments:['asset']"
+          ],
+          "freshness_check": false,
+          "name": "getAssetPrice",
+          "oracle_reads": [
+            "TMP_19(uint256) = HIGH_LEVEL_CALL, dest:_fallbackOracle(IPriceOracleGetter), function:getAssetPrice, arguments:['asset']",
+            "TMP_20(int256) = HIGH_LEVEL_CALL, dest:source(AggregatorInterface), function:latestAnswer, arguments:[]",
+            "TMP_23(uint256) = HIGH_LEVEL_CALL, dest:_fallbackOracle(IPriceOracleGetter), function:getAssetPrice, arguments:['asset']"
+          ],
+          "pruned_cfg_nodes": [
+            "_fallbackOracle.getAssetPrice(asset)",
+            "price = source.latestAnswer()",
+            "price > 0",
+            "uint256(price)",
+            "_fallbackOracle.getAssetPrice(asset)"
+          ],
+          "state_reads": [
+            "BASE_CURRENCY",
+            "BASE_CURRENCY_UNIT",
+            "_fallbackOracle",
+            "assetsSources"
+          ],
+          "state_writes": [],
+          "tags": [
+            "oracle-read",
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "assets",
+          "cfg_nodes": [
+            "prices = new uint256[](assets.length)",
+            "i = 0",
+            "i < assets.length",
+            "prices[i] = getAssetPrice(assets[i])",
+            "i ++",
+            "prices"
+          ],
+          "event_emits": [],
+          "external_calls": [
+            "TMP_27(uint256) = INTERNAL_CALL, AaveOracle.getAssetPrice(address)(REF_16)"
+          ],
+          "freshness_check": false,
+          "name": "getAssetsPrices",
+          "oracle_reads": [
+            "TMP_27(uint256) = INTERNAL_CALL, AaveOracle.getAssetPrice(address)(REF_16)"
+          ],
+          "pruned_cfg_nodes": [
+            "prices = new uint256[](assets.length)",
+            "prices[i] = getAssetPrice(assets[i])",
+            "prices"
+          ],
+          "state_reads": [],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "asset",
+          "cfg_nodes": [
+            "address(assetsSources[asset])"
+          ],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getSourceOfAsset",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [
+            "assetsSources"
+          ],
+          "state_writes": [],
+          "tags": [
+            "oracle-setter"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [
+            "address(_fallbackOracle)"
+          ],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "getFallbackOracle",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [
+            "address(_fallbackOracle)"
+          ],
+          "state_reads": [
+            "_fallbackOracle"
+          ],
+          "state_writes": [],
+          "tags": [
+            "oracle-read"
+          ]
+        },
+        {
+          "arguments": "",
+          "cfg_nodes": [
+            "aclManager = IACLManager(ADDRESSES_PROVIDER.getACLManager())",
+            "require(bool,string)(aclManager.isAssetListingAdmin(msg.sender) || aclManager.isPoolAdmin(msg.sender),Errors.CALLER_NOT_ASSET_LISTING_OR_POOL_ADMIN)"
+          ],
+          "event_emits": [],
+          "external_calls": [
+            "REF_21(string) -> Errors.CALLER_NOT_ASSET_LISTING_OR_POOL_ADMIN",
+            "TMP_31(address) = HIGH_LEVEL_CALL, dest:ADDRESSES_PROVIDER(IPoolAddressesProvider), function:getACLManager, arguments:[]",
+            "TMP_33(bool) = HIGH_LEVEL_CALL, dest:aclManager(IACLManager), function:isAssetListingAdmin, arguments:['msg.sender']",
+            "TMP_34(bool) = HIGH_LEVEL_CALL, dest:aclManager(IACLManager), function:isPoolAdmin, arguments:['msg.sender']"
+          ],
+          "freshness_check": false,
+          "name": "_onlyAssetListingOrPoolAdmins",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [],
+          "state_reads": [
+            "ADDRESSES_PROVIDER"
+          ],
+          "state_writes": [],
+          "tags": []
+        }
+      ],
+      "name": "AaveOracle"
+    },
+    {
+      "events": [],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [
+            "CALLER_NOT_POOL_ADMIN = 1",
+            "CALLER_NOT_EMERGENCY_ADMIN = 2",
+            "CALLER_NOT_POOL_OR_EMERGENCY_ADMIN = 3",
+            "CALLER_NOT_RISK_OR_POOL_ADMIN = 4",
+            "CALLER_NOT_ASSET_LISTING_OR_POOL_ADMIN = 5",
+            "CALLER_NOT_BRIDGE = 6",
+            "ADDRESSES_PROVIDER_NOT_REGISTERED = 7",
+            "INVALID_ADDRESSES_PROVIDER_ID = 8",
+            "NOT_CONTRACT = 9",
+            "CALLER_NOT_POOL_CONFIGURATOR = 10",
+            "CALLER_NOT_ATOKEN = 11",
+            "INVALID_ADDRESSES_PROVIDER = 12",
+            "INVALID_FLASHLOAN_EXECUTOR_RETURN = 13",
+            "RESERVE_ALREADY_ADDED = 14",
+            "NO_MORE_RESERVES_ALLOWED = 15",
+            "EMODE_CATEGORY_RESERVED = 16",
+            "INVALID_EMODE_CATEGORY_ASSIGNMENT = 17",
+            "RESERVE_LIQUIDITY_NOT_ZERO = 18",
+            "FLASHLOAN_PREMIUM_INVALID = 19",
+            "INVALID_RESERVE_PARAMS = 20",
+            "INVALID_EMODE_CATEGORY_PARAMS = 21",
+            "BRIDGE_PROTOCOL_FEE_INVALID = 22",
+            "CALLER_MUST_BE_POOL = 23",
+            "INVALID_MINT_AMOUNT = 24",
+            "INVALID_BURN_AMOUNT = 25",
+            "INVALID_AMOUNT = 26",
+            "RESERVE_INACTIVE = 27",
+            "RESERVE_FROZEN = 28",
+            "RESERVE_PAUSED = 29",
+            "BORROWING_NOT_ENABLED = 30",
+            "STABLE_BORROWING_NOT_ENABLED = 31",
+            "NOT_ENOUGH_AVAILABLE_USER_BALANCE = 32",
+            "INVALID_INTEREST_RATE_MODE_SELECTED = 33",
+            "COLLATERAL_BALANCE_IS_ZERO = 34",
+            "HEALTH_FACTOR_LOWER_THAN_LIQUIDATION_THRESHOLD = 35",
+            "COLLATERAL_CANNOT_COVER_NEW_BORROW = 36",
+            "COLLATERAL_SAME_AS_BORROWING_CURRENCY = 37",
+            "AMOUNT_BIGGER_THAN_MAX_LOAN_SIZE_STABLE = 38",
+            "NO_DEBT_OF_SELECTED_TYPE = 39",
+            "NO_EXPLICIT_AMOUNT_TO_REPAY_ON_BEHALF = 40",
+            "NO_OUTSTANDING_STABLE_DEBT = 41",
+            "NO_OUTSTANDING_VARIABLE_DEBT = 42",
+            "UNDERLYING_BALANCE_ZERO = 43",
+            "INTEREST_RATE_REBALANCE_CONDITIONS_NOT_MET = 44",
+            "HEALTH_FACTOR_NOT_BELOW_THRESHOLD = 45",
+            "COLLATERAL_CANNOT_BE_LIQUIDATED = 46",
+            "SPECIFIED_CURRENCY_NOT_BORROWED_BY_USER = 47",
+            "INCONSISTENT_FLASHLOAN_PARAMS = 49",
+            "BORROW_CAP_EXCEEDED = 50",
+            "SUPPLY_CAP_EXCEEDED = 51",
+            "UNBACKED_MINT_CAP_EXCEEDED = 52",
+            "DEBT_CEILING_EXCEEDED = 53",
+            "UNDERLYING_CLAIMABLE_RIGHTS_NOT_ZERO = 54",
+            "STABLE_DEBT_NOT_ZERO = 55",
+            "VARIABLE_DEBT_SUPPLY_NOT_ZERO = 56",
+            "LTV_VALIDATION_FAILED = 57",
+            "INCONSISTENT_EMODE_CATEGORY = 58",
+            "PRICE_ORACLE_SENTINEL_CHECK_FAILED = 59",
+            "ASSET_NOT_BORROWABLE_IN_ISOLATION = 60",
+            "RESERVE_ALREADY_INITIALIZED = 61",
+            "USER_IN_ISOLATION_MODE_OR_LTV_ZERO = 62",
+            "INVALID_LTV = 63",
+            "INVALID_LIQ_THRESHOLD = 64",
+            "INVALID_LIQ_BONUS = 65",
+            "INVALID_DECIMALS = 66",
+            "INVALID_RESERVE_FACTOR = 67",
+            "INVALID_BORROW_CAP = 68",
+            "INVALID_SUPPLY_CAP = 69",
+            "INVALID_LIQUIDATION_PROTOCOL_FEE = 70",
+            "INVALID_EMODE_CATEGORY = 71",
+            "INVALID_UNBACKED_MINT_CAP = 72",
+            "INVALID_DEBT_CEILING = 73",
+            "INVALID_RESERVE_INDEX = 74",
+            "ACL_ADMIN_CANNOT_BE_ZERO = 75",
+            "INCONSISTENT_PARAMS_LENGTH = 76",
+            "ZERO_ADDRESS_NOT_VALID = 77",
+            "INVALID_EXPIRATION = 78",
+            "INVALID_SIGNATURE = 79",
+            "OPERATION_NOT_SUPPORTED = 80",
+            "DEBT_CEILING_NOT_ZERO = 81",
+            "ASSET_NOT_LISTED = 82",
+            "INVALID_OPTIMAL_USAGE_RATIO = 83",
+            "INVALID_OPTIMAL_STABLE_TO_TOTAL_DEBT_RATIO = 84",
+            "UNDERLYING_CANNOT_BE_RESCUED = 85",
+            "ADDRESSES_PROVIDER_ALREADY_ADDED = 86",
+            "POOL_ADDRESSES_DO_NOT_MATCH = 87",
+            "STABLE_BORROWING_ENABLED = 88",
+            "SILOED_BORROWING_VIOLATION = 89",
+            "RESERVE_DEBT_NOT_ZERO = 90",
+            "FLASHLOAN_DISABLED = 91"
+          ],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "slitherConstructorConstantVariables",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [
+            "PRICE_ORACLE_SENTINEL_CHECK_FAILED = 59",
+            "CALLER_NOT_POOL_ADMIN = 1",
+            "CALLER_NOT_EMERGENCY_ADMIN = 2",
+            "CALLER_NOT_POOL_OR_EMERGENCY_ADMIN = 3",
+            "CALLER_NOT_RISK_OR_POOL_ADMIN = 4",
+            "CALLER_NOT_ASSET_LISTING_OR_POOL_ADMIN = 5",
+            "CALLER_NOT_BRIDGE = 6",
+            "ADDRESSES_PROVIDER_NOT_REGISTERED = 7",
+            "INVALID_ADDRESSES_PROVIDER_ID = 8",
+            "NOT_CONTRACT = 9",
+            "CALLER_NOT_POOL_CONFIGURATOR = 10",
+            "CALLER_NOT_ATOKEN = 11",
+            "INVALID_ADDRESSES_PROVIDER = 12",
+            "INVALID_FLASHLOAN_EXECUTOR_RETURN = 13",
+            "RESERVE_ALREADY_ADDED = 14",
+            "NO_MORE_RESERVES_ALLOWED = 15",
+            "EMODE_CATEGORY_RESERVED = 16",
+            "INVALID_EMODE_CATEGORY_ASSIGNMENT = 17",
+            "RESERVE_LIQUIDITY_NOT_ZERO = 18",
+            "FLASHLOAN_PREMIUM_INVALID = 19",
+            "INVALID_RESERVE_PARAMS = 20",
+            "INVALID_EMODE_CATEGORY_PARAMS = 21",
+            "BRIDGE_PROTOCOL_FEE_INVALID = 22",
+            "CALLER_MUST_BE_POOL = 23",
+            "INVALID_MINT_AMOUNT = 24",
+            "INVALID_BURN_AMOUNT = 25",
+            "INVALID_AMOUNT = 26",
+            "RESERVE_INACTIVE = 27",
+            "RESERVE_FROZEN = 28",
+            "RESERVE_PAUSED = 29",
+            "BORROWING_NOT_ENABLED = 30",
+            "STABLE_BORROWING_NOT_ENABLED = 31",
+            "NOT_ENOUGH_AVAILABLE_USER_BALANCE = 32",
+            "INVALID_INTEREST_RATE_MODE_SELECTED = 33",
+            "COLLATERAL_BALANCE_IS_ZERO = 34",
+            "HEALTH_FACTOR_LOWER_THAN_LIQUIDATION_THRESHOLD = 35",
+            "COLLATERAL_CANNOT_COVER_NEW_BORROW = 36",
+            "COLLATERAL_SAME_AS_BORROWING_CURRENCY = 37",
+            "AMOUNT_BIGGER_THAN_MAX_LOAN_SIZE_STABLE = 38",
+            "NO_DEBT_OF_SELECTED_TYPE = 39",
+            "NO_EXPLICIT_AMOUNT_TO_REPAY_ON_BEHALF = 40",
+            "NO_OUTSTANDING_STABLE_DEBT = 41",
+            "NO_OUTSTANDING_VARIABLE_DEBT = 42",
+            "UNDERLYING_BALANCE_ZERO = 43",
+            "INTEREST_RATE_REBALANCE_CONDITIONS_NOT_MET = 44",
+            "HEALTH_FACTOR_NOT_BELOW_THRESHOLD = 45",
+            "COLLATERAL_CANNOT_BE_LIQUIDATED = 46",
+            "SPECIFIED_CURRENCY_NOT_BORROWED_BY_USER = 47",
+            "INCONSISTENT_FLASHLOAN_PARAMS = 49",
+            "BORROW_CAP_EXCEEDED = 50",
+            "SUPPLY_CAP_EXCEEDED = 51",
+            "UNBACKED_MINT_CAP_EXCEEDED = 52",
+            "DEBT_CEILING_EXCEEDED = 53",
+            "UNDERLYING_CLAIMABLE_RIGHTS_NOT_ZERO = 54",
+            "STABLE_DEBT_NOT_ZERO = 55",
+            "VARIABLE_DEBT_SUPPLY_NOT_ZERO = 56",
+            "LTV_VALIDATION_FAILED = 57",
+            "INCONSISTENT_EMODE_CATEGORY = 58",
+            "ASSET_NOT_BORROWABLE_IN_ISOLATION = 60",
+            "RESERVE_ALREADY_INITIALIZED = 61",
+            "USER_IN_ISOLATION_MODE_OR_LTV_ZERO = 62",
+            "INVALID_LTV = 63",
+            "INVALID_LIQ_THRESHOLD = 64",
+            "INVALID_LIQ_BONUS = 65",
+            "INVALID_DECIMALS = 66",
+            "INVALID_RESERVE_FACTOR = 67",
+            "INVALID_BORROW_CAP = 68",
+            "INVALID_SUPPLY_CAP = 69",
+            "INVALID_LIQUIDATION_PROTOCOL_FEE = 70",
+            "INVALID_EMODE_CATEGORY = 71",
+            "INVALID_UNBACKED_MINT_CAP = 72",
+            "INVALID_DEBT_CEILING = 73",
+            "INVALID_RESERVE_INDEX = 74",
+            "ACL_ADMIN_CANNOT_BE_ZERO = 75",
+            "INCONSISTENT_PARAMS_LENGTH = 76",
+            "ZERO_ADDRESS_NOT_VALID = 77",
+            "INVALID_EXPIRATION = 78",
+            "INVALID_SIGNATURE = 79",
+            "OPERATION_NOT_SUPPORTED = 80",
+            "DEBT_CEILING_NOT_ZERO = 81",
+            "ASSET_NOT_LISTED = 82",
+            "INVALID_OPTIMAL_USAGE_RATIO = 83",
+            "INVALID_OPTIMAL_STABLE_TO_TOTAL_DEBT_RATIO = 84",
+            "UNDERLYING_CANNOT_BE_RESCUED = 85",
+            "ADDRESSES_PROVIDER_ALREADY_ADDED = 86",
+            "POOL_ADDRESSES_DO_NOT_MATCH = 87",
+            "STABLE_BORROWING_ENABLED = 88",
+            "SILOED_BORROWING_VIOLATION = 89",
+            "RESERVE_DEBT_NOT_ZERO = 90",
+            "FLASHLOAN_DISABLED = 91"
+          ],
+          "state_reads": [],
+          "state_writes": [
+            "ACL_ADMIN_CANNOT_BE_ZERO",
+            "ADDRESSES_PROVIDER_ALREADY_ADDED",
+            "ADDRESSES_PROVIDER_NOT_REGISTERED",
+            "AMOUNT_BIGGER_THAN_MAX_LOAN_SIZE_STABLE",
+            "ASSET_NOT_BORROWABLE_IN_ISOLATION",
+            "ASSET_NOT_LISTED",
+            "BORROWING_NOT_ENABLED",
+            "BORROW_CAP_EXCEEDED",
+            "BRIDGE_PROTOCOL_FEE_INVALID",
+            "CALLER_MUST_BE_POOL",
+            "CALLER_NOT_ASSET_LISTING_OR_POOL_ADMIN",
+            "CALLER_NOT_ATOKEN",
+            "CALLER_NOT_BRIDGE",
+            "CALLER_NOT_EMERGENCY_ADMIN",
+            "CALLER_NOT_POOL_ADMIN",
+            "CALLER_NOT_POOL_CONFIGURATOR",
+            "CALLER_NOT_POOL_OR_EMERGENCY_ADMIN",
+            "CALLER_NOT_RISK_OR_POOL_ADMIN",
+            "COLLATERAL_BALANCE_IS_ZERO",
+            "COLLATERAL_CANNOT_BE_LIQUIDATED",
+            "COLLATERAL_CANNOT_COVER_NEW_BORROW",
+            "COLLATERAL_SAME_AS_BORROWING_CURRENCY",
+            "DEBT_CEILING_EXCEEDED",
+            "DEBT_CEILING_NOT_ZERO",
+            "EMODE_CATEGORY_RESERVED",
+            "FLASHLOAN_DISABLED",
+            "FLASHLOAN_PREMIUM_INVALID",
+            "HEALTH_FACTOR_LOWER_THAN_LIQUIDATION_THRESHOLD",
+            "HEALTH_FACTOR_NOT_BELOW_THRESHOLD",
+            "INCONSISTENT_EMODE_CATEGORY",
+            "INCONSISTENT_FLASHLOAN_PARAMS",
+            "INCONSISTENT_PARAMS_LENGTH",
+            "INTEREST_RATE_REBALANCE_CONDITIONS_NOT_MET",
+            "INVALID_ADDRESSES_PROVIDER",
+            "INVALID_ADDRESSES_PROVIDER_ID",
+            "INVALID_AMOUNT",
+            "INVALID_BORROW_CAP",
+            "INVALID_BURN_AMOUNT",
+            "INVALID_DEBT_CEILING",
+            "INVALID_DECIMALS",
+            "INVALID_EMODE_CATEGORY",
+            "INVALID_EMODE_CATEGORY_ASSIGNMENT",
+            "INVALID_EMODE_CATEGORY_PARAMS",
+            "INVALID_EXPIRATION",
+            "INVALID_FLASHLOAN_EXECUTOR_RETURN",
+            "INVALID_INTEREST_RATE_MODE_SELECTED",
+            "INVALID_LIQUIDATION_PROTOCOL_FEE",
+            "INVALID_LIQ_BONUS",
+            "INVALID_LIQ_THRESHOLD",
+            "INVALID_LTV",
+            "INVALID_MINT_AMOUNT",
+            "INVALID_OPTIMAL_STABLE_TO_TOTAL_DEBT_RATIO",
+            "INVALID_OPTIMAL_USAGE_RATIO",
+            "INVALID_RESERVE_FACTOR",
+            "INVALID_RESERVE_INDEX",
+            "INVALID_RESERVE_PARAMS",
+            "INVALID_SIGNATURE",
+            "INVALID_SUPPLY_CAP",
+            "INVALID_UNBACKED_MINT_CAP",
+            "LTV_VALIDATION_FAILED",
+            "NOT_CONTRACT",
+            "NOT_ENOUGH_AVAILABLE_USER_BALANCE",
+            "NO_DEBT_OF_SELECTED_TYPE",
+            "NO_EXPLICIT_AMOUNT_TO_REPAY_ON_BEHALF",
+            "NO_MORE_RESERVES_ALLOWED",
+            "NO_OUTSTANDING_STABLE_DEBT",
+            "NO_OUTSTANDING_VARIABLE_DEBT",
+            "OPERATION_NOT_SUPPORTED",
+            "POOL_ADDRESSES_DO_NOT_MATCH",
+            "PRICE_ORACLE_SENTINEL_CHECK_FAILED",
+            "RESERVE_ALREADY_ADDED",
+            "RESERVE_ALREADY_INITIALIZED",
+            "RESERVE_DEBT_NOT_ZERO",
+            "RESERVE_FROZEN",
+            "RESERVE_INACTIVE",
+            "RESERVE_LIQUIDITY_NOT_ZERO",
+            "RESERVE_PAUSED",
+            "SILOED_BORROWING_VIOLATION",
+            "SPECIFIED_CURRENCY_NOT_BORROWED_BY_USER",
+            "STABLE_BORROWING_ENABLED",
+            "STABLE_BORROWING_NOT_ENABLED",
+            "STABLE_DEBT_NOT_ZERO",
+            "SUPPLY_CAP_EXCEEDED",
+            "UNBACKED_MINT_CAP_EXCEEDED",
+            "UNDERLYING_BALANCE_ZERO",
+            "UNDERLYING_CANNOT_BE_RESCUED",
+            "UNDERLYING_CLAIMABLE_RIGHTS_NOT_ZERO",
+            "USER_IN_ISOLATION_MODE_OR_LTV_ZERO",
+            "VARIABLE_DEBT_SUPPLY_NOT_ZERO",
+            "ZERO_ADDRESS_NOT_VALID"
+          ],
+          "tags": [
+            "borrow",
+            "liquidate",
+            "mint",
+            "oracle-read",
+            "pause",
+            "supply"
+          ]
+        }
+      ],
+      "name": "Errors"
+    },
+    {
+      "events": [],
+      "functions": [
+        {
+          "arguments": "",
+          "cfg_nodes": [
+            "CALLER_NOT_POOL_ADMIN = 1",
+            "CALLER_NOT_EMERGENCY_ADMIN = 2",
+            "CALLER_NOT_POOL_OR_EMERGENCY_ADMIN = 3",
+            "CALLER_NOT_RISK_OR_POOL_ADMIN = 4",
+            "CALLER_NOT_ASSET_LISTING_OR_POOL_ADMIN = 5",
+            "CALLER_NOT_BRIDGE = 6",
+            "ADDRESSES_PROVIDER_NOT_REGISTERED = 7",
+            "INVALID_ADDRESSES_PROVIDER_ID = 8",
+            "NOT_CONTRACT = 9",
+            "CALLER_NOT_POOL_CONFIGURATOR = 10",
+            "CALLER_NOT_ATOKEN = 11",
+            "INVALID_ADDRESSES_PROVIDER = 12",
+            "INVALID_FLASHLOAN_EXECUTOR_RETURN = 13",
+            "RESERVE_ALREADY_ADDED = 14",
+            "NO_MORE_RESERVES_ALLOWED = 15",
+            "EMODE_CATEGORY_RESERVED = 16",
+            "INVALID_EMODE_CATEGORY_ASSIGNMENT = 17",
+            "RESERVE_LIQUIDITY_NOT_ZERO = 18",
+            "FLASHLOAN_PREMIUM_INVALID = 19",
+            "INVALID_RESERVE_PARAMS = 20",
+            "INVALID_EMODE_CATEGORY_PARAMS = 21",
+            "BRIDGE_PROTOCOL_FEE_INVALID = 22",
+            "CALLER_MUST_BE_POOL = 23",
+            "INVALID_MINT_AMOUNT = 24",
+            "INVALID_BURN_AMOUNT = 25",
+            "INVALID_AMOUNT = 26",
+            "RESERVE_INACTIVE = 27",
+            "RESERVE_FROZEN = 28",
+            "RESERVE_PAUSED = 29",
+            "BORROWING_NOT_ENABLED = 30",
+            "STABLE_BORROWING_NOT_ENABLED = 31",
+            "NOT_ENOUGH_AVAILABLE_USER_BALANCE = 32",
+            "INVALID_INTEREST_RATE_MODE_SELECTED = 33",
+            "COLLATERAL_BALANCE_IS_ZERO = 34",
+            "HEALTH_FACTOR_LOWER_THAN_LIQUIDATION_THRESHOLD = 35",
+            "COLLATERAL_CANNOT_COVER_NEW_BORROW = 36",
+            "COLLATERAL_SAME_AS_BORROWING_CURRENCY = 37",
+            "AMOUNT_BIGGER_THAN_MAX_LOAN_SIZE_STABLE = 38",
+            "NO_DEBT_OF_SELECTED_TYPE = 39",
+            "NO_EXPLICIT_AMOUNT_TO_REPAY_ON_BEHALF = 40",
+            "NO_OUTSTANDING_STABLE_DEBT = 41",
+            "NO_OUTSTANDING_VARIABLE_DEBT = 42",
+            "UNDERLYING_BALANCE_ZERO = 43",
+            "INTEREST_RATE_REBALANCE_CONDITIONS_NOT_MET = 44",
+            "HEALTH_FACTOR_NOT_BELOW_THRESHOLD = 45",
+            "COLLATERAL_CANNOT_BE_LIQUIDATED = 46",
+            "SPECIFIED_CURRENCY_NOT_BORROWED_BY_USER = 47",
+            "INCONSISTENT_FLASHLOAN_PARAMS = 49",
+            "BORROW_CAP_EXCEEDED = 50",
+            "SUPPLY_CAP_EXCEEDED = 51",
+            "UNBACKED_MINT_CAP_EXCEEDED = 52",
+            "DEBT_CEILING_EXCEEDED = 53",
+            "UNDERLYING_CLAIMABLE_RIGHTS_NOT_ZERO = 54",
+            "STABLE_DEBT_NOT_ZERO = 55",
+            "VARIABLE_DEBT_SUPPLY_NOT_ZERO = 56",
+            "LTV_VALIDATION_FAILED = 57",
+            "INCONSISTENT_EMODE_CATEGORY = 58",
+            "PRICE_ORACLE_SENTINEL_CHECK_FAILED = 59",
+            "ASSET_NOT_BORROWABLE_IN_ISOLATION = 60",
+            "RESERVE_ALREADY_INITIALIZED = 61",
+            "USER_IN_ISOLATION_MODE_OR_LTV_ZERO = 62",
+            "INVALID_LTV = 63",
+            "INVALID_LIQ_THRESHOLD = 64",
+            "INVALID_LIQ_BONUS = 65",
+            "INVALID_DECIMALS = 66",
+            "INVALID_RESERVE_FACTOR = 67",
+            "INVALID_BORROW_CAP = 68",
+            "INVALID_SUPPLY_CAP = 69",
+            "INVALID_LIQUIDATION_PROTOCOL_FEE = 70",
+            "INVALID_EMODE_CATEGORY = 71",
+            "INVALID_UNBACKED_MINT_CAP = 72",
+            "INVALID_DEBT_CEILING = 73",
+            "INVALID_RESERVE_INDEX = 74",
+            "ACL_ADMIN_CANNOT_BE_ZERO = 75",
+            "INCONSISTENT_PARAMS_LENGTH = 76",
+            "ZERO_ADDRESS_NOT_VALID = 77",
+            "INVALID_EXPIRATION = 78",
+            "INVALID_SIGNATURE = 79",
+            "OPERATION_NOT_SUPPORTED = 80",
+            "DEBT_CEILING_NOT_ZERO = 81",
+            "ASSET_NOT_LISTED = 82",
+            "INVALID_OPTIMAL_USAGE_RATIO = 83",
+            "INVALID_OPTIMAL_STABLE_TO_TOTAL_DEBT_RATIO = 84",
+            "UNDERLYING_CANNOT_BE_RESCUED = 85",
+            "ADDRESSES_PROVIDER_ALREADY_ADDED = 86",
+            "POOL_ADDRESSES_DO_NOT_MATCH = 87",
+            "STABLE_BORROWING_ENABLED = 88",
+            "SILOED_BORROWING_VIOLATION = 89",
+            "RESERVE_DEBT_NOT_ZERO = 90",
+            "FLASHLOAN_DISABLED = 91"
+          ],
+          "event_emits": [],
+          "external_calls": [],
+          "freshness_check": false,
+          "name": "slitherConstructorConstantVariables",
+          "oracle_reads": [],
+          "pruned_cfg_nodes": [
+            "PRICE_ORACLE_SENTINEL_CHECK_FAILED = 59",
+            "CALLER_NOT_POOL_ADMIN = 1",
+            "CALLER_NOT_EMERGENCY_ADMIN = 2",
+            "CALLER_NOT_POOL_OR_EMERGENCY_ADMIN = 3",
+            "CALLER_NOT_RISK_OR_POOL_ADMIN = 4",
+            "CALLER_NOT_ASSET_LISTING_OR_POOL_ADMIN = 5",
+            "CALLER_NOT_BRIDGE = 6",
+            "ADDRESSES_PROVIDER_NOT_REGISTERED = 7",
+            "INVALID_ADDRESSES_PROVIDER_ID = 8",
+            "NOT_CONTRACT = 9",
+            "CALLER_NOT_POOL_CONFIGURATOR = 10",
+            "CALLER_NOT_ATOKEN = 11",
+            "INVALID_ADDRESSES_PROVIDER = 12",
+            "INVALID_FLASHLOAN_EXECUTOR_RETURN = 13",
+            "RESERVE_ALREADY_ADDED = 14",
+            "NO_MORE_RESERVES_ALLOWED = 15",
+            "EMODE_CATEGORY_RESERVED = 16",
+            "INVALID_EMODE_CATEGORY_ASSIGNMENT = 17",
+            "RESERVE_LIQUIDITY_NOT_ZERO = 18",
+            "FLASHLOAN_PREMIUM_INVALID = 19",
+            "INVALID_RESERVE_PARAMS = 20",
+            "INVALID_EMODE_CATEGORY_PARAMS = 21",
+            "BRIDGE_PROTOCOL_FEE_INVALID = 22",
+            "CALLER_MUST_BE_POOL = 23",
+            "INVALID_MINT_AMOUNT = 24",
+            "INVALID_BURN_AMOUNT = 25",
+            "INVALID_AMOUNT = 26",
+            "RESERVE_INACTIVE = 27",
+            "RESERVE_FROZEN = 28",
+            "RESERVE_PAUSED = 29",
+            "BORROWING_NOT_ENABLED = 30",
+            "STABLE_BORROWING_NOT_ENABLED = 31",
+            "NOT_ENOUGH_AVAILABLE_USER_BALANCE = 32",
+            "INVALID_INTEREST_RATE_MODE_SELECTED = 33",
+            "COLLATERAL_BALANCE_IS_ZERO = 34",
+            "HEALTH_FACTOR_LOWER_THAN_LIQUIDATION_THRESHOLD = 35",
+            "COLLATERAL_CANNOT_COVER_NEW_BORROW = 36",
+            "COLLATERAL_SAME_AS_BORROWING_CURRENCY = 37",
+            "AMOUNT_BIGGER_THAN_MAX_LOAN_SIZE_STABLE = 38",
+            "NO_DEBT_OF_SELECTED_TYPE = 39",
+            "NO_EXPLICIT_AMOUNT_TO_REPAY_ON_BEHALF = 40",
+            "NO_OUTSTANDING_STABLE_DEBT = 41",
+            "NO_OUTSTANDING_VARIABLE_DEBT = 42",
+            "UNDERLYING_BALANCE_ZERO = 43",
+            "INTEREST_RATE_REBALANCE_CONDITIONS_NOT_MET = 44",
+            "HEALTH_FACTOR_NOT_BELOW_THRESHOLD = 45",
+            "COLLATERAL_CANNOT_BE_LIQUIDATED = 46",
+            "SPECIFIED_CURRENCY_NOT_BORROWED_BY_USER = 47",
+            "INCONSISTENT_FLASHLOAN_PARAMS = 49",
+            "BORROW_CAP_EXCEEDED = 50",
+            "SUPPLY_CAP_EXCEEDED = 51",
+            "UNBACKED_MINT_CAP_EXCEEDED = 52",
+            "DEBT_CEILING_EXCEEDED = 53",
+            "UNDERLYING_CLAIMABLE_RIGHTS_NOT_ZERO = 54",
+            "STABLE_DEBT_NOT_ZERO = 55",
+            "VARIABLE_DEBT_SUPPLY_NOT_ZERO = 56",
+            "LTV_VALIDATION_FAILED = 57",
+            "INCONSISTENT_EMODE_CATEGORY = 58",
+            "ASSET_NOT_BORROWABLE_IN_ISOLATION = 60",
+            "RESERVE_ALREADY_INITIALIZED = 61",
+            "USER_IN_ISOLATION_MODE_OR_LTV_ZERO = 62",
+            "INVALID_LTV = 63",
+            "INVALID_LIQ_THRESHOLD = 64",
+            "INVALID_LIQ_BONUS = 65",
+            "INVALID_DECIMALS = 66",
+            "INVALID_RESERVE_FACTOR = 67",
+            "INVALID_BORROW_CAP = 68",
+            "INVALID_SUPPLY_CAP = 69",
+            "INVALID_LIQUIDATION_PROTOCOL_FEE = 70",
+            "INVALID_EMODE_CATEGORY = 71",
+            "INVALID_UNBACKED_MINT_CAP = 72",
+            "INVALID_DEBT_CEILING = 73",
+            "INVALID_RESERVE_INDEX = 74",
+            "ACL_ADMIN_CANNOT_BE_ZERO = 75",
+            "INCONSISTENT_PARAMS_LENGTH = 76",
+            "ZERO_ADDRESS_NOT_VALID = 77",
+            "INVALID_EXPIRATION = 78",
+            "INVALID_SIGNATURE = 79",
+            "OPERATION_NOT_SUPPORTED = 80",
+            "DEBT_CEILING_NOT_ZERO = 81",
+            "ASSET_NOT_LISTED = 82",
+            "INVALID_OPTIMAL_USAGE_RATIO = 83",
+            "INVALID_OPTIMAL_STABLE_TO_TOTAL_DEBT_RATIO = 84",
+            "UNDERLYING_CANNOT_BE_RESCUED = 85",
+            "ADDRESSES_PROVIDER_ALREADY_ADDED = 86",
+            "POOL_ADDRESSES_DO_NOT_MATCH = 87",
+            "STABLE_BORROWING_ENABLED = 88",
+            "SILOED_BORROWING_VIOLATION = 89",
+            "RESERVE_DEBT_NOT_ZERO = 90",
+            "FLASHLOAN_DISABLED = 91"
+          ],
+          "state_reads": [],
+          "state_writes": [
+            "ACL_ADMIN_CANNOT_BE_ZERO",
+            "ADDRESSES_PROVIDER_ALREADY_ADDED",
+            "ADDRESSES_PROVIDER_NOT_REGISTERED",
+            "AMOUNT_BIGGER_THAN_MAX_LOAN_SIZE_STABLE",
+            "ASSET_NOT_BORROWABLE_IN_ISOLATION",
+            "ASSET_NOT_LISTED",
+            "BORROWING_NOT_ENABLED",
+            "BORROW_CAP_EXCEEDED",
+            "BRIDGE_PROTOCOL_FEE_INVALID",
+            "CALLER_MUST_BE_POOL",
+            "CALLER_NOT_ASSET_LISTING_OR_POOL_ADMIN",
+            "CALLER_NOT_ATOKEN",
+            "CALLER_NOT_BRIDGE",
+            "CALLER_NOT_EMERGENCY_ADMIN",
+            "CALLER_NOT_POOL_ADMIN",
+            "CALLER_NOT_POOL_CONFIGURATOR",
+            "CALLER_NOT_POOL_OR_EMERGENCY_ADMIN",
+            "CALLER_NOT_RISK_OR_POOL_ADMIN",
+            "COLLATERAL_BALANCE_IS_ZERO",
+            "COLLATERAL_CANNOT_BE_LIQUIDATED",
+            "COLLATERAL_CANNOT_COVER_NEW_BORROW",
+            "COLLATERAL_SAME_AS_BORROWING_CURRENCY",
+            "DEBT_CEILING_EXCEEDED",
+            "DEBT_CEILING_NOT_ZERO",
+            "EMODE_CATEGORY_RESERVED",
+            "FLASHLOAN_DISABLED",
+            "FLASHLOAN_PREMIUM_INVALID",
+            "HEALTH_FACTOR_LOWER_THAN_LIQUIDATION_THRESHOLD",
+            "HEALTH_FACTOR_NOT_BELOW_THRESHOLD",
+            "INCONSISTENT_EMODE_CATEGORY",
+            "INCONSISTENT_FLASHLOAN_PARAMS",
+            "INCONSISTENT_PARAMS_LENGTH",
+            "INTEREST_RATE_REBALANCE_CONDITIONS_NOT_MET",
+            "INVALID_ADDRESSES_PROVIDER",
+            "INVALID_ADDRESSES_PROVIDER_ID",
+            "INVALID_AMOUNT",
+            "INVALID_BORROW_CAP",
+            "INVALID_BURN_AMOUNT",
+            "INVALID_DEBT_CEILING",
+            "INVALID_DECIMALS",
+            "INVALID_EMODE_CATEGORY",
+            "INVALID_EMODE_CATEGORY_ASSIGNMENT",
+            "INVALID_EMODE_CATEGORY_PARAMS",
+            "INVALID_EXPIRATION",
+            "INVALID_FLASHLOAN_EXECUTOR_RETURN",
+            "INVALID_INTEREST_RATE_MODE_SELECTED",
+            "INVALID_LIQUIDATION_PROTOCOL_FEE",
+            "INVALID_LIQ_BONUS",
+            "INVALID_LIQ_THRESHOLD",
+            "INVALID_LTV",
+            "INVALID_MINT_AMOUNT",
+            "INVALID_OPTIMAL_STABLE_TO_TOTAL_DEBT_RATIO",
+            "INVALID_OPTIMAL_USAGE_RATIO",
+            "INVALID_RESERVE_FACTOR",
+            "INVALID_RESERVE_INDEX",
+            "INVALID_RESERVE_PARAMS",
+            "INVALID_SIGNATURE",
+            "INVALID_SUPPLY_CAP",
+            "INVALID_UNBACKED_MINT_CAP",
+            "LTV_VALIDATION_FAILED",
+            "NOT_CONTRACT",
+            "NOT_ENOUGH_AVAILABLE_USER_BALANCE",
+            "NO_DEBT_OF_SELECTED_TYPE",
+            "NO_EXPLICIT_AMOUNT_TO_REPAY_ON_BEHALF",
+            "NO_MORE_RESERVES_ALLOWED",
+            "NO_OUTSTANDING_STABLE_DEBT",
+            "NO_OUTSTANDING_VARIABLE_DEBT",
+            "OPERATION_NOT_SUPPORTED",
+            "POOL_ADDRESSES_DO_NOT_MATCH",
+            "PRICE_ORACLE_SENTINEL_CHECK_FAILED",
+            "RESERVE_ALREADY_ADDED",
+            "RESERVE_ALREADY_INITIALIZED",
+            "RESERVE_DEBT_NOT_ZERO",
+            "RESERVE_FROZEN",
+            "RESERVE_INACTIVE",
+            "RESERVE_LIQUIDITY_NOT_ZERO",
+            "RESERVE_PAUSED",
+            "SILOED_BORROWING_VIOLATION",
+            "SPECIFIED_CURRENCY_NOT_BORROWED_BY_USER",
+            "STABLE_BORROWING_ENABLED",
+            "STABLE_BORROWING_NOT_ENABLED",
+            "STABLE_DEBT_NOT_ZERO",
+            "SUPPLY_CAP_EXCEEDED",
+            "UNBACKED_MINT_CAP_EXCEEDED",
+            "UNDERLYING_BALANCE_ZERO",
+            "UNDERLYING_CANNOT_BE_RESCUED",
+            "UNDERLYING_CLAIMABLE_RIGHTS_NOT_ZERO",
+            "USER_IN_ISOLATION_MODE_OR_LTV_ZERO",
+            "VARIABLE_DEBT_SUPPLY_NOT_ZERO",
+            "ZERO_ADDRESS_NOT_VALID"
+          ],
+          "tags": [
+            "borrow",
+            "liquidate",
+            "mint",
+            "oracle-read",
+            "pause",
+            "supply"
+          ]
+        }
+      ],
+      "name": "Errors"
+    }
+  ],
+  "event_semantics": [
+    {
+      "contract": "AaveOracle",
+      "event": "BaseCurrencySet",
+      "event_arguments": [
+        "baseCurrency",
+        "baseCurrencyUnit"
+      ],
+      "freshness_check": false,
+      "function": "constructor",
+      "oracle_reads": [
+        "INTERNAL_CALL, AaveOracle._setAssetsSources(address[],address[])(assets,sources)",
+        "INTERNAL_CALL, AaveOracle._setFallbackOracle(address)(fallbackOracle)"
+      ],
+      "pruned_cfg_nodes": [
+        "_setFallbackOracle(fallbackOracle)",
+        "ADDRESSES_PROVIDER = provider",
+        "BASE_CURRENCY = baseCurrency",
+        "BASE_CURRENCY_UNIT = baseCurrencyUnit"
+      ],
+      "state_reads": [],
+      "state_writes": [
+        "ADDRESSES_PROVIDER",
+        "BASE_CURRENCY",
+        "BASE_CURRENCY_UNIT"
+      ],
+      "transition_tags": [
+        "oracle-read"
+      ]
+    },
+    {
+      "contract": "AaveOracle",
+      "event": "AssetSourceUpdated",
+      "event_arguments": [
+        "REF_7",
+        "REF_8"
+      ],
+      "freshness_check": false,
+      "function": "_setAssetsSources",
+      "oracle_reads": [],
+      "pruned_cfg_nodes": [
+        "assetsSources[assets[i]] = AggregatorInterface(sources[i])"
+      ],
+      "state_reads": [],
+      "state_writes": [
+        "assetsSources"
+      ],
+      "transition_tags": [
+        "oracle-setter"
+      ]
+    },
+    {
+      "contract": "AaveOracle",
+      "event": "FallbackOracleUpdated",
+      "event_arguments": [
+        "fallbackOracle"
+      ],
+      "freshness_check": false,
+      "function": "_setFallbackOracle",
+      "oracle_reads": [],
+      "pruned_cfg_nodes": [
+        "_fallbackOracle = IPriceOracleGetter(fallbackOracle)",
+        "FallbackOracleUpdated(fallbackOracle)"
+      ],
+      "state_reads": [],
+      "state_writes": [
+        "_fallbackOracle"
+      ],
+      "transition_tags": [
+        "oracle-read",
+        "oracle-setter"
+      ]
+    }
+  ],
+  "target": [
+    "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/dependencies/chainlink/AggregatorInterface.sol",
+    "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/interfaces/IACLManager.sol",
+    "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/interfaces/IAaveOracle.sol",
+    "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/interfaces/IPoolAddressesProvider.sol",
+    "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/interfaces/IPriceOracleGetter.sol",
+    "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/misc/AaveOracle.sol",
+    "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/protocol/libraries/helpers/Errors.sol"
+  ],
+  "warnings": [
+    "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30: Invalid compilation: \n/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30 is a directory. Expected a Solidity file when not using a compilation framework."
+  ]
+}

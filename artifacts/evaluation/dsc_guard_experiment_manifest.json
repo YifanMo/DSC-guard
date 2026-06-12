@@ -1,0 +1,35 @@
+{
+  "active_cases": [
+    "blizz_luna",
+    "blueberry_faulty_oracle",
+    "moonwell_cbeth",
+    "moonwell_wrseth",
+    "ploutos",
+    "venus_luna"
+  ],
+  "benign_only": false,
+  "dataset": "dsc_guard_local_experiment",
+  "outputs": {
+    "json": [
+      "artifacts/evaluation/rq1_semantic_accuracy.json",
+      "artifacts/evaluation/rq2_ablation_study.json",
+      "artifacts/evaluation/rq2_detection_metrics.json",
+      "artifacts/evaluation/rq2_log_level_metrics.json",
+      "artifacts/evaluation/rq3_lead_time.json",
+      "artifacts/evaluation/rq4_actor_localization.json"
+    ],
+    "markdown": [
+      "results/rq1_semantic_accuracy.md",
+      "results/rq2_ablation_study.md",
+      "results/rq2_detection_effectiveness.md",
+      "results/rq2_log_level_detection.md",
+      "results/rq3_early_evidence_lead_time.md",
+      "results/rq4_attacker_localization.md"
+    ]
+  },
+  "positive_only": false,
+  "safety_boundary": "local historical artifacts only; no Dune/RPC/explorer calls; no writes to chain; no private keys; no attack simulation",
+  "selected_rqs": [
+    "rq2"
+  ]
+}

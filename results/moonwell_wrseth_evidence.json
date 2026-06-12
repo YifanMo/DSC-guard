@@ -1,0 +1,431 @@
+{
+  "alerts": [
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {},
+      "case": "moonwell_wrseth",
+      "constraint_id": "WRSETH_ETH_SOURCE_MUST_NOT_OUTLIER",
+      "details": {
+        "asset": "wrsETH",
+        "block_timestamp": 1762235095,
+        "feed": "0xd7221b10fbbc1e1ba95fd0b4d031c15f7f365296",
+        "quote_asset": "ETH",
+        "reason": "wrsETH/ETH source reported an abnormal outlier value",
+        "reported_rate": "1649934.60732",
+        "tx_hash": ""
+      },
+      "evidence_tx_hashes": [],
+      "id": "WRSETH_ETH_SOURCE_MUST_NOT_OUTLIER",
+      "record_role": "oracle_boundary",
+      "severity": "critical",
+      "tx_hash": "",
+      "type": "price_source_outlier"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "1206000",
+        "borrow_asset": "cbXRP",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0x229caeb87e0b6c31afad950150d2ba05a8d7fe823c9e5c05af63b4150b8f6cc6"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0x229caeb87e0b6c31afad950150d2ba05a8d7fe823c9e5c05af63b4150b8f6cc6",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "80000",
+        "borrow_asset": "EURC",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0xecb1c96e15889dc11d2928f6e63e34abcb8b1114bd69f15a794fa4df07f647aa"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0xecb1c96e15889dc11d2928f6e63e34abcb8b1114bd69f15a794fa4df07f647aa",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "73300",
+        "borrow_asset": "EURC",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0x7855a861bb27ba93aac37ec60e2de3381c46f82070dc4d300aca70ee05cc69ec"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0x7855a861bb27ba93aac37ec60e2de3381c46f82070dc4d300aca70ee05cc69ec",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "80000",
+        "borrow_asset": "USDC",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0xc5daf8bfea0b7f6c5da8e4b08e19df2be58094a366aa2387e9b9443fb0e0c0d4"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0xc5daf8bfea0b7f6c5da8e4b08e19df2be58094a366aa2387e9b9443fb0e0c0d4",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "101000",
+        "borrow_asset": "AERO",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0xa5f60967fc6ad8c0f5b82f1a12970371333c16d8dddee5cd3a4f8a95561769fd"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0xa5f60967fc6ad8c0f5b82f1a12970371333c16d8dddee5cd3a4f8a95561769fd",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "101000",
+        "borrow_asset": "AERO",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0x815715adbf5032d1b968d5fda6c3589d2f4d3ab0b7a12c42f7f6a3cddbf99ff9"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0x815715adbf5032d1b968d5fda6c3589d2f4d3ab0b7a12c42f7f6a3cddbf99ff9",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "21",
+        "borrow_asset": "wstETH",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0x190a491c0ef095d5447d6d813dc8e2ec11a5710e189771c24527393a2beb05ac"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0x190a491c0ef095d5447d6d813dc8e2ec11a5710e189771c24527393a2beb05ac",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "20.5",
+        "borrow_asset": "wstETH",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0xff3075de35647efed753a918d20a92d9113e14a86a6dc98064b94249d14a54c1"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0xff3075de35647efed753a918d20a92d9113e14a86a6dc98064b94249d14a54c1",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "20.5",
+        "borrow_asset": "wstETH",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0x76911abc581204db6063763b024de0bf7bb1bbb62f61dc81be3bac4bc9e474b2"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0x76911abc581204db6063763b024de0bf7bb1bbb62f61dc81be3bac4bc9e474b2",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "20",
+        "borrow_asset": "wstETH",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0x5cd5b182e8be9e13360970d851f2479376f9de30f9f07dda617e6deba5e72ca4"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0x5cd5b182e8be9e13360970d851f2479376f9de30f9f07dda617e6deba5e72ca4",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "24",
+        "borrow_asset": "cbETH",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0xd74224baa38bb6872769d43469aea69f45683281ca475c658338f2c08e5f412d"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0xd74224baa38bb6872769d43469aea69f45683281ca475c658338f2c08e5f412d",
+      "type": "attacker_localization"
+    },
+    {
+      "block_number": 0,
+      "candidate_actor_roles": {
+        "actor": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      },
+      "case": "moonwell_wrseth",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "24",
+        "borrow_asset": "cbETH",
+        "borrower": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "collateral_asset": "wrsETH",
+        "reasons": [
+          "price_source_outlier"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0x26abab9dd1119f13ba4899cea1d5875e3c5286427732a4eb7143aa44485cf6e0"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0x26abab9dd1119f13ba4899cea1d5875e3c5286427732a4eb7143aa44485cf6e0",
+      "type": "attacker_localization"
+    }
+  ],
+  "attacker_candidates": [
+    {
+      "address": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+      "profit_summary": [
+        "borrowed 1206000 cbXRP against wrsETH",
+        "borrowed 80000 EURC against wrsETH",
+        "borrowed 73300 EURC against wrsETH",
+        "borrowed 80000 USDC against wrsETH",
+        "borrowed 101000 AERO against wrsETH",
+        "borrowed 101000 AERO against wrsETH",
+        "borrowed 21 wstETH against wrsETH",
+        "borrowed 20.5 wstETH against wrsETH",
+        "borrowed 20.5 wstETH against wrsETH",
+        "borrowed 20 wstETH against wrsETH",
+        "borrowed 24 cbETH against wrsETH",
+        "borrowed 24 cbETH against wrsETH"
+      ],
+      "roles": [
+        "borrower"
+      ],
+      "tx_hashes": [
+        "0x190a491c0ef095d5447d6d813dc8e2ec11a5710e189771c24527393a2beb05ac",
+        "0x229caeb87e0b6c31afad950150d2ba05a8d7fe823c9e5c05af63b4150b8f6cc6",
+        "0x26abab9dd1119f13ba4899cea1d5875e3c5286427732a4eb7143aa44485cf6e0",
+        "0x5cd5b182e8be9e13360970d851f2479376f9de30f9f07dda617e6deba5e72ca4",
+        "0x76911abc581204db6063763b024de0bf7bb1bbb62f61dc81be3bac4bc9e474b2",
+        "0x7855a861bb27ba93aac37ec60e2de3381c46f82070dc4d300aca70ee05cc69ec",
+        "0x815715adbf5032d1b968d5fda6c3589d2f4d3ab0b7a12c42f7f6a3cddbf99ff9",
+        "0xa5f60967fc6ad8c0f5b82f1a12970371333c16d8dddee5cd3a4f8a95561769fd",
+        "0xc5daf8bfea0b7f6c5da8e4b08e19df2be58094a366aa2387e9b9443fb0e0c0d4",
+        "0xd74224baa38bb6872769d43469aea69f45683281ca475c658338f2c08e5f412d",
+        "0xecb1c96e15889dc11d2928f6e63e34abcb8b1114bd69f15a794fa4df07f647aa",
+        "0xff3075de35647efed753a918d20a92d9113e14a86a6dc98064b94249d14a54c1"
+      ]
+    },
+    {
+      "address": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+      "profit_summary": [
+        "borrowed 1206000 cbXRP against wrsETH",
+        "borrowed 80000 EURC against wrsETH",
+        "borrowed 73300 EURC against wrsETH",
+        "borrowed 80000 USDC against wrsETH",
+        "borrowed 101000 AERO against wrsETH",
+        "borrowed 101000 AERO against wrsETH",
+        "borrowed 21 wstETH against wrsETH",
+        "borrowed 20.5 wstETH against wrsETH",
+        "borrowed 20.5 wstETH against wrsETH",
+        "borrowed 20 wstETH against wrsETH",
+        "borrowed 24 cbETH against wrsETH",
+        "borrowed 24 cbETH against wrsETH"
+      ],
+      "roles": [
+        "actor"
+      ],
+      "tx_hashes": [
+        "0x190a491c0ef095d5447d6d813dc8e2ec11a5710e189771c24527393a2beb05ac",
+        "0x229caeb87e0b6c31afad950150d2ba05a8d7fe823c9e5c05af63b4150b8f6cc6",
+        "0x26abab9dd1119f13ba4899cea1d5875e3c5286427732a4eb7143aa44485cf6e0",
+        "0x5cd5b182e8be9e13360970d851f2479376f9de30f9f07dda617e6deba5e72ca4",
+        "0x76911abc581204db6063763b024de0bf7bb1bbb62f61dc81be3bac4bc9e474b2",
+        "0x7855a861bb27ba93aac37ec60e2de3381c46f82070dc4d300aca70ee05cc69ec",
+        "0x815715adbf5032d1b968d5fda6c3589d2f4d3ab0b7a12c42f7f6a3cddbf99ff9",
+        "0xa5f60967fc6ad8c0f5b82f1a12970371333c16d8dddee5cd3a4f8a95561769fd",
+        "0xc5daf8bfea0b7f6c5da8e4b08e19df2be58094a366aa2387e9b9443fb0e0c0d4",
+        "0xd74224baa38bb6872769d43469aea69f45683281ca475c658338f2c08e5f412d",
+        "0xecb1c96e15889dc11d2928f6e63e34abcb8b1114bd69f15a794fa4df07f647aa",
+        "0xff3075de35647efed753a918d20a92d9113e14a86a6dc98064b94249d14a54c1"
+      ]
+    }
+  ],
+  "case": "moonwell_wrseth",
+  "case_name": "Moonwell wrsETH oracle malfunction",
+  "chain": "base",
+  "formula_violations": {},
+  "implementation_mismatches": {},
+  "input_records": 13,
+  "known_txs": {
+    "attacker_contract": "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+    "attacker_eoa": "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff",
+    "first_attack": "0x229caeb87e0b6c31afad950150d2ba05a8d7fe823c9e5c05af63b4150b8f6cc6"
+  },
+  "oracle_map": {},
+  "price_source_outliers": {
+    "wrseth": {
+      "asset": "wrsETH",
+      "block_timestamp": 1762235095,
+      "feed": "0xd7221b10fbbc1e1ba95fd0b4d031c15f7f365296",
+      "quote_asset": "ETH",
+      "reason": "wrsETH/ETH source reported an abnormal outlier value",
+      "reported_rate": "1649934.60732",
+      "tx_hash": ""
+    }
+  },
+  "stale_assets": {}
+}

@@ -1,0 +1,33 @@
+{
+  "benign_candidate_count": 60,
+  "benign_verified_count": 30,
+  "by_benign_stratum": {
+    "cross_protocol": 30,
+    "same_oracle": 30,
+    "same_protocol": 0
+  },
+  "by_label": {
+    "benign_verified": 30,
+    "unknown_negative": 30
+  },
+  "chains": [
+    "ethereum",
+    "bnb",
+    "base",
+    "avalanche_c"
+  ],
+  "dataset": "case_aware_benign_eval_dataset",
+  "end": "2026-05-12",
+  "false_positive_denominator": 30,
+  "positive_count": 6,
+  "safety_boundary": "read-only historical Dune/RPC evidence; no chain writes, no write methods, no private keys, no attack simulation",
+  "selection_policy": "hard benign candidates using same-oracle, same-protocol, and deterministic cross-protocol hash sampling; no rank truncation, scoring, or nondeterministic sampling",
+  "sql_dir": "artifacts/eval_dataset/sql",
+  "start": "2022-01-01",
+  "targets": {
+    "cross_protocol": 500,
+    "same_oracle": 200,
+    "same_protocol": 200
+  },
+  "unknown_negative_count": 30
+}

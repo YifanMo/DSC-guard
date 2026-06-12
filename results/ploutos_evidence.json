@@ -1,0 +1,111 @@
+{
+  "alerts": [
+    {
+      "block_number": 24538896,
+      "candidate_actor_roles": {},
+      "case": "ploutos",
+      "constraint_id": "USDC_FEED_MUST_BE_USDC_USD",
+      "details": {
+        "actual_feed": "BTC/USD",
+        "asset": "USDC",
+        "expected_feed": "USDC/USD"
+      },
+      "evidence_tx_hashes": [
+        "0xcfedf63b37a6cd45b21bc94e3de5412fee0765e7dad6b7c8561a01cebd193ab6"
+      ],
+      "id": "USDC_FEED_MUST_BE_USDC_USD",
+      "record_role": "oracle_boundary",
+      "severity": "critical",
+      "tx_hash": "0xcfedf63b37a6cd45b21bc94e3de5412fee0765e7dad6b7c8561a01cebd193ab6",
+      "type": "feed_mismatch"
+    },
+    {
+      "block_number": 24538897,
+      "candidate_actor_roles": {
+        "actor": "",
+        "supplier": "0x3885869b0f4526806b468a0c64a89bb860a18cee"
+      },
+      "case": "ploutos",
+      "constraint_id": "COLLATERAL_ENABLING_SUPPLY",
+      "details": {
+        "amount": "unknown",
+        "asset": "USDC",
+        "evidence_rule": "first risky collateral supply or latest top-up before same-actor impact",
+        "reasons": [
+          "bad_oracle:first_risky_collateral_supply",
+          "bad_oracle:latest_topup_before_impact"
+        ],
+        "supplier": "0x3885869b0f4526806b468a0c64a89bb860a18cee"
+      },
+      "evidence_tx_hashes": [
+        "0xa17dc37e1b65c65d20042212fb834974f7faaa961442e3fc05393778705f8474"
+      ],
+      "id": "COLLATERAL_ENABLING_SUPPLY",
+      "record_role": "early_evidence",
+      "severity": "high",
+      "tx_hash": "0xa17dc37e1b65c65d20042212fb834974f7faaa961442e3fc05393778705f8474",
+      "type": "collateral_enabling_supply_under_bad_oracle"
+    },
+    {
+      "block_number": 24538897,
+      "candidate_actor_roles": {
+        "actor": "",
+        "borrower": "0x3885869b0f4526806b468a0c64a89bb860a18cee"
+      },
+      "case": "ploutos",
+      "constraint_id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "details": {
+        "borrow_amount": "unknown",
+        "borrow_asset": "unknown",
+        "borrower": "0x3885869b0f4526806b468a0c64a89bb860a18cee",
+        "collateral_asset": "USDC",
+        "reasons": [
+          "feed_mismatch"
+        ]
+      },
+      "evidence_tx_hashes": [
+        "0xa17dc37e1b65c65d20042212fb834974f7faaa961442e3fc05393778705f8474"
+      ],
+      "id": "BORROW_AFTER_ORACLE_VIOLATION",
+      "record_role": "borrow",
+      "severity": "critical",
+      "tx_hash": "0xa17dc37e1b65c65d20042212fb834974f7faaa961442e3fc05393778705f8474",
+      "type": "attacker_localization"
+    }
+  ],
+  "attacker_candidates": [
+    {
+      "address": "0x3885869b0f4526806b468a0c64a89bb860a18cee",
+      "profit_summary": [
+        "borrowed unknown unknown against USDC"
+      ],
+      "roles": [
+        "borrower"
+      ],
+      "tx_hashes": [
+        "0xa17dc37e1b65c65d20042212fb834974f7faaa961442e3fc05393778705f8474"
+      ]
+    }
+  ],
+  "case": "ploutos",
+  "case_name": "Ploutos Money USDC oracle misconfiguration",
+  "chain": "ethereum",
+  "formula_violations": {},
+  "implementation_mismatches": {},
+  "input_records": 4,
+  "known_txs": {
+    "config": "0xcfedf63b37a6cd45b21bc94e3de5412fee0765e7dad6b7c8561a01cebd193ab6",
+    "exploit": "0xa17dc37e1b65c65d20042212fb834974f7faaa961442e3fc05393778705f8474"
+  },
+  "oracle_map": {
+    "usdc": {
+      "actual_feed": "BTC/USD",
+      "asset": "USDC",
+      "block_number": 24538896,
+      "expected_feed": "USDC/USD",
+      "tx_hash": "0xcfedf63b37a6cd45b21bc94e3de5412fee0765e7dad6b7c8561a01cebd193ab6"
+    }
+  },
+  "price_source_outliers": {},
+  "stale_assets": {}
+}

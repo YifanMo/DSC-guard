@@ -1,0 +1,7 @@
+case,loss_metric,detected_loss,public_reference,coverage,loss_confidence,primary_amount,known_usd_estimate,unknown_or_internal_flow_count,loss_summary
+ploutos,largest_known_token_flow_in_exploit_receipt_not_protocol_loss,187.366746326704993556 WETH,not_estimated,receipt_flow_estimated,receipt_flow_estimated,187.366746326704993556 WETH,,2,receipt_flow_estimated: largest known-token flow 187.366746326704993556 WETH
+moonwell_cbeth,cbETH borrowed,465.81700159946678042,not_estimated,representative materialized amount,protocol_event_decoded,465.81700159946678042 cbETH,,,cbeth_borrowed=465.81700159946678042
+moonwell_wrseth,public bad debt USD,3700000,3700000,forum canonical attack tx list,public_postmortem_reference,3700000 USD,3700000,,public_bad_debt_usd=3700000; canonical_attack_txs=12
+blueberry_faulty_oracle,reported proceeds ETH,457,457,postmortem canonical attack transaction,public_postmortem_reference,457 ETH proceeds,,,reported_proceeds_eth=457; canonical_attack_txs=1
+venus_luna,BUSD borrowed,11686144.73999,11411700,main accounts exceed public narrative,protocol_event_decoded,11686144.73999 BUSD,11686144.73999,0,total_borrowed_busd=11686144.73999; top_two=11411700
+blizz_luna,known borrowed USD,6305417.642606887,8280000,76.15238698800589%,dune_amount_usd_known,6305417.642606887 USD,6305417.642606887,11,known_borrowed_usd=6305417.642606887; public_loss_usd=8280000; coverage=76.15238698800589

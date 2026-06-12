@@ -1,0 +1,194 @@
+{
+  "generated_at": "2026-05-27T14:29:27.681951+00:00",
+  "source_boundary": "Verified protocol/oracle source targets are configured in config/cases.json and collected under cache/sources/{case}. Slither IR was generated from collected verified sources with --require-slither; some fetched files may be skipped due to import/remapping or explorer source-format issues, and those warnings are retained per case.",
+  "toolchain": {
+    "slither": "0.10.4",
+    "solc_default": [
+      "solc, the solidity compiler commandline interface",
+      "Version: 0.8.35+commit.47b9dedd.Darwin.appleclang"
+    ],
+    "kompile": [
+      "K version:    v7.1.282",
+      "Build date:   Wed Aug 27 02:56:15 HKT 2025"
+    ],
+    "krun": [
+      "K version:    v7.1.282",
+      "Build date:   Wed Aug 27 02:56:15 HKT 2025"
+    ],
+    "java": [
+      "openjdk version \"26.0.1\" 2026-04-21",
+      "OpenJDK Runtime Environment Homebrew (build 26.0.1)",
+      "OpenJDK 64-Bit Server VM Homebrew (build 26.0.1, mixed mode, sharing)"
+    ]
+  },
+  "cases": [
+    {
+      "case": "ploutos",
+      "source_targets_configured": 2,
+      "source_collection_entries": 2,
+      "source_files_collected": 7,
+      "source_entries_without_files": [
+        "0x3e47945cca05439f99029a3d21e3166ce1a84fab"
+      ],
+      "slither_backend": "slither",
+      "slither_ir": "artifacts/slither_ir/ploutos.json",
+      "slither_targets_mined": 7,
+      "slither_target_sample": [
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/dependencies/chainlink/AggregatorInterface.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/interfaces/IACLManager.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/interfaces/IAaveOracle.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/interfaces/IPoolAddressesProvider.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30/_aave/core-v3/contracts/interfaces/IPriceOracleGetter.sol"
+      ],
+      "slither_contract_count": 16,
+      "slither_event_semantics_count": 3,
+      "slither_warning_count": 1,
+      "slither_warning_sample": [
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30: Invalid compilation: \n/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/ploutos/0x9dce7a180c34203fee8ce8ca62f244feeb67bd30 is a directory. Expected a Solidity file when not using a compilation framework."
+      ],
+      "k_module": "artifacts/k/ploutos.k",
+      "k_compiled": true,
+      "k_compiled_dir": "artifacts/k/ploutos-kompiled"
+    },
+    {
+      "case": "moonwell_cbeth",
+      "source_targets_configured": 3,
+      "source_collection_entries": 4,
+      "source_files_collected": 47,
+      "source_entries_without_files": [],
+      "slither_backend": "slither",
+      "slither_ir": "artifacts/slither_ir/moonwell_cbeth.json",
+      "slither_targets_mined": 39,
+      "slither_target_sample": [
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a/lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a/lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a/lib/openzeppelin-contracts/contracts/utils/Address.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a/src/CarefulMath.sol"
+      ],
+      "slither_contract_count": 156,
+      "slither_event_semantics_count": 107,
+      "slither_warning_count": 12,
+      "slither_warning_sample": [
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a: Invalid compilation: \n/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a is a directory. Expected a Solidity file when not using a compilation framework.",
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a/src/MErc20.sol: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a/src/MErc20.sol: Invalid compilation: \nInvalid solc compilation Error: Source \"@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol\" not found: File not found. Searched the following locations: \"\".\n --> cache/sources/moonwell_cbeth/0x599d4a1538d686814ee11b331eacbba166d7c41a/src/MErc20.sol:4:1:\n  |\n4 | import \"@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol\";\n  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+      ],
+      "k_module": "artifacts/k/moonwell_cbeth.k",
+      "k_compiled": true,
+      "k_compiled_dir": "artifacts/k/moonwell_cbeth-kompiled"
+    },
+    {
+      "case": "moonwell_wrseth",
+      "source_targets_configured": 4,
+      "source_collection_entries": 4,
+      "source_files_collected": 27,
+      "source_entries_without_files": [
+        "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb"
+      ],
+      "slither_backend": "slither",
+      "slither_ir": "artifacts/slither_ir/moonwell_wrseth.json",
+      "slither_targets_mined": 27,
+      "slither_target_sample": [
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x4a61db12d0cb4293d799ecdd82e5994b5746f850/contract/AccessControlledOffchainAggregator.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x4a61db12d0cb4293d799ecdd82e5994b5746f850/contract/AccessControllerInterface.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x4a61db12d0cb4293d799ecdd82e5994b5746f850/contract/AggregatorInterface.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x4a61db12d0cb4293d799ecdd82e5994b5746f850/contract/AggregatorV2V3Interface.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x4a61db12d0cb4293d799ecdd82e5994b5746f850/contract/AggregatorV3Interface.sol"
+      ],
+      "slither_contract_count": 82,
+      "slither_event_semantics_count": 77,
+      "slither_warning_count": 3,
+      "slither_warning_sample": [
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x4a61db12d0cb4293d799ecdd82e5994b5746f850: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x4a61db12d0cb4293d799ecdd82e5994b5746f850: Invalid compilation: \n/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x4a61db12d0cb4293d799ecdd82e5994b5746f850 is a directory. Expected a Solidity file when not using a compilation framework.",
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x71041dddad3595f9ced3dccfbe3d1f4b0a16bb70: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x71041dddad3595f9ced3dccfbe3d1f4b0a16bb70: Invalid compilation: \n/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/moonwell_wrseth/0x71041dddad3595f9ced3dccfbe3d1f4b0a16bb70 is a directory. Expected a Solidity file when not using a compilation framework."
+      ],
+      "k_module": "artifacts/k/moonwell_wrseth.k",
+      "k_compiled": true,
+      "k_compiled_dir": "artifacts/k/moonwell_wrseth-kompiled"
+    },
+    {
+      "case": "blueberry_faulty_oracle",
+      "source_targets_configured": 5,
+      "source_collection_entries": 7,
+      "source_files_collected": 64,
+      "source_entries_without_files": [
+        "0x16d43cac32329ec286dc14431e0c0e805e6f5174",
+        "0x3aa228a80f50763045bdfc45012da124bd0a6809"
+      ],
+      "slither_backend": "slither",
+      "slither_ir": "artifacts/slither_ir/blueberry_faulty_oracle.json",
+      "slither_targets_mined": 61,
+      "slither_target_sample": [
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59/lib/blueberry-core/contracts/interfaces/IAnkrETH.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59/lib/blueberry-core/contracts/interfaces/IBaseOracle.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59/lib/blueberry-core/contracts/interfaces/IWstETH.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59/lib/blueberry-core/contracts/interfaces/chainlink/IAggregatorV3Interface.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59/lib/blueberry-core/contracts/utils/BlueberryConst.sol"
+      ],
+      "slither_contract_count": 280,
+      "slither_event_semantics_count": 168,
+      "slither_warning_count": 8,
+      "slither_warning_sample": [
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59: Invalid compilation: \n/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59 is a directory. Expected a Solidity file when not using a compilation framework.",
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59/lib/blueberry-core/contracts/oracle/BaseAdapter.sol: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59/lib/blueberry-core/contracts/oracle/BaseAdapter.sol: Invalid compilation: \nInvalid solc compilation Error: Source \"@openzeppelin/contracts-upgradeable/access/Ownable2StepUpgradeable.sol\" not found: File not found. Searched the following locations: \"\".\n  --> cache/sources/blueberry_faulty_oracle/0x5818562baac907b859e27813e8c0962d416dab59/lib/blueberry-core/contracts/oracle/BaseAdapter.sol:13:1:\n   |\n13 | import { Ownable2StepUpgradeable } from \"@openzeppelin/contracts-upgradeable/access/Ownable2StepUpgradeable.sol\";\n   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+      ],
+      "k_module": "artifacts/k/blueberry_faulty_oracle.k",
+      "k_compiled": true,
+      "k_compiled_dir": "artifacts/k/blueberry_faulty_oracle-kompiled"
+    },
+    {
+      "case": "venus_luna",
+      "source_targets_configured": 3,
+      "source_collection_entries": 5,
+      "source_files_collected": 56,
+      "source_entries_without_files": [],
+      "slither_backend": "slither",
+      "slither_ir": "artifacts/slither_ir/venus_luna.json",
+      "slither_targets_mined": 46,
+      "slither_target_sample": [
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0xa43845cc2c0f74dace13f4adebdcc178eba49980/contracts/CarefulMath.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0xa43845cc2c0f74dace13f4adebdcc178eba49980/contracts/ComptrollerInterface.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0xa43845cc2c0f74dace13f4adebdcc178eba49980/contracts/EIP20Interface.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0xa43845cc2c0f74dace13f4adebdcc178eba49980/contracts/EIP20NonStandardInterface.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0xa43845cc2c0f74dace13f4adebdcc178eba49980/contracts/ErrorReporter.sol"
+      ],
+      "slither_contract_count": 236,
+      "slither_event_semantics_count": 227,
+      "slither_warning_count": 15,
+      "slither_warning_sample": [
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0x95c78222b3d6e262426483d42cfa53685a67ab9d: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0x95c78222b3d6e262426483d42cfa53685a67ab9d: Invalid compilation: \n/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0x95c78222b3d6e262426483d42cfa53685a67ab9d is a directory. Expected a Solidity file when not using a compilation framework.",
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0x95c78222b3d6e262426483d42cfa53685a67ab9d/VBep20Delegator.sol: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0x95c78222b3d6e262426483d42cfa53685a67ab9d/VBep20Delegator.sol: Invalid compilation: \nInvalid solc compilation /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/venus_luna/0x95c78222b3d6e262426483d42cfa53685a67ab9d/VBep20Delegator.sol:1:1: Error: Expected pragma, import directive or contract/interface/library definition.\n{\"ComptrollerInterface.sol\":{\"conten ...\n^\n"
+      ],
+      "k_module": "artifacts/k/venus_luna.k",
+      "k_compiled": true,
+      "k_compiled_dir": "artifacts/k/venus_luna-kompiled"
+    },
+    {
+      "case": "blizz_luna",
+      "source_targets_configured": 5,
+      "source_collection_entries": 7,
+      "source_files_collected": 41,
+      "source_entries_without_files": [],
+      "slither_backend": "slither",
+      "slither_ir": "artifacts/slither_ir/blizz_luna.json",
+      "slither_targets_mined": 33,
+      "slither_target_sample": [
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/Address.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/Context.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/DataTypes.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/Errors.sol",
+        "/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/IAaveIncentivesController.sol"
+      ],
+      "slither_contract_count": 208,
+      "slither_event_semantics_count": 218,
+      "slither_warning_count": 15,
+      "slither_warning_sample": [
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00: Invalid compilation: \n/Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00 is a directory. Expected a Solidity file when not using a compilation framework.",
+        "Slither failed for /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol: Slither failed to parse /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol: Invalid compilation: \nInvalid solc compilation Error: Source \"IERC20.sol\" not found: File not found.\n --> /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol:4:1:\n  |\n4 | import {IERC20} from \"IERC20.sol\";\n  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Source \"SafeERC20.sol\" not found: File not found.\n --> /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol:5:1:\n  |\n5 | import {SafeERC20} from \"SafeERC20.sol\";\n  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Source \"ILendingPool.sol\" not found: File not found.\n --> /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol:6:1:\n  |\n6 | import {ILendingPool} from \"ILendingPool.sol\";\n  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Source \"IAToken.sol\" not found: File not found.\n --> /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol:7:1:\n  |\n7 | import {IAToken} from \"IAToken.sol\";\n  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Source \"WadRayMath.sol\" not found: File not found.\n --> /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol:8:1:\n  |\n8 | import {WadRayMath} from \"WadRayMath.sol\";\n  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Source \"Errors.sol\" not found: File not found.\n --> /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol:9:1:\n  |\n9 | import {Errors} from \"Errors.sol\";\n  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Source \"VersionedInitializable.sol\" not found: File not found.\n  --> /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol:10:1:\n   |\n10 | import {VersionedInitializable} from \"VersionedInitializable.sol\";\n   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Source \"IncentivizedERC20.sol\" not found: File not found.\n  --> /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol:11:1:\n   |\n11 | import {IncentivizedERC20} from \"IncentivizedERC20.sol\";\n   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Source \"IAaveIncentivesController.sol\" not found: File not found.\n  --> /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol:12:1:\n   |\n12 | import {IAaveIncentivesController} from \"IAaveIncentivesController.sol\";\n   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Source \"SafeMath.sol\" not found: File not found.\n  --> /Users/moyifan/Desktop/desktop/oracle_misconfigure/cache/sources/blizz_luna/0x119730d8d93883af00f34019e692327b9410fd00/AToken.sol:13:1:\n   |\n13 | import {SafeMath} from \"SafeMath.sol\";\n   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+      ],
+      "k_module": "artifacts/k/blizz_luna.k",
+      "k_compiled": true,
+      "k_compiled_dir": "artifacts/k/blizz_luna-kompiled"
+    }
+  ]
+}

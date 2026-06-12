@@ -1,0 +1,299 @@
+{
+  "ablation_summary": {
+    "full_dsc_guard": {
+      "actor_recall": 1.0,
+      "benign_warning_rate": 0.0014,
+      "impact_tx_recall": 1.0,
+      "replayable_case_recall": 1.0
+    },
+    "impact_only_without_oracle_boundary": {
+      "actor_recall": 0.0,
+      "benign_warning_rate": 0.0,
+      "impact_tx_recall": 0.0,
+      "replayable_case_recall": 0.0
+    },
+    "oracle_boundary_without_lending_binding": {
+      "actor_recall": 0.0,
+      "benign_warning_rate": 1.0,
+      "impact_tx_recall": 0.0,
+      "replayable_case_recall": 0.0
+    },
+    "topic_only_raw_filter": {
+      "actor_recall": 0.0,
+      "benign_warning_rate": 1.0,
+      "impact_tx_recall": 0.0,
+      "replayable_case_recall": 0.0
+    },
+    "without_log_semantics_abi_only": {
+      "actor_recall": 0.0,
+      "benign_warning_rate": 0.9641,
+      "impact_tx_recall": 0.0,
+      "replayable_case_recall": 0.0
+    }
+  },
+  "bucket_counts": {
+    "review": 14,
+    "strict_benign": 9637,
+    "unknown": 349
+  },
+  "by_case": [
+    {
+      "case_related_to": "blizz_luna",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 1623,
+      "strict_rate": 1.0,
+      "total": 1623,
+      "unknown": 0
+    },
+    {
+      "case_related_to": "blueberry_faulty_oracle",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 1,
+      "strict_rate": 0.029411764705882353,
+      "total": 34,
+      "unknown": 33
+    },
+    {
+      "case_related_to": "moonwell_cbeth",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 2580,
+      "strict_rate": 0.8908839779005525,
+      "total": 2896,
+      "unknown": 316
+    },
+    {
+      "case_related_to": "moonwell_wrseth",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 636,
+      "strict_rate": 1.0,
+      "total": 636,
+      "unknown": 0
+    },
+    {
+      "case_related_to": "ploutos",
+      "other": 0,
+      "review": 14,
+      "strict_benign": 46,
+      "strict_rate": 0.7666666666666667,
+      "total": 60,
+      "unknown": 0
+    },
+    {
+      "case_related_to": "venus_luna",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 4751,
+      "strict_rate": 1.0,
+      "total": 4751,
+      "unknown": 0
+    }
+  ],
+  "by_chain": [
+    {
+      "chain": "avalanche_c",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 1623,
+      "strict_rate": 1.0,
+      "total": 1623,
+      "unknown": 0
+    },
+    {
+      "chain": "base",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 3216,
+      "strict_rate": 0.9105322763306908,
+      "total": 3532,
+      "unknown": 316
+    },
+    {
+      "chain": "bnb",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 4751,
+      "strict_rate": 1.0,
+      "total": 4751,
+      "unknown": 0
+    },
+    {
+      "chain": "ethereum",
+      "other": 0,
+      "review": 14,
+      "strict_benign": 47,
+      "strict_rate": 0.5,
+      "total": 94,
+      "unknown": 33
+    }
+  ],
+  "by_failure_class": [
+    {
+      "failure_class": "feed_binding_failure",
+      "other": 0,
+      "review": 14,
+      "strict_benign": 46,
+      "strict_rate": 0.7666666666666667,
+      "total": 60,
+      "unknown": 0
+    },
+    {
+      "failure_class": "freshness_handling_failure",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 6374,
+      "strict_rate": 1.0,
+      "total": 6374,
+      "unknown": 0
+    },
+    {
+      "failure_class": "price_composition_failure",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 2580,
+      "strict_rate": 0.8908839779005525,
+      "total": 2896,
+      "unknown": 316
+    },
+    {
+      "failure_class": "price_semantics_mismatch",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 637,
+      "strict_rate": 0.9507462686567164,
+      "total": 670,
+      "unknown": 33
+    }
+  ],
+  "by_scope_class": [
+    {
+      "other": 0,
+      "review": 0,
+      "scope_class": "S1",
+      "strict_benign": 6374,
+      "strict_rate": 1.0,
+      "total": 6374,
+      "unknown": 0
+    },
+    {
+      "other": 0,
+      "review": 14,
+      "scope_class": "S2",
+      "strict_benign": 47,
+      "strict_rate": 0.734375,
+      "total": 64,
+      "unknown": 3
+    },
+    {
+      "other": 0,
+      "review": 0,
+      "scope_class": "S3",
+      "strict_benign": 637,
+      "strict_rate": 0.9550224887556222,
+      "total": 667,
+      "unknown": 30
+    },
+    {
+      "other": 0,
+      "review": 0,
+      "scope_class": "S4",
+      "strict_benign": 2579,
+      "strict_rate": 0.890846286701209,
+      "total": 2895,
+      "unknown": 316
+    }
+  ],
+  "by_stratum": [
+    {
+      "benign_stratum": "case_topic",
+      "other": 0,
+      "review": 14,
+      "strict_benign": 3263,
+      "strict_rate": 0.8998896856039713,
+      "total": 3626,
+      "unknown": 349
+    },
+    {
+      "benign_stratum": "same_oracle",
+      "other": 0,
+      "review": 0,
+      "strict_benign": 6374,
+      "strict_rate": 1.0,
+      "total": 6374,
+      "unknown": 0
+    }
+  ],
+  "dataset": "no_dune_10k_case_aware_benign",
+  "excluded_rows": 363,
+  "input_samples": "artifacts/eval_dataset/no_dune_10k/materialized/materialized_samples.jsonl",
+  "materialization_summary": {
+    "cumulative_cache_files": {
+      "debug_trace": 312,
+      "rpc": 38275,
+      "source": 5508
+    },
+    "request_budget": {
+      "debug_trace_max": 2000,
+      "debug_trace_used": 0,
+      "rpc_max": 60000,
+      "rpc_used": 0,
+      "source_max": 12000,
+      "source_used": 0
+    }
+  },
+  "review_reason_table": [
+    {
+      "case_counts": {
+        "ploutos": 14
+      },
+      "count": 14,
+      "reason": "feed_binding_log_with_incomplete_actual_feed_identity",
+      "scope_counts": {
+        "S2": 14
+      }
+    }
+  ],
+  "review_rows": 14,
+  "rq2_detection_summary": {
+    "positive_case_recall": 1.0,
+    "positive_impact_tx_recall": 1.0,
+    "strict_row_fp": 0,
+    "strict_row_fp_rate": 0.0
+  },
+  "status_counts": {
+    "materialized_no_replayable_constraint_violation": 9591,
+    "needs_review_case_asset_other_feed": 14,
+    "unknown_after_materialization": 349,
+    "verified_no_case_feed_mismatch": 46
+  },
+  "strict_benign_rows": 9637,
+  "strict_denominator_rule": "Only strict_benign rows enter the confirmed false-positive denominator.",
+  "total_rows": 10000,
+  "unknown_reason_table": [
+    {
+      "case_counts": {
+        "blueberry_faulty_oracle": 33
+      },
+      "count": 33,
+      "reason": "generic_oracle_scope_log_not_bound_to_replay_semantics",
+      "scope_counts": {
+        "S2": 3,
+        "S3": 30
+      }
+    },
+    {
+      "case_counts": {
+        "moonwell_cbeth": 316
+      },
+      "count": 316,
+      "reason": "generic_oracle_scope_log_without_source_or_abi",
+      "scope_counts": {
+        "S4": 316
+      }
+    }
+  ],
+  "unknown_rows": 349
+}

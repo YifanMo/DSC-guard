@@ -1,0 +1,527 @@
+# Venus Protocol LUNA stale oracle consumption
+
+- Case: `venus_luna`
+- Chain: `bsc`
+- Input records: `218`
+- Alerts: `201`
+
+## Key Transactions
+
+- stale_oracle_last_update: `0xa73bcdba45d34dde372a3284ef4749004a76b2e04be345c602c99d60f4048d4f`
+- sample_luna_deposit: `0xa9a0682280af5be4e6d58ad7cc24018719aaaf3ed04f3a1d2316361ab11735ec`
+- sample_borrow_busd: `0xb81cabf803237f12e145434f68b7e541e0829da17fbf55e347e782e7c6b10a63`
+
+## Alerts
+
+- `LUNA_ORACLE_MUST_BE_FRESH` (stale_oracle, critical) at block `17737661`, tx `0xa73bcdba45d34dde372a3284ef4749004a76b2e04be345c602c99d60f4048d4f`
+  - asset=LUNA, feed=0xec72d46011d67a6ac4fa7d3f476fa2049dc807ee, answer=0.10736482, updated_at=1652355524, block_timestamp=1652355524, tx_hash=0xa73bcdba45d34dde372a3284ef4749004a76b2e04be345c602c99d60f4048d4f, reason=chainlink_answer_stopped_near_lower_bound
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17737818`, tx `0xf5004eb392b1e9403cb5d5e40d11981352d6afe9214d0896cc55fb111e0ff41f`
+  - borrower=0x41659b40e02e17fac38681aa4a8f72e52158e8a8, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=100, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17737826`, tx `0x6ee5c981fd1ce8f6cfe9b539ba689312b7129fce95a34fff2a96bf5743198156`
+  - supplier=0x6f3390a9ec8125209d88062c14bad7dc0220251b, asset=LUNA, amount=2569.619264, reasons=['stale_oracle:first_risky_collateral_supply', 'stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17737847`, tx `0xbf6da7bcab63cba7907406fdb53b7b209f712bbc5c8dd9d7cca4e1b173dc7fed`
+  - supplier=0x41659b40e02e17fac38681aa4a8f72e52158e8a8, asset=LUNA, amount=3000, reasons=['stale_oracle:first_risky_collateral_supply', 'stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17738004`, tx `0x34d221974148d8d3816c623e0efe26adcf2d25aee5ba5d0e930cba11bdc12281`
+  - borrower=0x30c743831c4cd47454e0006067f66d7da0310a01, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=5, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17738047`, tx `0x11ac0d8d550287302b9e7a46772966eaa38e6bab144278cdbc32cfe23862bbdb`
+  - supplier=0x6346766678a3045613e14835d4b33c4793f397c1, asset=LUNA, amount=3270.243995, reasons=['stale_oracle:first_risky_collateral_supply', 'stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17738478`, tx `0x00162b01bee8203f02251e040a32436662c9f691723411214353ab25b0673d27`
+  - borrower=0x6f3390a9ec8125209d88062c14bad7dc0220251b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=40, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17738501`, tx `0xec4353ece5b4f04983d3b5e3fdd4e6686b5c07019ddfc4d3ac8a991a4f5fc37d`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=10, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17738569`, tx `0xfc50df8fe290fd86c1f3fa5c9c7d0a38b3a9213e829883c318c8295bf793eb82`
+  - borrower=0x41659b40e02e17fac38681aa4a8f72e52158e8a8, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=200, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17738705`, tx `0xa2f81e0ce3fe738abe85fcb6ee5898b714eefb75acfbceb2eff5d66e2b062de5`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=100, reasons=['stale_oracle:first_risky_collateral_supply', 'stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739018`, tx `0x382484444a46b2898902f6556e91ad2d6f89adb984746276de8c9858db8b7f9d`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=21916.491916, reasons=['stale_oracle:first_risky_collateral_supply', 'stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739034`, tx `0x9c077d3c492fd07d713aa4f2488e1d6c94407b955039a7e8a19b5bc788a6118f`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=700, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739088`, tx `0xd4a23b03c9e19bf937a4babc7512d51d01350674b329e70c6b303de64f54327f`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=389547.144634, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739115`, tx `0x6aa4448f7e9c4104bb68b4e1cae1eb85654dbe767b69c7d39c0e7623e6fcd3f4`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=23000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739166`, tx `0x4924d6c709923a741834d0ae9f5b05d02b6fde6ef5fcfa85dfb3598ff18c8664`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=402128.882361, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739178`, tx `0xd85cdde4d6cc781595853467a3c2d2db8b83093bcda27597e05e7f8e2e7132f0`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=24000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739206`, tx `0xc9a69967b104180853dcb0a7a5c0dc7689b444bd41f9e3bb5b423395a102b217`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=377277.768009, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739220`, tx `0x72ed96111b9378aeef49de49163ae43932f61df05525563e0c8fe375708b7a00`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=22000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739277`, tx `0x3af0230805c6932f3c806ae598b3d42a68bbd52cd0b241373648667dce1c4780`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=412570.571515, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739305`, tx `0x788c3ad9535bc652077c0c74b3937be4b790ea2783ddff4e626406fd8561437d`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=24000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739365`, tx `0x901bba7c218891adda97588b3e3d57c1cf5a68904fb2c99469fe436f18a5c8cf`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=434882.937701, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739383`, tx `0x16a1b39c82a2758dc6dfc67a102179c6c487d0c98dbb873b7416791802d000e4`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=26000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739384`, tx `0xb012400c94380a94bbe482be5b28f4ea84b615736cd398449a5a6035ddd0bf44`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=667.355161, reasons=['stale_oracle:first_risky_collateral_supply', 'stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739407`, tx `0xff71e96d311b4395a900087b1df39ef8f8586b1c74f0d7f566006de98cb7039b`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=401544.242041, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739422`, tx `0x0573f68fb6f116fd239457d4434f3da585c2d55a42558c3187194efaeba5feb4`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=10, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739433`, tx `0x0965b72164bf9096eaf7d45cc4e4594ba67ba3f6cb803ef319036230e047c8f8`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=23000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739450`, tx `0x9cb463d1e3ac2a4bc1e497ad8c7899a0b017aa290d03840149fde67244ac5921`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=417287.474373, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739481`, tx `0x55e3114541cc8fe98044e512171ddbaa88f36ad5b94c0bf12b786696deb1fd90`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=392015.847715, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739503`, tx `0xb4e2eebc317606400b44bc4eac886ae6932429aea31406e0ea9a335a163f78a3`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=435.596935, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739514`, tx `0xfac150abc78be42ccdbb60f69d89b26e00ba2f308ed445d1b42ecb0654b17b07`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=20, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739519`, tx `0x6b927ab5d4c9015a019a3e3ffd3ec4cdf647ad9fea908e7da5a672f239533344`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=392205.505667, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739533`, tx `0x7108af727c40340b4ec0112230331960c7637c91859bef1273bd48d9f9e467aa`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=938.699796, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739546`, tx `0x9cac3831741849f607e2bb5c727132783593b714c9ca71a45f7dc51f7f646bae`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=50, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739557`, tx `0x489c4fe6df9a8a74d4ab07b91c28526af1db6adab40c8e7c00e82dfe339bb8e5`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=425129.658529, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739570`, tx `0xbd8e3a01812f795e37fcccf89ef259562b29c9879e3febc5d8112c8d35bc5c05`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=2350.874859, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739585`, tx `0xabe3fa5c9b9110e51809257590655b982216c456753f81f8293d47cf6913752c`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=100, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739601`, tx `0x3c3eec4b74e795272fbf1b4cc1738568bb75e7bca851b2d03dd48290d0a41616`
+  - borrower=0x6346766678a3045613e14835d4b33c4793f397c1, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=3000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739612`, tx `0xf960888a16aa859e376db178a57eb06134c300c1b435be6b8541211d5ede6dd0`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=2285.773502, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739629`, tx `0x2a9a2f87e24a412be7589c32060790740929b71012f5469ff9f09f0599b94b2d`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=200, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739631`, tx `0x913b2242c14d8a6ba4cd953e28c31b10eb7afb449c0448277a99299e2c3a6489`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=400754.857854, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739648`, tx `0xff29951cc6bede42302ed7f345944c3e2ef3c31e336e3bc4f2e0d473eb854c18`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=24000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739662`, tx `0xf3d95871642c7f2271ca1665d622e3f820762257f858b1ecc4d94e04fda18649`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=4619.428188, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739673`, tx `0xcf66db97d65d9bc3753a90fc957e18f708aaecf63aa6de99ad40ea9ca13b9cfa`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=250, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739680`, tx `0x3c51b474be986c9de7686d97d694eac27bed9d36d3da9b543312d1f794a4721c`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=405842.885712, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739693`, tx `0x3a98ddb59bc956af7221febd1ce88f15537a3857ace6b594551a9bca9b312eac`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=49000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739695`, tx `0x1b87731b3dbe9398d1d9c521e3c2a8538a7e839f5f3cf7550ff638d4140ff2d5`
+  - supplier=0xdf99f63bc8f1ce2fd7aa0c0140a0340f91fb4680, asset=LUNA, amount=118.765276, reasons=['stale_oracle:first_risky_collateral_supply', 'stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739702`, tx `0x18f19c0751e9743ba02d0d5c604c4621d73ad879eccaec8933f312a7116a7d6e`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=5827.802472, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739720`, tx `0x18b88b7ccbc1925331d1470530177e1dd4df5ea40710de32b31387f882417240`
+  - borrower=0xdf99f63bc8f1ce2fd7aa0c0140a0340f91fb4680, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=10.5, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739733`, tx `0x885a88e0791988324a357a52d4fa8415c4f218bfb205e391a165f2c17fae176b`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=400, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739736`, tx `0xf4f7d0407c9cca19e4a3b25ca262ad9f01219414f96f9b2dab87bda3cb7e79aa`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=395208.800082, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739748`, tx `0x75bb466e5459eb3aee1bfc50815f69944ce657ed1adc6037bff10a7909f62398`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=46000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739750`, tx `0xefc247a98ab230ff1705bae2eefcf55aa1564b52292b40935038f0f76b2a979c`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=18538.327701, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739767`, tx `0xdac29956b78425e76b6e1733271301c0ff317e39865e71dd1e4c59b4202c799d`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=1000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739787`, tx `0x60884d1fbb9665ca06c1b3de634c6432043b103bc8f45dbf74fa7792540bb5d8`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=822372.828507, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739801`, tx `0x9a9437fd6397d992323808dfef467920d619686d17b935ce53efabc3803614b7`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=48000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739804`, tx `0x3dcc2c4665f8f7d6bad4b65f3ad53281120ca2b87cc89850c286f24cb5fe3410`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=700, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739804`, tx `0xb9e0b1405ee5af70e93ffeb89847bf9d9e27af8cc5adc2d781c573194b9bf16e`
+  - borrower=0x584f31474ce439a2b463b544f547f95b9aa1dd64, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=50, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739812`, tx `0xaf393ddc11d49943599b615492b0e817940948b2819a405203f5e845fa31e798`
+  - borrower=0x6346766678a3045613e14835d4b33c4793f397c1, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=4000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739830`, tx `0x371f495fe609815bb726b28bdf2dd33592e47f2fdce5cb09d0ad25a5a4e9e5af`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=1259442.878858, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739836`, tx `0x4efec7458d2416c40ab22184c2e1eca7a1c5cf027b52996863a3aa4e31f5e01c`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=31618.90618, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739845`, tx `0xc46566372d098b12969acae5ede83f08e6cca7eb8d68a1ee6f3dabe73fb3daf2`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=74000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17739848`, tx `0x4f2908335ce9f02e891657abb776f266fc5038d1ae8309eb5982d21a9c34c5a8`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=1000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739942`, tx `0x3bbfec2ad4aeaacb4bbaf9520c188267128cdfda88985bc28515c285c620b611`
+  - supplier=0xdf99f63bc8f1ce2fd7aa0c0140a0340f91fb4680, asset=LUNA, amount=364.616152, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17739981`, tx `0x2aa6453eb7a3afee350d1fe959bad69bbd7a186861656920dd6cc6b581cc412b`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=1743713.755901, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740048`, tx `0xd4d2a61109184eb85e9ac64cfc322fd6a7acc0cd3176547750195bb018c169d2`
+  - borrower=0x6346766678a3045613e14835d4b33c4793f397c1, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=3000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740087`, tx `0x5fde0550b9f44c0a90cb0da98d97265a1688774896571655919d0c863d24f141`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=523747.680739, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740098`, tx `0x91ca43135e6a405964dd9e8b264d499e10c14e9e961303bc451539e3de497fd2`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=30000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740137`, tx `0x75489dbfddfc45c63602f69a7a65aed6d3f65e07715181d36877e2e36e021118`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=1037674.870941, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740159`, tx `0x1c16e88c090702d6f7d5e85b3c4819620728e34037fa4d982e1eac79d215cae0`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=61000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740166`, tx `0xef50ae4f26e07ad067ea4598dee243012c839fc1da0ac7268415ab56b2a8a9a2`
+  - borrower=0x6346766678a3045613e14835d4b33c4793f397c1, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=1700, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740203`, tx `0xcd09f7bcc9caca05ccd63ca2776436b4436f47021a66645672f0b4fca8f0e5ef`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=1139660.209168, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740217`, tx `0x91a299fa5b9305c02d403659439121308c710cd959592883228f12e38416300f`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=67000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740258`, tx `0x3597f57ed560e9f48752763a89ec7a1d3bacc01ace8c5a38898426a064eebf4a`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=1851555.606793, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740274`, tx `0xd4dc6f4079cbc065b2eb1b936d53bf5241241ebef711e49b2672e460af0acdfb`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=109000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740301`, tx `0x0649fc7465cb106abdd44efd9af8ce51fe839870f3e08733c8053dccf65826da`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=1776349.743823, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740346`, tx `0x7b79d8a24a2564138d9a81b05418f809a1f256a867c92bad9b7f5f97ecb87663`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=2219892.464995, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740418`, tx `0x7679e1894b4b9eb64cb89a3ddd386e2283b476772e2e263d13fb654af387daa2`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=2283085.802153, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740467`, tx `0x7f56b112ff81183986d68bd6d40cb09bfeb1b394507782f574ec38f6c50fe1c0`
+  - borrower=0x3b7f525dc67cca55251abb5d04c81a83a6005269, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=50, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740482`, tx `0xa9a0682280af5be4e6d58ad7cc24018719aaaf3ed04f3a1d2316361ab11735ec`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=611.194237, reasons=['stale_oracle:first_risky_collateral_supply', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740482`, tx `0xf8f6240b93ee5c605e8ffa2e59fc93ea02e3a99fc654a2f9538f133b54b5547b`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=3653.974673, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740493`, tx `0x95ed83fd828874254980e6354aa88466c02484c5c1363dacbb0f0fbf0ace7550`
+  - borrower=0x3b7f525dc67cca55251abb5d04c81a83a6005269, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=200, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740511`, tx `0x46aad9738ccc26ac1ee5b467103486715df3676004b2ad813c8ce4d18a6ed66c`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=12030.058078, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740514`, tx `0xcee8ca77d2607de5f613eb68633bbc6aead4ec853151cbaaa7481f3166074972`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=2308506.539723, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740523`, tx `0xc4661b5fa0cc8a3a360231dd7ad27021f81f0188636ee2131aeab665d11bd553`
+  - borrower=0x3b7f525dc67cca55251abb5d04c81a83a6005269, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=700, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740526`, tx `0x8895a74aad19e2bff0e769f2a88a86cff15e9dc0cd1633025f153d5f6338fddd`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=128000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740531`, tx `0x57a6bf53e325d76c4813ed3bca6b8f12e14001338898d4796d4d3fd1a130b8a9`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=8599.07562, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740542`, tx `0x1898e1e860ccaf41c9efd9edffbd5cf1d44aad284efc0daf30ee2c32f54cdbf4`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=59990.071807, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740554`, tx `0x11670d07cb4dadc9a03bc72528c8b636fae954303b42a88ef508fa66a973785d`
+  - borrower=0x3b7f525dc67cca55251abb5d04c81a83a6005269, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=3400, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740575`, tx `0xf25ee165252afe3a6103636d98f922d4f43e8fccd58dbb503b5ee92c4ee316e0`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=263182.441824, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740576`, tx `0x7a24671aa9a5b607491e289c2200194a8bdf85dcb9a9fed1be6ac12f8a5e5ccb`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=2583720.569053, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740584`, tx `0x8d9f9feca724bb2a990526963c80b2626e050c78510bb94876142596ab57f4a0`
+  - borrower=0x3b7f525dc67cca55251abb5d04c81a83a6005269, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=10000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740590`, tx `0x168c910f97efec3bda363d02bf6d0e892748e374a5f748b5ad0581eccd928cd1`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=75143.324712, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740592`, tx `0xcf387ceba3990a0e3ed4b48abebd5571bebe8e555b3da3b3f2b26d6619cc0c89`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=161000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740611`, tx `0x5e85b0a82a46268b13d9a6d07ff4a88a9cf12ed5f7615ef56f7099e864a5edc0`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=416252.58976, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740622`, tx `0x747e23cac0ccdf2db9d4beb260fe30002ea2a8e03c994d84b7a8a871d611d080`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=207603.404192, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740622`, tx `0xe277b015ae5e4dab2708104fa225ec1fcf5d0b69a7cb9a71ccc492079032e750`
+  - borrower=0x3b7f525dc67cca55251abb5d04c81a83a6005269, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=25000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740636`, tx `0xb81cabf803237f12e145434f68b7e541e0829da17fbf55e347e782e7c6b10a63`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=12000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740636`, tx `0x9efbe8c2afd86dfd1caecaadeb7234ceaae54552658db3833ccec78104b7f50d`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=3793786.344875, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740651`, tx `0x9adb287bbcafd3e71a1f9a3f310e7a7ca3d1a662bd867662be7ffbf3596963ec`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=210000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740656`, tx `0xc14d4f3174edbb1e509771e63bf5d50456b3052c6a83c86287e734162fee39f6`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=705119.092581, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740657`, tx `0x919ffc8da4ad1e2b58bb8bb655898e2b592710375b75b2b26496b23af9ecaffb`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=270315.650286, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740670`, tx `0xc6c164085dc9ada2df43d209bf6ef746f359c2557e4f07bf221d565d66acce99`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=13000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740682`, tx `0x98ed4bcedcf9be7043a51dd539473686f105dc718368fde256637e56177ee407`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=477360.262869, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740692`, tx `0xdcfd518dd651fcb2943063ec9ba07e51520339ffb84e60ef438f10ddda3ef3de`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=29000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740699`, tx `0x13dee3b2ae8182a91298ddb104cbc53ed77760740124ff005264421abe49aa06`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=662750.868377, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740716`, tx `0x9ab7b0a2c117aecefc2203d370c4f3576b8e8bbee10c72b14bcba2441abb13a1`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=485079.54393, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740716`, tx `0x2df48b91d5c4c313c7ed379fb705b53bf2f5b627deaa835159528570e43a3ce3`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=2608531.068617, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740724`, tx `0x3be4e6beb2e2e73b2eba0f063763c6c85379bb1f08ab86a86856946efe587620`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=25000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740738`, tx `0x86288ba7322f27d6d0a89ea3bb53a0b803ab313cd5dd4cf4e0d2517114d144b3`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=160000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740739`, tx `0x4e4ecebee75e838cfec8a95c5ac47da90de508389cba28ac31adfda580d0f9a7`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=830150.037302, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740746`, tx `0x3d098fb1ac80e9663bbcd9fe296ebbcb8bf8945105248514a6b06b76daf7f4a7`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=661651.376532, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740750`, tx `0x8c4aeb492514a69ba5355f5fd714b9094f50873c51e12ac27aeed175499c5cf6`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=50000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740754`, tx `0xc52ac69feec78bae065936252559df01148e83ef7500b391e7f9d55a3c6c3c7f`
+  - borrower=0x3b7f525dc67cca55251abb5d04c81a83a6005269, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=40000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740765`, tx `0xfe0f2e9666bb9c6cfdd6e3462a8c69e6e0ff0edfcf2ee40f4b1ed587b18b0ae4`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=546565.477127, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740767`, tx `0x0159ca898db0c17db5f335729c63c984c01dda04ed9b5bb3ce49ae1d052d418d`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=1295130.437593, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740778`, tx `0x18b229bac11230b804f5b866c0debd3781fede4e51bcd3b2cf5d0402b816a0a6`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=75000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740782`, tx `0x7102fa1a5c085f4a0f276b2e44872973a5ce67b07ec6254208d4e6bdada229d5`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=2618259.334682, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740796`, tx `0x91ffb3ea47f650cb59645563f8bce8c346a007a3a7d99de59d00f98192dd7292`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=140000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740802`, tx `0x35c231c37535e980ca830d421a34e942bd6defec66bdfce62212a00e51a2e889`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=694466.445332, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740806`, tx `0x0e83be191c7a640d847318d2cc45f57b17cfbd5cf462c12b5728cab8161f5aeb`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=1434075.25039, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740820`, tx `0xf4e434f3935983506eedacd1b3bb47fe877ef681809f1e235141e203bbbd8925`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=78000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740839`, tx `0xeeb5faf17b34bc602effe961b356d5a615a85fdf6ab70eb4a54246d422839925`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=1372109.911635, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740849`, tx `0x18f6673545788e620625002e908a3aa04317b58753cdaa2fd56f2cb233000e98`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=85000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740849`, tx `0x093c1f92dfabc785f74252b9ce54d0cb1d9466f142eb6e9b0fab3cddba41079d`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=625933.133603, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740853`, tx `0xa4106f6b1933ee1be29b5205c1827293f62a7458c0aa8b3576b08891095f4f78`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=3897368.781034, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740858`, tx `0x9d5334be2f27b2efd330470de26afc98a03b03296e76b8c36d633ba778554f77`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=1303910.266182, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740863`, tx `0x99117bc74c7c9cca6e4d235078f9ba3e76f8504ec078ecfe07947cb3af0ba41c`
+  - borrower=0x3b7f525dc67cca55251abb5d04c81a83a6005269, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=40000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740866`, tx `0x152ea3f7d86052a6b7b68accd2f203c903df903acc04dd9463c7392ce1751da6`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=80000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740876`, tx `0x6b3d5c3dc3b15abcb89cb8d758275cfb02aeeeae12dccb54f8353a2e50de0894`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=607320.610129, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740879`, tx `0xe293c02df6465f116cc643438774482bc43f4fcf77a7f23cd8d2893bf97008f9`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=2166917.120766, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740894`, tx `0xbc53d583e1366461d90c55e275c15ace63c126b9197f60daba2b9c0d3849be84`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=125000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740907`, tx `0xce53755aea04f1c9c1bd34f06216d52fb87d78205aea20115592a054777800e3`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=741143.236533, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740908`, tx `0xf522f7f64035085af97441cc5095a24ad82b5fb9ccf042d61c7d5f7eb8e09b19`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=2348963.488058, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740918`, tx `0x56c65e3e8457046616aa05d9b8461d128b115686deff553fdedef3ede943b18d`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=125000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740936`, tx `0xea4a4f6c82dd6912a21dfb20934a061c786a779a3cda4d8b63e63dfad00cb3fe`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=2332300.000937, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740945`, tx `0x3d79bd4fb589a4740534243e37a49142dd8108f070d30d6c9231d7b4b4df77b0`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=140000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740948`, tx `0xc3e9c75e2dc8fc195ed5647c81289525b78aef6b1a496e8db7acfb8b8125e7e8`
+  - supplier=0x3b7f525dc67cca55251abb5d04c81a83a6005269, asset=LUNA, amount=635517.65069, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740962`, tx `0x3df716635ab1ae1a1e33c468ec4d01cbc2d1ddd35055135f90ca4f69bc06cab6`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=3221682.962909, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17740974`, tx `0xf1af74e1271ca75a3030c6b1217fb59677418c2f22e088ca5b01845de3717543`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=190000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17740988`, tx `0xe0aeaef46b4485b81152cc99be07140900e1515037284c2865a45c06cfb13971`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=2009309.823487, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741003`, tx `0x565551609b6a0320855a682ff0f590fefc9d2f2bff785f49ed600c31409dca0a`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=120000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741017`, tx `0x16d9aa095ec14056818294d6122717420a6a8290b855bd0b91a60a24e0cd21d1`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=3362063.789123, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741028`, tx `0x4ee526c32a90d4f0e726e920bbbe7043a1036ee4a64c59bc0737a0a8d5d58dbd`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=2018189.847649, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741031`, tx `0x140d547a0443a30fd9d85efb60bdb95680adf962953420ccc049da2325ad7320`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=180000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741044`, tx `0xa5007ec2b007e1fc1344b0d7581f6c3f616c03b9d69fe2675ef655020a9253f8`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=280000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741045`, tx `0xc3844ec066c5af99e805f838db35d91d81753e807d91401ed2379b9f16d3b7eb`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=300, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741046`, tx `0x84f21a0b5b31715bbdafef8cf20585a8ba818095500db76d2fb3cf90cfb0a234`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=3686676.879052, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741057`, tx `0x0a981c729a3b701dd1b8570fee381d70fab43c4fde163538f98075e61e6da03e`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=230000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741057`, tx `0x26deaac18f1fba41982591e2c534064d7fee3fac6a5c69c72930ed7abb30e6bf`
+  - supplier=0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e, asset=LUNA, amount=40791.443373, reasons=['stale_oracle:first_risky_collateral_supply', 'stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741060`, tx `0x8df2e195c94409fe3338df14cc7cc52da5f15bb5a06f602ea12b9cb320289a2a`
+  - supplier=0x00bb5a70a1a8167fdcc95f04a4c39bad4620ba48, asset=LUNA, amount=413.3, reasons=['stale_oracle:first_risky_collateral_supply', 'stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741074`, tx `0xc52680f95b4ae5e4c3ec26626c6678fc3c7027a64953c95c9c0b38c1717cb936`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=38421.158969, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741074`, tx `0x5462c3863ed01c223184b9895ade168cd7f0bd3fc138a8e2958876084aec1443`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=4059386.229103, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741083`, tx `0x2eac2804e3edb6dc71d743a99d93e1c81a82d1c69c2b29ed9de740a557b695a7`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=240000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741086`, tx `0xf5c128a76bfdefc60cf409b2cea7f8611e1497da18e143f3f43b0b1071ad017c`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=2000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741109`, tx `0xc6e05b7953714e66c6b2b81e15cb4d1d2cdb0a4b14a76be73455e8ff1d0925c4`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=267633.709862, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741110`, tx `0x5705df104877041a9618afe04bfb964876cb1e070ff9417ec50b20102640979d`
+  - borrower=0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=958.706419, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741110`, tx `0x9657f04763b94f7dbabcdd24ffce2fa9f62eb1c1296e6df87fbe92f45440850a`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=3858663.346133, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741131`, tx `0x9b30e4ba7046c2880083419d6f173a06f0aec058adeea24e605bab88a6cc9566`
+  - borrower=0x00bb5a70a1a8167fdcc95f04a4c39bad4620ba48, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=9.140175, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741137`, tx `0x950ad230f564f250f3f493d292626750c28c91247afac54a4f6928bc1ca16798`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=230000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741142`, tx `0x93a14669b5c06968d6db5d617e98250209e2a4dd813fefb0b6adbde91b2afaf8`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=4397342.49475, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741147`, tx `0xec39cdf84af4351150bfcaa1ece4e7a6c358e48275e25e53b2cac2e7fe142aab`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=13000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741152`, tx `0xd0458b77cb2d4e14df604fb93c40bf3e37fc971bf4b951963f19ab8517447134`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=240000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741158`, tx `0x394ca91559abedfd7d045801b520f7fbf20fc32a5fb4cb10374383f63285f853`
+  - borrower=0xdf99f63bc8f1ce2fd7aa0c0140a0340f91fb4680, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=5, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741176`, tx `0x570888b5fa5eb5e8c059f3824a701195aa9b20c53404465c25bebfd8832413b0`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=5457194.624707, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741188`, tx `0xdf60ad40a45fa15f4eb59210a0c657135ab6c612f681e25308a73f4aaf30b60c`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=300000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741202`, tx `0x4bcf70aa6092380aba56672c8d431df7db56cb10605fcd934d499852c8e35c08`
+  - supplier=0x20481433fa76ccf0766ae566fb8582a6c5261c80, asset=LUNA, amount=442764.959666, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741214`, tx `0xdcfab24e044c2b1e11819eb8d9823a9ad32f8b1c4ff07e98f2ef9543eea4ac94`
+  - borrower=0x20481433fa76ccf0766ae566fb8582a6c5261c80, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=25000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741219`, tx `0x645bc6ab047cc7c85168a2a4aedbe3f8ec5102d849fe60efaea0aa6b6ec69be1`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=5183686.406869, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741226`, tx `0x8f1f20c192c094b99fe8085a4b867813b807e309f01eb654bf15660c4968c562`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=240000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741244`, tx `0xb598daafd0ce36c56baf138d347c62c41b12113173ef8d5c79bb195a9d0f2eff`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=4770929.873402, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741250`, tx `0x2e1c51a99909e8d7f4c2890ddb15343f7040b4226658d885f3d652877adde86c`
+  - borrower=0x3b7f525dc67cca55251abb5d04c81a83a6005269, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=40000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741253`, tx `0x02889f113f95aebb0cb458cbab8ac3d8febe933a19af76d06df2ed3a7665e8c1`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=300000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741269`, tx `0x83b8af66a00b593f98f2070cbea38b9e0ddd2b63cffa5c903ec6d193638290d0`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=5244497.153754, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741289`, tx `0x068250486a138e036d93635ff027058f7dbedf8047db082ba1ecd2212a291c62`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=300000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741294`, tx `0x4bcdb71f9952f78510d336e93ff795e188d6af058ea85e294b6705b532faa30f`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=4451234.732664, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741303`, tx `0x0ee9679df8bb2a0d8d080ed2950fd27bafc7bdd66121b4d128aa70e1cc61a38b`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=300000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741319`, tx `0x17fb383baf837cf271451ca6d6ff84d45c405c67c574ad7ddc7dad0c7fbdd5ae`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=4475297.625993, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741336`, tx `0x869d3ad8ae2308ca12ca5b9b7a3f6128412309f5870852278d4ffd5335415234`
+  - supplier=0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e, asset=LUNA, amount=277343.221854, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741339`, tx `0xca20a8acc869328a04dee90a22a261044bf617aa8aa43aeee13d93b50bcb9fc3`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=280000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741350`, tx `0x122a71ff7cc9e9a456cb3b743d1ac40109e1698ad90a805afdb1eda2a145dcc5`
+  - borrower=0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=6518.295089, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741363`, tx `0x1b8aa966fe0461423464f2b712e9a71d9460d6b52992a8b73eb83f111f63c5cb`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=9371852.711039, reasons=['stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741386`, tx `0x3ae46e99552f4a520aa319e1476701243b2546f7b9e95c21b414a050fa2c945e`
+  - supplier=0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e, asset=LUNA, amount=1185861.38158, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741390`, tx `0x31294a32606d099c4a91ea7af66e152a3df57d7fa9eca9517a61c2ca5d80f59a`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=14417680.471781, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741395`, tx `0x1f490c3ea3a060c5bb1d54482d61f7ddd57172b78dbfb3d3728e5f08635c3562`
+  - borrower=0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=27870.865404, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741400`, tx `0x9725e3ab82543ebd29d3967a39a6cc10cfbd5f4ea5887eeec0105c3ee2e1896a`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=1300000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741429`, tx `0xafe51eb7f7b28944a7eb750d48c439ca4fc09bf91be0a68e494cc16ce112d082`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=1909579.4895, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741440`, tx `0xfe46daf691a9bd98b6f1a9a9bde132dc7747e89859db30dc4fdb5dee023af31e`
+  - supplier=0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e, asset=LUNA, amount=1003600.190436, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741451`, tx `0xd307173c2e6f4db585fbe47c63a275107c81ab900a1a874fa0e180be42e16c87`
+  - borrower=0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=23587.232903, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741461`, tx `0x7052e4033d63f909c7f001fdaa73a00913911837b5155fc14f44dbfb7e2e434d`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=115000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741485`, tx `0x651888758a6118639abef8e11f2a193d20508986bc10f4eaec2a75f8a598d735`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=14417680.471781, reasons=['stale_oracle:latest_topup_before_impact', 'stale_oracle:material_collateral_increase_>=10%'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741497`, tx `0x90aa4055c56076f21eb2850197e19d7f537c263768c68d1ed10dfeeb6d3c8b27`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=900000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741565`, tx `0x60de79c073e2bdbbb5090a23898cc86b8a48aec1b65ff92565f29489921f722e`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=8822096.897151, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741570`, tx `0x1768ecb70eb60b1bfac75d9aa1174bf9164c9e6181482e810bcda6ea8026b58b`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=6091234.861066, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741576`, tx `0xf5574fc3416a50e1f3483665e203f7cc683dcdb3ac894c8185928139cd7cc10d`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=580000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741583`, tx `0x388c11ee590df2d20d3da0f75f87e49a72d082fedef464203e3c16f7f4815b80`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=260000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741662`, tx `0x022312734b70952505bcc93638160c320bfcc7ac71d619131cc84e2e3b39d80c`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=9371852.711039, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741673`, tx `0xb815a3247aa6f7d6571d5d0d03560934615e162d1877646ecffeb576f8bd40cf`
+  - supplier=0x1f6d66ba924ebf554883cf84d482394013ed294b, asset=LUNA, amount=5906138.27719, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741674`, tx `0x9e003da539f7a27f364b0871f1fc1c296b5d003549d797d068d96e91b998834c`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=1100000, reasons=['stale_oracle']
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741698`, tx `0xd0e0d9eaa193009d23e8af419d88e4363845a2858f7d640b568ae70ab09c6ef5`
+  - borrower=0x1f6d66ba924ebf554883cf84d482394013ed294b, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=440000, reasons=['stale_oracle']
+- `COLLATERAL_ENABLING_SUPPLY` (collateral_enabling_supply_under_stale_oracle, high) at block `17741699`, tx `0x24264b8d4771715dbbcd6fe88201e389a4d0c84a640df3ca7bd43ca1e793c288`
+  - supplier=0x8d655aaaa0ec224b17972df385e25325b9103332, asset=LUNA, amount=9371852.711039, reasons=['stale_oracle:latest_topup_before_impact'], evidence_rule=first risky collateral supply or latest top-up before same-actor impact
+- `BORROW_AFTER_ORACLE_VIOLATION` (attacker_localization, critical) at block `17741710`, tx `0x0b8e54992390d61767c54d837765a224ceb6f41c8ee6b1f6094d393d5571993e`
+  - borrower=0x8d655aaaa0ec224b17972df385e25325b9103332, collateral_asset=LUNA, borrow_asset=BUSD, borrow_amount=1000000, reasons=['stale_oracle']
+
+## Attacker Candidates
+
+- `0x41659b40e02e17fac38681aa4a8f72e52158e8a8` roles=['borrower'] txs=`0xf5004eb392b1e9403cb5d5e40d11981352d6afe9214d0896cc55fb111e0ff41f`, `0xfc50df8fe290fd86c1f3fa5c9c7d0a38b3a9213e829883c318c8295bf793eb82`
+  - borrowed 100 BUSD against LUNA
+  - borrowed 200 BUSD against LUNA
+- `0x30c743831c4cd47454e0006067f66d7da0310a01` roles=['borrower'] txs=`0x34d221974148d8d3816c623e0efe26adcf2d25aee5ba5d0e930cba11bdc12281`
+  - borrowed 5 BUSD against LUNA
+- `0x6f3390a9ec8125209d88062c14bad7dc0220251b` roles=['borrower'] txs=`0x00162b01bee8203f02251e040a32436662c9f691723411214353ab25b0673d27`
+  - borrowed 40 BUSD against LUNA
+- `0x20481433fa76ccf0766ae566fb8582a6c5261c80` roles=['borrower'] txs=`0x0573f68fb6f116fd239457d4434f3da585c2d55a42558c3187194efaeba5feb4`, `0x2a9a2f87e24a412be7589c32060790740929b71012f5469ff9f09f0599b94b2d`, `0x3dcc2c4665f8f7d6bad4b65f3ad53281120ca2b87cc89850c286f24cb5fe3410`, `0x4f2908335ce9f02e891657abb776f266fc5038d1ae8309eb5982d21a9c34c5a8`, `0x885a88e0791988324a357a52d4fa8415c4f218bfb205e391a165f2c17fae176b`, `0x9cac3831741849f607e2bb5c727132783593b714c9ca71a45f7dc51f7f646bae`, `0xabe3fa5c9b9110e51809257590655b982216c456753f81f8293d47cf6913752c`, `0xc3844ec066c5af99e805f838db35d91d81753e807d91401ed2379b9f16d3b7eb`, `0xcf66db97d65d9bc3753a90fc957e18f708aaecf63aa6de99ad40ea9ca13b9cfa`, `0xdac29956b78425e76b6e1733271301c0ff317e39865e71dd1e4c59b4202c799d`, `0xdcfab24e044c2b1e11819eb8d9823a9ad32f8b1c4ff07e98f2ef9543eea4ac94`, `0xec39cdf84af4351150bfcaa1ece4e7a6c358e48275e25e53b2cac2e7fe142aab`, `0xec4353ece5b4f04983d3b5e3fdd4e6686b5c07019ddfc4d3ac8a991a4f5fc37d`, `0xf5c128a76bfdefc60cf409b2cea7f8611e1497da18e143f3f43b0b1071ad017c`, `0xfac150abc78be42ccdbb60f69d89b26e00ba2f308ed445d1b42ecb0654b17b07`
+  - borrowed 10 BUSD against LUNA
+  - borrowed 10 BUSD against LUNA
+  - borrowed 20 BUSD against LUNA
+  - borrowed 50 BUSD against LUNA
+  - borrowed 100 BUSD against LUNA
+  - borrowed 200 BUSD against LUNA
+  - borrowed 250 BUSD against LUNA
+  - borrowed 400 BUSD against LUNA
+  - borrowed 1000 BUSD against LUNA
+  - borrowed 700 BUSD against LUNA
+  - borrowed 1000 BUSD against LUNA
+  - borrowed 300 BUSD against LUNA
+  - borrowed 2000 BUSD against LUNA
+  - borrowed 13000 BUSD against LUNA
+  - borrowed 25000 BUSD against LUNA
+- `0x1f6d66ba924ebf554883cf84d482394013ed294b` roles=['borrower'] txs=`0x0965b72164bf9096eaf7d45cc4e4594ba67ba3f6cb803ef319036230e047c8f8`, `0x16a1b39c82a2758dc6dfc67a102179c6c487d0c98dbb873b7416791802d000e4`, `0x1c16e88c090702d6f7d5e85b3c4819620728e34037fa4d982e1eac79d215cae0`, `0x388c11ee590df2d20d3da0f75f87e49a72d082fedef464203e3c16f7f4815b80`, `0x3a98ddb59bc956af7221febd1ce88f15537a3857ace6b594551a9bca9b312eac`, `0x6aa4448f7e9c4104bb68b4e1cae1eb85654dbe767b69c7d39c0e7623e6fcd3f4`, `0x7052e4033d63f909c7f001fdaa73a00913911837b5155fc14f44dbfb7e2e434d`, `0x72ed96111b9378aeef49de49163ae43932f61df05525563e0c8fe375708b7a00`, `0x75bb466e5459eb3aee1bfc50815f69944ce657ed1adc6037bff10a7909f62398`, `0x788c3ad9535bc652077c0c74b3937be4b790ea2783ddff4e626406fd8561437d`, `0x86288ba7322f27d6d0a89ea3bb53a0b803ab313cd5dd4cf4e0d2517114d144b3`, `0x8895a74aad19e2bff0e769f2a88a86cff15e9dc0cd1633025f153d5f6338fddd`, `0x91a299fa5b9305c02d403659439121308c710cd959592883228f12e38416300f`, `0x91ca43135e6a405964dd9e8b264d499e10c14e9e961303bc451539e3de497fd2`, `0x91ffb3ea47f650cb59645563f8bce8c346a007a3a7d99de59d00f98192dd7292`, `0x9a9437fd6397d992323808dfef467920d619686d17b935ce53efabc3803614b7`, `0x9adb287bbcafd3e71a1f9a3f310e7a7ca3d1a662bd867662be7ffbf3596963ec`, `0x9c077d3c492fd07d713aa4f2488e1d6c94407b955039a7e8a19b5bc788a6118f`, `0xa5007ec2b007e1fc1344b0d7581f6c3f616c03b9d69fe2675ef655020a9253f8`, `0xc46566372d098b12969acae5ede83f08e6cca7eb8d68a1ee6f3dabe73fb3daf2`, `0xcf387ceba3990a0e3ed4b48abebd5571bebe8e555b3da3b3f2b26d6619cc0c89`, `0xd0e0d9eaa193009d23e8af419d88e4363845a2858f7d640b568ae70ab09c6ef5`, `0xd4dc6f4079cbc065b2eb1b936d53bf5241241ebef711e49b2672e460af0acdfb`, `0xd85cdde4d6cc781595853467a3c2d2db8b83093bcda27597e05e7f8e2e7132f0`, `0xff29951cc6bede42302ed7f345944c3e2ef3c31e336e3bc4f2e0d473eb854c18`
+  - borrowed 700 BUSD against LUNA
+  - borrowed 23000 BUSD against LUNA
+  - borrowed 24000 BUSD against LUNA
+  - borrowed 22000 BUSD against LUNA
+  - borrowed 24000 BUSD against LUNA
+  - borrowed 26000 BUSD against LUNA
+  - borrowed 23000 BUSD against LUNA
+  - borrowed 24000 BUSD against LUNA
+  - borrowed 49000 BUSD against LUNA
+  - borrowed 46000 BUSD against LUNA
+  - borrowed 48000 BUSD against LUNA
+  - borrowed 74000 BUSD against LUNA
+  - borrowed 30000 BUSD against LUNA
+  - borrowed 61000 BUSD against LUNA
+  - borrowed 67000 BUSD against LUNA
+  - borrowed 109000 BUSD against LUNA
+  - borrowed 128000 BUSD against LUNA
+  - borrowed 161000 BUSD against LUNA
+  - borrowed 210000 BUSD against LUNA
+  - borrowed 160000 BUSD against LUNA
+  - borrowed 140000 BUSD against LUNA
+  - borrowed 280000 BUSD against LUNA
+  - borrowed 115000 BUSD against LUNA
+  - borrowed 260000 BUSD against LUNA
+  - borrowed 440000 BUSD against LUNA
+- `0x6346766678a3045613e14835d4b33c4793f397c1` roles=['borrower'] txs=`0x3c3eec4b74e795272fbf1b4cc1738568bb75e7bca851b2d03dd48290d0a41616`, `0xaf393ddc11d49943599b615492b0e817940948b2819a405203f5e845fa31e798`, `0xd4d2a61109184eb85e9ac64cfc322fd6a7acc0cd3176547750195bb018c169d2`, `0xef50ae4f26e07ad067ea4598dee243012c839fc1da0ac7268415ab56b2a8a9a2`
+  - borrowed 3000 BUSD against LUNA
+  - borrowed 4000 BUSD against LUNA
+  - borrowed 3000 BUSD against LUNA
+  - borrowed 1700 BUSD against LUNA
+- `0xdf99f63bc8f1ce2fd7aa0c0140a0340f91fb4680` roles=['borrower'] txs=`0x18b88b7ccbc1925331d1470530177e1dd4df5ea40710de32b31387f882417240`, `0x394ca91559abedfd7d045801b520f7fbf20fc32a5fb4cb10374383f63285f853`
+  - borrowed 10.5 BUSD against LUNA
+  - borrowed 5 BUSD against LUNA
+- `0x584f31474ce439a2b463b544f547f95b9aa1dd64` roles=['borrower'] txs=`0xb9e0b1405ee5af70e93ffeb89847bf9d9e27af8cc5adc2d781c573194b9bf16e`
+  - borrowed 50 BUSD against LUNA
+- `0x3b7f525dc67cca55251abb5d04c81a83a6005269` roles=['borrower'] txs=`0x11670d07cb4dadc9a03bc72528c8b636fae954303b42a88ef508fa66a973785d`, `0x2e1c51a99909e8d7f4c2890ddb15343f7040b4226658d885f3d652877adde86c`, `0x7f56b112ff81183986d68bd6d40cb09bfeb1b394507782f574ec38f6c50fe1c0`, `0x8d9f9feca724bb2a990526963c80b2626e050c78510bb94876142596ab57f4a0`, `0x95ed83fd828874254980e6354aa88466c02484c5c1363dacbb0f0fbf0ace7550`, `0x99117bc74c7c9cca6e4d235078f9ba3e76f8504ec078ecfe07947cb3af0ba41c`, `0xc4661b5fa0cc8a3a360231dd7ad27021f81f0188636ee2131aeab665d11bd553`, `0xc52ac69feec78bae065936252559df01148e83ef7500b391e7f9d55a3c6c3c7f`, `0xe277b015ae5e4dab2708104fa225ec1fcf5d0b69a7cb9a71ccc492079032e750`
+  - borrowed 50 BUSD against LUNA
+  - borrowed 200 BUSD against LUNA
+  - borrowed 700 BUSD against LUNA
+  - borrowed 3400 BUSD against LUNA
+  - borrowed 10000 BUSD against LUNA
+  - borrowed 25000 BUSD against LUNA
+  - borrowed 40000 BUSD against LUNA
+  - borrowed 40000 BUSD against LUNA
+  - borrowed 40000 BUSD against LUNA
+- `0x8d655aaaa0ec224b17972df385e25325b9103332` roles=['borrower'] txs=`0x02889f113f95aebb0cb458cbab8ac3d8febe933a19af76d06df2ed3a7665e8c1`, `0x068250486a138e036d93635ff027058f7dbedf8047db082ba1ecd2212a291c62`, `0x0a981c729a3b701dd1b8570fee381d70fab43c4fde163538f98075e61e6da03e`, `0x0b8e54992390d61767c54d837765a224ceb6f41c8ee6b1f6094d393d5571993e`, `0x0ee9679df8bb2a0d8d080ed2950fd27bafc7bdd66121b4d128aa70e1cc61a38b`, `0x140d547a0443a30fd9d85efb60bdb95680adf962953420ccc049da2325ad7320`, `0x152ea3f7d86052a6b7b68accd2f203c903df903acc04dd9463c7392ce1751da6`, `0x18b229bac11230b804f5b866c0debd3781fede4e51bcd3b2cf5d0402b816a0a6`, `0x18f6673545788e620625002e908a3aa04317b58753cdaa2fd56f2cb233000e98`, `0x2eac2804e3edb6dc71d743a99d93e1c81a82d1c69c2b29ed9de740a557b695a7`, `0x3be4e6beb2e2e73b2eba0f063763c6c85379bb1f08ab86a86856946efe587620`, `0x3d79bd4fb589a4740534243e37a49142dd8108f070d30d6c9231d7b4b4df77b0`, `0x565551609b6a0320855a682ff0f590fefc9d2f2bff785f49ed600c31409dca0a`, `0x56c65e3e8457046616aa05d9b8461d128b115686deff553fdedef3ede943b18d`, `0x8c4aeb492514a69ba5355f5fd714b9094f50873c51e12ac27aeed175499c5cf6`, `0x8f1f20c192c094b99fe8085a4b867813b807e309f01eb654bf15660c4968c562`, `0x90aa4055c56076f21eb2850197e19d7f537c263768c68d1ed10dfeeb6d3c8b27`, `0x950ad230f564f250f3f493d292626750c28c91247afac54a4f6928bc1ca16798`, `0x9725e3ab82543ebd29d3967a39a6cc10cfbd5f4ea5887eeec0105c3ee2e1896a`, `0x9e003da539f7a27f364b0871f1fc1c296b5d003549d797d068d96e91b998834c`, `0xb81cabf803237f12e145434f68b7e541e0829da17fbf55e347e782e7c6b10a63`, `0xbc53d583e1366461d90c55e275c15ace63c126b9197f60daba2b9c0d3849be84`, `0xc6c164085dc9ada2df43d209bf6ef746f359c2557e4f07bf221d565d66acce99`, `0xca20a8acc869328a04dee90a22a261044bf617aa8aa43aeee13d93b50bcb9fc3`, `0xd0458b77cb2d4e14df604fb93c40bf3e37fc971bf4b951963f19ab8517447134`, `0xdcfd518dd651fcb2943063ec9ba07e51520339ffb84e60ef438f10ddda3ef3de`, `0xdf60ad40a45fa15f4eb59210a0c657135ab6c612f681e25308a73f4aaf30b60c`, `0xf1af74e1271ca75a3030c6b1217fb59677418c2f22e088ca5b01845de3717543`, `0xf4e434f3935983506eedacd1b3bb47fe877ef681809f1e235141e203bbbd8925`, `0xf5574fc3416a50e1f3483665e203f7cc683dcdb3ac894c8185928139cd7cc10d`
+  - borrowed 12000 BUSD against LUNA
+  - borrowed 13000 BUSD against LUNA
+  - borrowed 29000 BUSD against LUNA
+  - borrowed 25000 BUSD against LUNA
+  - borrowed 50000 BUSD against LUNA
+  - borrowed 75000 BUSD against LUNA
+  - borrowed 78000 BUSD against LUNA
+  - borrowed 85000 BUSD against LUNA
+  - borrowed 80000 BUSD against LUNA
+  - borrowed 125000 BUSD against LUNA
+  - borrowed 125000 BUSD against LUNA
+  - borrowed 140000 BUSD against LUNA
+  - borrowed 190000 BUSD against LUNA
+  - borrowed 120000 BUSD against LUNA
+  - borrowed 180000 BUSD against LUNA
+  - borrowed 230000 BUSD against LUNA
+  - borrowed 240000 BUSD against LUNA
+  - borrowed 230000 BUSD against LUNA
+  - borrowed 240000 BUSD against LUNA
+  - borrowed 300000 BUSD against LUNA
+  - borrowed 240000 BUSD against LUNA
+  - borrowed 300000 BUSD against LUNA
+  - borrowed 300000 BUSD against LUNA
+  - borrowed 300000 BUSD against LUNA
+  - borrowed 280000 BUSD against LUNA
+  - borrowed 1300000 BUSD against LUNA
+  - borrowed 900000 BUSD against LUNA
+  - borrowed 580000 BUSD against LUNA
+  - borrowed 1100000 BUSD against LUNA
+  - borrowed 1000000 BUSD against LUNA
+- `0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e` roles=['borrower'] txs=`0x122a71ff7cc9e9a456cb3b743d1ac40109e1698ad90a805afdb1eda2a145dcc5`, `0x1f490c3ea3a060c5bb1d54482d61f7ddd57172b78dbfb3d3728e5f08635c3562`, `0x5705df104877041a9618afe04bfb964876cb1e070ff9417ec50b20102640979d`, `0xd307173c2e6f4db585fbe47c63a275107c81ab900a1a874fa0e180be42e16c87`
+  - borrowed 958.706419 BUSD against LUNA
+  - borrowed 6518.295089 BUSD against LUNA
+  - borrowed 27870.865404 BUSD against LUNA
+  - borrowed 23587.232903 BUSD against LUNA
+- `0x00bb5a70a1a8167fdcc95f04a4c39bad4620ba48` roles=['borrower'] txs=`0x9b30e4ba7046c2880083419d6f173a06f0aec058adeea24e605bab88a6cc9566`
+  - borrowed 9.140175 BUSD against LUNA

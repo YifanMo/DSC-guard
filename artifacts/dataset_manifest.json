@@ -1,0 +1,276 @@
+{
+  "dataset_name": "Oracle-Consumption Failure Evidence Dataset",
+  "paper_scope": "Price-oracle consumption failures in EVM lending protocols",
+  "scope_summary": "Historical evidence for EVM lending incidents where a protocol consumes price-oracle data with incorrect identity, transformation, or freshness semantics when computing collateral value, borrow capacity, or liquidation eligibility.",
+  "included_failure_classes": [
+    "feed_binding_failure",
+    "price_semantics_mismatch",
+    "price_composition_failure",
+    "freshness_handling_failure"
+  ],
+  "excluded_categories": [
+    "general_dex_oracle_price_manipulation",
+    "flash_loan_manipulation_of_amm_spot_or_twap_prices",
+    "randomness_or_event_resolution_oracles",
+    "cross_chain_bridge_oracle_failures",
+    "pure_governance_attacks_unrelated_to_oracle_valuation",
+    "non_evm_incidents",
+    "unknown_incident_discovery_by_full_chain_scanning"
+  ],
+  "cost_control_policy": {
+    "default_mode": "local_artifacts_first",
+    "broad_scans": "disabled",
+    "rpc_usage": "only known transaction receipts or missing-field validation",
+    "dune_usage": "reuse materialized query artifacts unless explicitly refreshing a locator",
+    "api_keys": "read from .env and never written to artifacts"
+  },
+  "broad_search_extension": {
+    "design": "seed_evaluation_set_plus_rule_based_remote_search_to_minimal_evidence_materialization",
+    "rules": "artifacts/broad_search/rules.json",
+    "sql_templates": "artifacts/broad_search/sql/",
+    "strategy_report": "results/broad_search_strategy.md",
+    "default_action": "render_sql_only_no_paid_query_execution",
+    "seed_candidates": "artifacts/broad_search/seed_candidates.jsonl",
+    "local_materialization_policy": "seed rows are already materialized; remote candidates download only minimal A_replayable plus logically eligible B_high_confidence_incomplete evidence slices after evidence-closure triage gates; no top-k, weighted score, or amount-based cutoff is used"
+  },
+  "cases": [
+    {
+      "case": "ploutos",
+      "name": "Ploutos Money USDC oracle misconfiguration",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "failure_class": "feed_binding_failure",
+      "semantic_dimension": "identity_mismatch",
+      "oracle_consumption_layer": "consumer_asset_feed_mapping",
+      "definition": "The protocol binds a collateral asset to the wrong price source.",
+      "trigger_event": "ORACLE_FEED_SET",
+      "impact_events": [
+        "SUPPLY",
+        "BORROW"
+      ],
+      "violated_constraints": [
+        "USDC_FEED_MUST_BE_USDC_USD"
+      ],
+      "expected_behavior": "USDC collateral should be valued through a USDC/USD feed.",
+      "actual_behavior": "USDC collateral was valued through a BTC/USD feed.",
+      "chainlink_answerupdated_sufficient": false,
+      "collection_mode": "known_tx_receipts_only",
+      "api_cost_budget": {
+        "rpc_receipts_max": 2,
+        "dune_queries_max": 0,
+        "etherscan_source_requests_max": 2
+      },
+      "artifacts": {
+        "trace": "artifacts/log_trace/ploutos.jsonl",
+        "evidence": "results/ploutos_evidence.json",
+        "report": "results/ploutos_detection.md"
+      }
+    },
+    {
+      "case": "moonwell_cbeth",
+      "name": "Moonwell cbETH oracle formula error",
+      "chain": "base",
+      "chain_id": 8453,
+      "failure_class": "price_composition_failure",
+      "semantic_dimension": "arithmetic_transformation_mismatch",
+      "oracle_consumption_layer": "governance_configured_oracle_wrapper",
+      "definition": "The protocol uses a price source with the right semantic family but applies an incorrect valuation formula.",
+      "trigger_event": "ORACLE_FORMULA_SET",
+      "impact_events": [
+        "LIQUIDATE",
+        "BORROW"
+      ],
+      "violated_constraints": [
+        "CBETH_USD_MUST_MULTIPLY_ETH_USD"
+      ],
+      "expected_behavior": "cbETH/USD should be computed as cbETH/ETH multiplied by ETH/USD.",
+      "actual_behavior": "cbETH was consumed as the raw cbETH/ETH exchange-rate value.",
+      "formula_operands": {
+        "expected": [
+          "cbETH/ETH",
+          "ETH/USD"
+        ],
+        "actual": [
+          "cbETH/ETH"
+        ]
+      },
+      "chainlink_answerupdated_sufficient": false,
+      "collection_mode": "materialized_dune_decoded_events_plus_known_receipts",
+      "api_cost_budget": {
+        "rpc_receipts_max": 5,
+        "dune_queries_max": 6,
+        "etherscan_source_requests_max": 3
+      },
+      "artifacts": {
+        "trace": "artifacts/log_trace/moonwell_cbeth.jsonl",
+        "evidence": "results/moonwell_cbeth_evidence.json",
+        "report": "results/moonwell_cbeth_detection.md",
+        "locator": "artifacts/moonwell_cbeth_locator/dune_findings.json"
+      }
+    },
+    {
+      "case": "moonwell_wrseth",
+      "name": "Moonwell wrsETH oracle malfunction",
+      "chain": "base",
+      "chain_id": 8453,
+      "failure_class": "price_semantics_mismatch",
+      "semantic_dimension": "oracle_source_malfunction",
+      "oracle_consumption_layer": "oracle_source_value",
+      "definition": "The protocol combines the correct price sources, but one source emits an economically invalid outlier value.",
+      "trigger_event": "ORACLE_PRICE_MALFUNCTION",
+      "impact_events": [
+        "BORROW"
+      ],
+      "violated_constraints": [
+        "WRSETH_ETH_SOURCE_MUST_NOT_OUTLIER"
+      ],
+      "expected_behavior": "wrsETH/ETH should remain within a plausible exchange-rate range before being combined with ETH/USD.",
+      "actual_behavior": "wrsETH/ETH was reported as an abnormal outlier and Moonwell accepted wrsETH collateral for borrowing.",
+      "oracle_malfunction": {
+        "asset": "wrsETH",
+        "feed": "0xd7221b10fbbc1e1ba95fd0b4d031c15f7f365296",
+        "eth_usd_feed": "0x71041dddad3595f9ced3dccfbe3d1f4b0a16bb70",
+        "reported_rate": "1649934.60732",
+        "malfunction_time": "2025-11-04T05:44:55Z"
+      },
+      "chainlink_answerupdated_sufficient": "useful_but_not_sufficient",
+      "collection_mode": "forum_canonical_tx_list_rpc_fill_optional",
+      "api_cost_budget": {
+        "rpc_receipts_max": 40,
+        "dune_queries_max": 0,
+        "etherscan_source_requests_max": 0
+      },
+      "artifacts": {
+        "trace": "artifacts/log_trace/moonwell_wrseth.jsonl",
+        "evidence": "results/moonwell_wrseth_evidence.json",
+        "report": "results/moonwell_wrseth_detection.md",
+        "locator": "artifacts/moonwell_wrseth_locator/wrseth_findings.json"
+      }
+    },
+    {
+      "case": "blueberry_faulty_oracle",
+      "name": "Blueberry Protocol faulty oracle deployment",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "failure_class": "price_semantics_mismatch",
+      "semantic_dimension": "oracle_implementation_or_decimal_semantics_error",
+      "oracle_consumption_layer": "money_market_oracle_implementation",
+      "definition": "The protocol consumes prices from an oracle implementation whose return-value semantics do not match the money-market valuation assumptions.",
+      "trigger_event": "ORACLE_IMPLEMENTATION_MISMATCH",
+      "impact_events": [
+        "BORROW"
+      ],
+      "violated_constraints": [
+        "BLUEBERRY_MONEY_MARKET_MUST_USE_NORMALIZED_ORACLE_SEMANTICS"
+      ],
+      "expected_behavior": "The money market should consume normalized collateral and borrow-asset prices through the intended PriceOracleProxy semantics.",
+      "actual_behavior": "The money market consumed CoreOracle 18-decimal scaled prices directly, underpricing OHM, USDC, and WBTC borrow assets against WETH collateral.",
+      "oracle_mismatch": {
+        "asset": "WETH",
+        "expected_oracle": "PriceOracleProxy",
+        "actual_oracle": "CoreOracle",
+        "affected_borrow_assets": [
+          "OHM",
+          "USDC",
+          "WBTC"
+        ],
+        "attack_time": "2024-02-23T02:22:11Z"
+      },
+      "chainlink_answerupdated_sufficient": false,
+      "collection_mode": "postmortem_canonical_tx_rpc_fill_optional",
+      "api_cost_budget": {
+        "rpc_receipts_max": 6,
+        "dune_queries_max": 0,
+        "etherscan_source_requests_max": 0
+      },
+      "artifacts": {
+        "trace": "artifacts/log_trace/blueberry_faulty_oracle.jsonl",
+        "evidence": "results/blueberry_faulty_oracle_evidence.json",
+        "report": "results/blueberry_faulty_oracle_detection.md",
+        "locator": "artifacts/blueberry_faulty_oracle_locator/blueberry_findings.json"
+      }
+    },
+    {
+      "case": "venus_luna",
+      "name": "Venus Protocol LUNA stale oracle consumption",
+      "chain": "bsc",
+      "chain_id": 56,
+      "failure_class": "freshness_handling_failure",
+      "semantic_dimension": "temporal_validity_mismatch",
+      "oracle_consumption_layer": "collateral_freshness_check",
+      "definition": "The protocol continues to value collateral with an oracle answer that is stale, paused, or economically invalid.",
+      "trigger_event": "STALE_ORACLE_START",
+      "impact_events": [
+        "SUPPLY",
+        "BORROW"
+      ],
+      "violated_constraints": [
+        "LUNA_ORACLE_MUST_BE_FRESH",
+        "LUNA_COLLATERAL_DISABLED_WHEN_STALE"
+      ],
+      "expected_behavior": "LUNA collateral should be disabled or rejected once the feed is stale or near the lower-bound circuit-breaker value.",
+      "actual_behavior": "The protocol continued to accept LUNA collateral and allowed BUSD borrowing.",
+      "stale_oracle": {
+        "asset": "LUNA",
+        "feed": "0xec72d46011d67a6ac4fa7d3f476fa2049dc807ee",
+        "last_answer": "0.10736482",
+        "heartbeat_seconds": 3600,
+        "stale_reason": "chainlink_answer_stopped_near_lower_bound"
+      },
+      "chainlink_answerupdated_sufficient": "useful_but_not_sufficient",
+      "collection_mode": "local_csv_first_rpc_fill_only_if_missing",
+      "api_cost_budget": {
+        "rpc_receipts_max": 500,
+        "dune_queries_max": 0,
+        "etherscan_source_requests_max": 2
+      },
+      "artifacts": {
+        "trace": "artifacts/log_trace/venus_luna.jsonl",
+        "evidence": "results/venus_luna_evidence.json",
+        "report": "results/venus_luna_detection.md",
+        "locator": "artifacts/venus_luna_locator/venus_findings.json"
+      }
+    },
+    {
+      "case": "blizz_luna",
+      "name": "Blizz Finance LUNA stale oracle consumption",
+      "chain": "avalanche",
+      "chain_id": 43114,
+      "failure_class": "freshness_handling_failure",
+      "semantic_dimension": "temporal_validity_mismatch",
+      "oracle_consumption_layer": "collateral_freshness_check",
+      "definition": "The protocol continues to value collateral with an oracle answer that is stale, paused, or economically invalid.",
+      "trigger_event": "STALE_ORACLE_START",
+      "impact_events": [
+        "SUPPLY",
+        "BORROW"
+      ],
+      "violated_constraints": [
+        "LUNA_ORACLE_MUST_BE_FRESH",
+        "LUNA_COLLATERAL_DISABLED_WHEN_STALE"
+      ],
+      "expected_behavior": "LUNA collateral should be paused or rejected once the feed stops updating near the lower-bound value.",
+      "actual_behavior": "The protocol continued to accept LUNA collateral and allowed borrowing from non-LUNA markets.",
+      "stale_oracle": {
+        "asset": "LUNA",
+        "feed": "0x2e7e21f479167c1206420c956f3e8e392da580f5",
+        "last_answer": "0.10736482",
+        "heartbeat_seconds": 3600,
+        "stale_reason": "chainlink_answer_stopped_near_lower_bound"
+      },
+      "chainlink_answerupdated_sufficient": "useful_but_not_sufficient",
+      "collection_mode": "materialized_dune_full_market_candidates",
+      "api_cost_budget": {
+        "rpc_receipts_max": 500,
+        "dune_queries_max": 5,
+        "etherscan_source_requests_max": 3
+      },
+      "artifacts": {
+        "trace": "artifacts/log_trace/blizz_luna.jsonl",
+        "evidence": "results/blizz_luna_evidence.json",
+        "report": "results/blizz_luna_detection.md",
+        "locator": "artifacts/blizz_luna_locator/dune_findings.json"
+      }
+    }
+  ]
+}

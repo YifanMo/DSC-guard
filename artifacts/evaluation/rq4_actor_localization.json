@@ -1,0 +1,463 @@
+{
+  "case_count": 6,
+  "cases": [
+    {
+      "actor_recall": 1.0,
+      "candidate_precision": 1.0,
+      "case": "ploutos",
+      "failure_class": "feed_binding",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "known_actor_count": 1,
+      "known_actors": [
+        "0x3885869b0f4526806b468a0c64a89bb860a18cee"
+      ],
+      "matched_actor_count": 1,
+      "matched_actors": [
+        "0x3885869b0f4526806b468a0c64a89bb860a18cee"
+      ],
+      "predicted_actors": [
+        "0x3885869b0f4526806b468a0c64a89bb860a18cee"
+      ],
+      "predicted_candidate_count": 1,
+      "role_coverage": {
+        "0x3885869b0f4526806b468a0c64a89bb860a18cee": [
+          "borrower"
+        ]
+      }
+    },
+    {
+      "actor_recall": 1.0,
+      "candidate_precision": 1.0,
+      "case": "moonwell_cbeth",
+      "failure_class": "price_semantics",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "known_actor_count": 14,
+      "known_actors": [
+        "0x083cfa7fd187be983ce5d519fe7ae78357779998",
+        "0x2e609abcdf2025fd6793433cc200cf956a9d9a42",
+        "0x32ed287f0d1c18768d7f42cefae85f75b89203ae",
+        "0x4de911f6b0a3ace9c25cf198fe6027415051eb60",
+        "0x71738d870229d6d9b3779f6e76adfaaf17eaa5f3",
+        "0x74513519689b1fb427747624a4dd87b3849d39cd",
+        "0x9e81b20e3255cdfaebda41d5decbacd9fc6ae0a9",
+        "0xb0779fde6d659afb71e0ef2f77f3d63b45fb9d6c",
+        "0xbe4427685fe32cbaf4a77fe77f3c58a55bb955ad",
+        "0xc39949b3ffec373459536a4e7d66069b6fb0eb36",
+        "0xd3957054e6104fb9ed2bd927c713c0add790f7f5",
+        "0xe2678ef94d47217008246b2970d24b0295102978",
+        "0xe3bc763f99c9c657d245ab85e201ae0ea4c3ba07",
+        "0xf4cd829526070c2c0af9e6dce2c9255130f7ec68"
+      ],
+      "matched_actor_count": 14,
+      "matched_actors": [
+        "0x083cfa7fd187be983ce5d519fe7ae78357779998",
+        "0x2e609abcdf2025fd6793433cc200cf956a9d9a42",
+        "0x32ed287f0d1c18768d7f42cefae85f75b89203ae",
+        "0x4de911f6b0a3ace9c25cf198fe6027415051eb60",
+        "0x71738d870229d6d9b3779f6e76adfaaf17eaa5f3",
+        "0x74513519689b1fb427747624a4dd87b3849d39cd",
+        "0x9e81b20e3255cdfaebda41d5decbacd9fc6ae0a9",
+        "0xb0779fde6d659afb71e0ef2f77f3d63b45fb9d6c",
+        "0xbe4427685fe32cbaf4a77fe77f3c58a55bb955ad",
+        "0xc39949b3ffec373459536a4e7d66069b6fb0eb36",
+        "0xd3957054e6104fb9ed2bd927c713c0add790f7f5",
+        "0xe2678ef94d47217008246b2970d24b0295102978",
+        "0xe3bc763f99c9c657d245ab85e201ae0ea4c3ba07",
+        "0xf4cd829526070c2c0af9e6dce2c9255130f7ec68"
+      ],
+      "predicted_actors": [
+        "0x083cfa7fd187be983ce5d519fe7ae78357779998",
+        "0xf4cd829526070c2c0af9e6dce2c9255130f7ec68",
+        "0xe2678ef94d47217008246b2970d24b0295102978",
+        "0x71738d870229d6d9b3779f6e76adfaaf17eaa5f3",
+        "0xd3957054e6104fb9ed2bd927c713c0add790f7f5",
+        "0x32ed287f0d1c18768d7f42cefae85f75b89203ae",
+        "0xb0779fde6d659afb71e0ef2f77f3d63b45fb9d6c",
+        "0xe3bc763f99c9c657d245ab85e201ae0ea4c3ba07",
+        "0x2e609abcdf2025fd6793433cc200cf956a9d9a42",
+        "0xc39949b3ffec373459536a4e7d66069b6fb0eb36",
+        "0x9e81b20e3255cdfaebda41d5decbacd9fc6ae0a9",
+        "0x74513519689b1fb427747624a4dd87b3849d39cd",
+        "0xbe4427685fe32cbaf4a77fe77f3c58a55bb955ad",
+        "0x4de911f6b0a3ace9c25cf198fe6027415051eb60"
+      ],
+      "predicted_candidate_count": 14,
+      "role_coverage": {
+        "0x083cfa7fd187be983ce5d519fe7ae78357779998": [
+          "liquidator"
+        ],
+        "0x2e609abcdf2025fd6793433cc200cf956a9d9a42": [
+          "liquidator"
+        ],
+        "0x32ed287f0d1c18768d7f42cefae85f75b89203ae": [
+          "liquidator"
+        ],
+        "0x4de911f6b0a3ace9c25cf198fe6027415051eb60": [
+          "liquidator"
+        ],
+        "0x71738d870229d6d9b3779f6e76adfaaf17eaa5f3": [
+          "liquidator"
+        ],
+        "0x74513519689b1fb427747624a4dd87b3849d39cd": [
+          "borrower"
+        ],
+        "0x9e81b20e3255cdfaebda41d5decbacd9fc6ae0a9": [
+          "borrower"
+        ],
+        "0xb0779fde6d659afb71e0ef2f77f3d63b45fb9d6c": [
+          "liquidator"
+        ],
+        "0xbe4427685fe32cbaf4a77fe77f3c58a55bb955ad": [
+          "borrower"
+        ],
+        "0xc39949b3ffec373459536a4e7d66069b6fb0eb36": [
+          "liquidator"
+        ],
+        "0xd3957054e6104fb9ed2bd927c713c0add790f7f5": [
+          "liquidator"
+        ],
+        "0xe2678ef94d47217008246b2970d24b0295102978": [
+          "liquidator"
+        ],
+        "0xe3bc763f99c9c657d245ab85e201ae0ea4c3ba07": [
+          "liquidator"
+        ],
+        "0xf4cd829526070c2c0af9e6dce2c9255130f7ec68": [
+          "liquidator"
+        ]
+      }
+    },
+    {
+      "actor_recall": 1.0,
+      "candidate_precision": 1.0,
+      "case": "moonwell_wrseth",
+      "failure_class": "price_semantics",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "known_actor_count": 2,
+      "known_actors": [
+        "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff"
+      ],
+      "matched_actor_count": 2,
+      "matched_actors": [
+        "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff"
+      ],
+      "predicted_actors": [
+        "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb",
+        "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff"
+      ],
+      "predicted_candidate_count": 2,
+      "role_coverage": {
+        "0x42ecd332d47c91cbc83b39bd7f53cebe5e9734bb": [
+          "attacker_contract",
+          "borrower"
+        ],
+        "0x6997a8c804642ae2de16d7b8ff09565a5d5658ff": [
+          "actor",
+          "attacker_eoa"
+        ]
+      }
+    },
+    {
+      "actor_recall": 1.0,
+      "candidate_precision": 1.0,
+      "case": "blueberry_faulty_oracle",
+      "failure_class": "price_semantics",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "known_actor_count": 2,
+      "known_actors": [
+        "0x3aa228a80f50763045bdfc45012da124bd0a6809",
+        "0xc0ffeebabe5d496b2dde509f9fa189c25cf29671"
+      ],
+      "matched_actor_count": 2,
+      "matched_actors": [
+        "0x3aa228a80f50763045bdfc45012da124bd0a6809",
+        "0xc0ffeebabe5d496b2dde509f9fa189c25cf29671"
+      ],
+      "predicted_actors": [
+        "0x3aa228a80f50763045bdfc45012da124bd0a6809",
+        "0xc0ffeebabe5d496b2dde509f9fa189c25cf29671"
+      ],
+      "predicted_candidate_count": 2,
+      "role_coverage": {
+        "0x3aa228a80f50763045bdfc45012da124bd0a6809": [
+          "attacker_contract",
+          "borrower"
+        ],
+        "0xc0ffeebabe5d496b2dde509f9fa189c25cf29671": [
+          "actor",
+          "attacker_eoa"
+        ]
+      }
+    },
+    {
+      "actor_recall": 1.0,
+      "candidate_precision": 1.0,
+      "case": "venus_luna",
+      "failure_class": "freshness",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "known_actor_count": 12,
+      "known_actors": [
+        "0x00bb5a70a1a8167fdcc95f04a4c39bad4620ba48",
+        "0x1f6d66ba924ebf554883cf84d482394013ed294b",
+        "0x20481433fa76ccf0766ae566fb8582a6c5261c80",
+        "0x30c743831c4cd47454e0006067f66d7da0310a01",
+        "0x3b7f525dc67cca55251abb5d04c81a83a6005269",
+        "0x41659b40e02e17fac38681aa4a8f72e52158e8a8",
+        "0x584f31474ce439a2b463b544f547f95b9aa1dd64",
+        "0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e",
+        "0x6346766678a3045613e14835d4b33c4793f397c1",
+        "0x6f3390a9ec8125209d88062c14bad7dc0220251b",
+        "0x8d655aaaa0ec224b17972df385e25325b9103332",
+        "0xdf99f63bc8f1ce2fd7aa0c0140a0340f91fb4680"
+      ],
+      "matched_actor_count": 12,
+      "matched_actors": [
+        "0x00bb5a70a1a8167fdcc95f04a4c39bad4620ba48",
+        "0x1f6d66ba924ebf554883cf84d482394013ed294b",
+        "0x20481433fa76ccf0766ae566fb8582a6c5261c80",
+        "0x30c743831c4cd47454e0006067f66d7da0310a01",
+        "0x3b7f525dc67cca55251abb5d04c81a83a6005269",
+        "0x41659b40e02e17fac38681aa4a8f72e52158e8a8",
+        "0x584f31474ce439a2b463b544f547f95b9aa1dd64",
+        "0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e",
+        "0x6346766678a3045613e14835d4b33c4793f397c1",
+        "0x6f3390a9ec8125209d88062c14bad7dc0220251b",
+        "0x8d655aaaa0ec224b17972df385e25325b9103332",
+        "0xdf99f63bc8f1ce2fd7aa0c0140a0340f91fb4680"
+      ],
+      "predicted_actors": [
+        "0x41659b40e02e17fac38681aa4a8f72e52158e8a8",
+        "0x30c743831c4cd47454e0006067f66d7da0310a01",
+        "0x6f3390a9ec8125209d88062c14bad7dc0220251b",
+        "0x20481433fa76ccf0766ae566fb8582a6c5261c80",
+        "0x1f6d66ba924ebf554883cf84d482394013ed294b",
+        "0x6346766678a3045613e14835d4b33c4793f397c1",
+        "0xdf99f63bc8f1ce2fd7aa0c0140a0340f91fb4680",
+        "0x584f31474ce439a2b463b544f547f95b9aa1dd64",
+        "0x3b7f525dc67cca55251abb5d04c81a83a6005269",
+        "0x8d655aaaa0ec224b17972df385e25325b9103332",
+        "0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e",
+        "0x00bb5a70a1a8167fdcc95f04a4c39bad4620ba48"
+      ],
+      "predicted_candidate_count": 12,
+      "role_coverage": {
+        "0x00bb5a70a1a8167fdcc95f04a4c39bad4620ba48": [
+          "borrower"
+        ],
+        "0x1f6d66ba924ebf554883cf84d482394013ed294b": [
+          "borrower"
+        ],
+        "0x20481433fa76ccf0766ae566fb8582a6c5261c80": [
+          "borrower"
+        ],
+        "0x30c743831c4cd47454e0006067f66d7da0310a01": [
+          "borrower"
+        ],
+        "0x3b7f525dc67cca55251abb5d04c81a83a6005269": [
+          "borrower"
+        ],
+        "0x41659b40e02e17fac38681aa4a8f72e52158e8a8": [
+          "borrower"
+        ],
+        "0x584f31474ce439a2b463b544f547f95b9aa1dd64": [
+          "borrower"
+        ],
+        "0x5e6a2f64ff885f095a279ca7deb938ec43c54c4e": [
+          "borrower"
+        ],
+        "0x6346766678a3045613e14835d4b33c4793f397c1": [
+          "borrower"
+        ],
+        "0x6f3390a9ec8125209d88062c14bad7dc0220251b": [
+          "borrower"
+        ],
+        "0x8d655aaaa0ec224b17972df385e25325b9103332": [
+          "borrower"
+        ],
+        "0xdf99f63bc8f1ce2fd7aa0c0140a0340f91fb4680": [
+          "borrower"
+        ]
+      }
+    },
+    {
+      "actor_recall": 1.0,
+      "candidate_precision": 1.0,
+      "case": "blizz_luna",
+      "failure_class": "freshness",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "known_actor_count": 24,
+      "known_actors": [
+        "0x124526e524a778039f7f5c3e1dc4cdb3050c0454",
+        "0x1477e7397281a17f55831f99ed94b682e720721b",
+        "0x268f7adb572d344731c9222d7c740cabd485a3e5",
+        "0x2ccb0d43e67b68963c7f43b546073117eb325470",
+        "0x34aa6cdc4378343181a6675a7248666f33a0ec07",
+        "0x39b20b7a7a4936e9174da7e78dad98aa2b413279",
+        "0x3a3e47a28e53978bea59830fad6a0eb2fc371091",
+        "0x3c55e589d868079aa4cf14457c5e8d93119a969d",
+        "0x42623912bf3910a30d13a9887cdd19d74d1870d5",
+        "0x4b6cfd17afbfca3db464843232ec294bb5abe249",
+        "0x4c33a6e78b39a97badac6a8616f85ee4ce93df73",
+        "0x88043ac03ed670cf07c6793790881663d9263b96",
+        "0x8d38a54818306f2bd0536d4571c9c271a533352b",
+        "0x95506c0a7c302ff29b0f2b0b679c4400238d774f",
+        "0x97fc31117f7f252f99c696d4cd24efb91d30cac8",
+        "0xa2b7ce040e05d122246c732c96bbcec45baa711f",
+        "0xa5a8c343eaebdf2d6170e0a1e56089aa18b29ceb",
+        "0xabf7135fe323aed91ce92efe80381b1587aa7f65",
+        "0xadbab4f38ff9dcd71886f43b148bcad4a3081fb9",
+        "0xb1ee64d564d1e388ddb042092175a2d7e4af675e",
+        "0xb34b1c413bc1f6e16c8791c915696dc3e36ead0d",
+        "0xdc4f2e5e7dce8a7c7ad61d80e8d401e615de1539",
+        "0xe84c01208c4868d5615fccf0b98f8c90f460d2b6",
+        "0xfda5a361f3c67ebfed328f3a9e95bd275734e675"
+      ],
+      "matched_actor_count": 24,
+      "matched_actors": [
+        "0x124526e524a778039f7f5c3e1dc4cdb3050c0454",
+        "0x1477e7397281a17f55831f99ed94b682e720721b",
+        "0x268f7adb572d344731c9222d7c740cabd485a3e5",
+        "0x2ccb0d43e67b68963c7f43b546073117eb325470",
+        "0x34aa6cdc4378343181a6675a7248666f33a0ec07",
+        "0x39b20b7a7a4936e9174da7e78dad98aa2b413279",
+        "0x3a3e47a28e53978bea59830fad6a0eb2fc371091",
+        "0x3c55e589d868079aa4cf14457c5e8d93119a969d",
+        "0x42623912bf3910a30d13a9887cdd19d74d1870d5",
+        "0x4b6cfd17afbfca3db464843232ec294bb5abe249",
+        "0x4c33a6e78b39a97badac6a8616f85ee4ce93df73",
+        "0x88043ac03ed670cf07c6793790881663d9263b96",
+        "0x8d38a54818306f2bd0536d4571c9c271a533352b",
+        "0x95506c0a7c302ff29b0f2b0b679c4400238d774f",
+        "0x97fc31117f7f252f99c696d4cd24efb91d30cac8",
+        "0xa2b7ce040e05d122246c732c96bbcec45baa711f",
+        "0xa5a8c343eaebdf2d6170e0a1e56089aa18b29ceb",
+        "0xabf7135fe323aed91ce92efe80381b1587aa7f65",
+        "0xadbab4f38ff9dcd71886f43b148bcad4a3081fb9",
+        "0xb1ee64d564d1e388ddb042092175a2d7e4af675e",
+        "0xb34b1c413bc1f6e16c8791c915696dc3e36ead0d",
+        "0xdc4f2e5e7dce8a7c7ad61d80e8d401e615de1539",
+        "0xe84c01208c4868d5615fccf0b98f8c90f460d2b6",
+        "0xfda5a361f3c67ebfed328f3a9e95bd275734e675"
+      ],
+      "predicted_actors": [
+        "0x34aa6cdc4378343181a6675a7248666f33a0ec07",
+        "0x4c33a6e78b39a97badac6a8616f85ee4ce93df73",
+        "0xadbab4f38ff9dcd71886f43b148bcad4a3081fb9",
+        "0x39b20b7a7a4936e9174da7e78dad98aa2b413279",
+        "0x2ccb0d43e67b68963c7f43b546073117eb325470",
+        "0xdc4f2e5e7dce8a7c7ad61d80e8d401e615de1539",
+        "0x3c55e589d868079aa4cf14457c5e8d93119a969d",
+        "0x4b6cfd17afbfca3db464843232ec294bb5abe249",
+        "0x1477e7397281a17f55831f99ed94b682e720721b",
+        "0xe84c01208c4868d5615fccf0b98f8c90f460d2b6",
+        "0x95506c0a7c302ff29b0f2b0b679c4400238d774f",
+        "0xa2b7ce040e05d122246c732c96bbcec45baa711f",
+        "0x88043ac03ed670cf07c6793790881663d9263b96",
+        "0xa5a8c343eaebdf2d6170e0a1e56089aa18b29ceb",
+        "0xabf7135fe323aed91ce92efe80381b1587aa7f65",
+        "0x268f7adb572d344731c9222d7c740cabd485a3e5",
+        "0x42623912bf3910a30d13a9887cdd19d74d1870d5",
+        "0xb1ee64d564d1e388ddb042092175a2d7e4af675e",
+        "0xfda5a361f3c67ebfed328f3a9e95bd275734e675",
+        "0x8d38a54818306f2bd0536d4571c9c271a533352b",
+        "0x124526e524a778039f7f5c3e1dc4cdb3050c0454",
+        "0x97fc31117f7f252f99c696d4cd24efb91d30cac8",
+        "0xb34b1c413bc1f6e16c8791c915696dc3e36ead0d",
+        "0x3a3e47a28e53978bea59830fad6a0eb2fc371091"
+      ],
+      "predicted_candidate_count": 24,
+      "role_coverage": {
+        "0x124526e524a778039f7f5c3e1dc4cdb3050c0454": [
+          "borrower"
+        ],
+        "0x1477e7397281a17f55831f99ed94b682e720721b": [
+          "borrower"
+        ],
+        "0x268f7adb572d344731c9222d7c740cabd485a3e5": [
+          "borrower"
+        ],
+        "0x2ccb0d43e67b68963c7f43b546073117eb325470": [
+          "borrower"
+        ],
+        "0x34aa6cdc4378343181a6675a7248666f33a0ec07": [
+          "borrower"
+        ],
+        "0x39b20b7a7a4936e9174da7e78dad98aa2b413279": [
+          "borrower"
+        ],
+        "0x3a3e47a28e53978bea59830fad6a0eb2fc371091": [
+          "borrower"
+        ],
+        "0x3c55e589d868079aa4cf14457c5e8d93119a969d": [
+          "borrower"
+        ],
+        "0x42623912bf3910a30d13a9887cdd19d74d1870d5": [
+          "borrower"
+        ],
+        "0x4b6cfd17afbfca3db464843232ec294bb5abe249": [
+          "borrower"
+        ],
+        "0x4c33a6e78b39a97badac6a8616f85ee4ce93df73": [
+          "borrower"
+        ],
+        "0x88043ac03ed670cf07c6793790881663d9263b96": [
+          "borrower"
+        ],
+        "0x8d38a54818306f2bd0536d4571c9c271a533352b": [
+          "borrower"
+        ],
+        "0x95506c0a7c302ff29b0f2b0b679c4400238d774f": [
+          "borrower"
+        ],
+        "0x97fc31117f7f252f99c696d4cd24efb91d30cac8": [
+          "borrower"
+        ],
+        "0xa2b7ce040e05d122246c732c96bbcec45baa711f": [
+          "borrower"
+        ],
+        "0xa5a8c343eaebdf2d6170e0a1e56089aa18b29ceb": [
+          "borrower"
+        ],
+        "0xabf7135fe323aed91ce92efe80381b1587aa7f65": [
+          "borrower"
+        ],
+        "0xadbab4f38ff9dcd71886f43b148bcad4a3081fb9": [
+          "borrower"
+        ],
+        "0xb1ee64d564d1e388ddb042092175a2d7e4af675e": [
+          "borrower"
+        ],
+        "0xb34b1c413bc1f6e16c8791c915696dc3e36ead0d": [
+          "borrower"
+        ],
+        "0xdc4f2e5e7dce8a7c7ad61d80e8d401e615de1539": [
+          "borrower"
+        ],
+        "0xe84c01208c4868d5615fccf0b98f8c90f460d2b6": [
+          "borrower"
+        ],
+        "0xfda5a361f3c67ebfed328f3a9e95bd275734e675": [
+          "borrower"
+        ]
+      }
+    }
+  ],
+  "known_actor_total": 55,
+  "matched_actor_total": 55,
+  "micro_actor_recall": 1.0,
+  "rq": "RQ4"
+}
